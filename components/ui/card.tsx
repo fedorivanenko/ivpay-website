@@ -8,7 +8,7 @@ import { m, motion, HTMLMotionProps } from 'framer-motion'
 import { 
   cardAppearing,
   contentAppearing
- } from "@/lib/motion_utils"
+ } from "@/components/motion/motion_utils"
 
 type DivProps = HTMLMotionProps<'div'> & {
   className?: string
@@ -16,13 +16,13 @@ type DivProps = HTMLMotionProps<'div'> & {
 
 const Card = React.forwardRef<HTMLDivElement, DivProps>(
   ({ className, ...props }, ref) => (
-    <motion.div
+    <m.div
       ref={ref}
+      variants={cardAppearing}
       className={cn(
         "rounded-lg bg-card text-card-foreground overflow-hidden relative z-0",
         className
       )}
-      variants={cardAppearing}
       {...props}
     />
   )
@@ -31,7 +31,7 @@ Card.displayName = "Card"
 
 const CardHeader = React.forwardRef<HTMLDivElement, DivProps>(
   ({ className, ...props }, ref) => (
-    <motion.div
+    <m.div
       ref={ref}
       className={cn("flex flex-col space-y-1.5 p-6 pb-2", className)}
       {...props}
@@ -47,7 +47,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "text-32 leading-none tracking-tight uppercase",
+      "text-xl md:text-3xl leading-none tracking-tight uppercase",
       className
     )}
     {...props}
@@ -69,7 +69,7 @@ CardDescription.displayName = "CardDescription"
 
 const CardContent = React.forwardRef<HTMLDivElement, DivProps>(
   ({ className, ...props }, ref) => (
-    <motion.div
+    <m.div
       ref={ref}
       className={cn("p-6 pt-0", className)}
       {...props}
@@ -80,7 +80,7 @@ CardContent.displayName = "CardContent"
 
 const CardFooter = React.forwardRef<HTMLDivElement, DivProps>(
   ({ className, ...props }, ref) => (
-  <motion.div
+  <m.div
     ref={ref}
     className={cn("flex items-center p-6 pt-0", className)}
     {...props}
@@ -91,7 +91,7 @@ CardFooter.displayName = "CardFooter"
 
 const CardImageWrapper = React.forwardRef<HTMLDivElement, DivProps>(
   ({ className, ...props }, ref) => (
-  <motion.div
+  <m.div
     ref={ref}
     className={cn("absolute w-full h-full top-0 -z-10", className)}
     {...props}

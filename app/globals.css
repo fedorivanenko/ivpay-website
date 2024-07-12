@@ -30,8 +30,8 @@
       --destructive: 0 84.2% 60.2%;
       --destructive-foreground: 0 0% 98%;
 
-      --border: 0 0% 89.8%;
-      --input: 0 0% 89.8%;
+      --border: 0 0% 79.8%;
+      --input: 0 0% 79.8%;
       --ring: 0 0% 3.9%;
 
       --radius: 1.5rem;
@@ -82,5 +82,15 @@
     src: url('/fonts/Nohemi-VF.ttf') format('truetype');
     font-weight: 200 700;
     font-display: swap;
-    font-style: italic;
   }
+
+  /* Webfont: Nohemi-Light */
+  @font-face {
+    font-family: 'Nohemi';
+    src: url('/fonts/Nohemi-Light.woff') format('woff'), /* Modern Browsers */
+         url('/fonts/Nohemi-Light.woff2') format('woff2'), /* Modern Browsers */
+         url('/fonts/Nohemi-Light.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-weight: 300;
+    font-display: swap;
+}
+

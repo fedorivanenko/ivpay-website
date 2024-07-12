@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { LazyMotion, domAnimation } from "framer-motion"
+import LazyMotionWrapper from "@/components/motion/lazyMotionWrapper";
 
 export const metadata: Metadata = {
   title: "Ivpay | A simple way to start accepting crypto in your business",
@@ -14,10 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="font-light">
-        {children}
-      </body>
-    </html>
+    <LazyMotionWrapper>
+      <html lang="en">
+        <body>
+          {children}
+        </body>
+      </html>
+    </LazyMotionWrapper>
   );
 }

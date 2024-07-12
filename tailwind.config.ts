@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss"
+import type { PluginAPI } from 'tailwindcss/types/config'
+
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 const config = {
@@ -20,14 +22,20 @@ const config = {
     },
     extend: {
       fontFamily: {
-        'sans': ['Nohemi-Variable', ...defaultTheme.fontFamily.sans],
+        'sans': ['Nohemi', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        100: "100px",
-        80 : "80px",
-        60 : "60px",
-        40 : "40px",
-        32 : "32px",
+        'xs': ['0.75rem', '1rem'],  // 12px font-size, 16px line-height
+        'sm': ['0.875rem', '1.25rem'],  // 14px font-size, 20px line-height
+        'base': ['1rem', '1.5rem'],  // 16px font-size, 24px line-height
+        'lg': ['1.125rem', '1.75rem'],  // 18px font-size, 28px line-height
+        'xl': ['1.25rem', '1.75rem'],  // 20px font-size, 28px line-height
+        '2xl': ['1.5rem', '2rem'],  // 24px font-size, 32px line-height
+        '3xl': ['2rem', '2.25rem'],  // 32px font-size, 36px line-height
+        '4xl': ['2.5rem', '2.5rem'],  // 40px font-size, 40px line-height
+        '5xl': ['3.75rem', '4rem'],  // 60px font-size, 64px line-height
+        '6xl': ['5rem', '5rem'],  // 80px font-size, 80px line-height
+        '7xl': ['6.25rem', '6.25rem'],  // 100px font-size, 100px line-height
       },
       colors: {
         border: "hsl(var(--border))",
@@ -90,7 +98,24 @@ const config = {
       }
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    /*
+    function({ addUtilities } : PluginAPI) {
+      const newUtilities = {
+        '.mask-gradient-r': {
+          maskImage: 'linear-gradient(to right, black, transparent)',
+          WebkitMaskImage: 'linear-gradient(to right, black, transparent)',
+        },
+        '.mask-gradient-l': {
+          maskImage: 'linear-gradient(to left, black, transparent)',
+          WebkitMaskImage: 'linear-gradient(to left, black, transparent)',
+        },
+        // Add more directions as needed
+      }
+      addUtilities(newUtilities)
+    }*/
+  ],
 } satisfies Config
 
 export default config
