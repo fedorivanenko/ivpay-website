@@ -26,5 +26,6 @@ const BrandBadge = React.forwardRef<
     </li>
   );
 });
+BrandBadge.displayName = 'BrandBadge'
 
 export default BrandBadge
