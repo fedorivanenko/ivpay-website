@@ -31,32 +31,27 @@ type AnimationItem = {
 };
 
 function useAnimationQueue() {
+
   const controls = useAnimationControls();
   const [queue, setQueue] = useState<AnimationItem[]>([]);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [currentAnimationId, setCurrentAnimationId] = useState<string | null>(null);
   const queueRef = useRef<AnimationItem[]>([]);
 
   const addToQueue = useCallback((id: string, animation: Parameters<AnimationControls['start']>[0]) => {
     const newItem = { id, animation };
     //console.log("Adding to queue:", newItem);
 
-    // Check if the animation already exists in the queue
-    const existingIndex = queueRef.current.findIndex(item => item.id === id);
-
-    if (existingIndex !== -1) {
-      // If it exists, remove it and all animations in between
-      queueRef.current = [
-        ...queueRef.current.slice(0, existingIndex),
-        newItem,
-        ...queueRef.current.slice(existingIndex + 1)
-      ];
+    if (id === currentAnimationId) {
+      // Clear the entire queue if the new item's id matches the current animation's id
+      queueRef.current = [newItem];
     } else {
-      // If it doesn't exist, just add it to the end
+      // Otherwise, add the new item to the end of the queue
       queueRef.current = [...queueRef.current, newItem];
     }
 
     setQueue([...queueRef.current]);
-  }, []);
+  }, [currentAnimationId]);
 
   const runQueue = useCallback(async () => {
     if (isAnimating || queueRef.current.length === 0) return;
@@ -66,6 +61,7 @@ function useAnimationQueue() {
 
     while (queueRef.current.length > 0) {
       const item = queueRef.current[0];
+      setCurrentAnimationId(item.id);
       //console.log("Running animation:", item);
       await controls.start(item.animation);
       queueRef.current = queueRef.current.slice(1);
@@ -74,6 +70,7 @@ function useAnimationQueue() {
 
     //console.log("Queue finished");
     setIsAnimating(false);
+    setCurrentAnimationId(null);
   }, [controls, isAnimating]);
 
   useEffect(() => {
@@ -82,7 +79,8 @@ function useAnimationQueue() {
       runQueue();
     }
   }, [queue, isAnimating, runQueue]);
-  return { controls, addToQueue };
+
+  return { controls, addToQueue, currentAnimationId };
 }
 
 const MotionTriggerWrapper = React.forwardRef<HTMLDivElement, MotionDivWrapperProps>(({ children, ...props }, forwardedRef) => {

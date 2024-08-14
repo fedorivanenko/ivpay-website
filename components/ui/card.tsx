@@ -3,14 +3,15 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
-import { m, motion, HTMLMotionProps } from 'framer-motion'
+import { m, motion, MotionProps, HTMLMotionProps } from 'framer-motion'
 
 import { 
   cardAppearing,
   contentAppearing
  } from "@/components/motion/motion_utils"
 
-type DivProps = HTMLMotionProps<'div'> & {
+type DivProps = Omit<React.HTMLAttributes<HTMLDivElement>, keyof MotionProps> &
+MotionProps & {
   className?: string
 }
 
@@ -20,7 +21,7 @@ const Card = React.forwardRef<HTMLDivElement, DivProps>(
       ref={ref}
       variants={cardAppearing}
       className={cn(
-        "rounded-lg bg-card text-card-foreground overflow-hidden relative z-0",
+        "rounded-lg sm:rounded-2xl bg-card text-card-foreground overflow-hidden relative z-0",
         className
       )}
       {...props}
@@ -29,13 +30,12 @@ const Card = React.forwardRef<HTMLDivElement, DivProps>(
 )
 Card.displayName = "Card"
 
-const CardHeader = React.forwardRef<HTMLDivElement, DivProps>(
+const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <m.div
+    <div
       ref={ref}
-      className={cn("flex flex-col space-y-1.5 p-6 pb-2", className)}
+      className={cn("flex flex-col space-y-1.5 p-5 sm:p-7.5 pb-2 sm:pb-2.5", className)}
       {...props}
-      //variants={contentAppearing}
     />
   ))
 CardHeader.displayName = "CardHeader"
@@ -67,35 +67,32 @@ const CardDescription = React.forwardRef<
 ))
 CardDescription.displayName = "CardDescription"
 
-const CardContent = React.forwardRef<HTMLDivElement, DivProps>(
+const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <m.div
+    <div
       ref={ref}
-      className={cn("p-6 pt-0", className)}
+      className={cn("p-7.5 py-0", className)}
       {...props}
-      //variants={contentAppearing}
     />
   ))
 CardContent.displayName = "CardContent"
 
-const CardFooter = React.forwardRef<HTMLDivElement, DivProps>(
+const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-  <m.div
+  <div
     ref={ref}
-    className={cn("flex items-center p-6 pt-0", className)}
+    className={cn("flex items-center p-7.5 pt-0", className)}
     {...props}
-    //variants={contentAppearing}
   />
 ))
 CardFooter.displayName = "CardFooter"
 
-const CardImageWrapper = React.forwardRef<HTMLDivElement, DivProps>(
+const CardImageWrapper = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-  <m.div
+  <div
     ref={ref}
-    className={cn("absolute w-full h-full top-0 -z-10", className)}
+    className={cn("absolute h-full aspect-square bottom-0 right-0 -z-10", className)}
     {...props}
-    //variants={contentAppearing}
   />
 ))
 CardImageWrapper.displayName = "CardImageWrapper"

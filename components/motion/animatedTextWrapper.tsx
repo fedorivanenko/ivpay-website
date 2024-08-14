@@ -5,11 +5,12 @@ import * as React from 'react'
 import { m, motion, HTMLMotionProps } from 'framer-motion'
 import { textAppearing, textStaggerChildren } from './motion_utils'
 
-import { useEffect, useState, useRef, useImperativeHandle } from 'react'
+import { useRef, useImperativeHandle } from 'react'
 
-import useAriaLabel from '@/lib/useAriaLabel'
+import { useAriaLabel } from '@/lib/useAriaLabel'
+import { splitAndFormat } from '@/components/elements/thousandsSeparator'
 
-interface ProcessedChildren {
+type ProcessedChildren = {
   children: (string | React.ReactNode)[];
   totalElements: number;
 }
@@ -46,15 +47,15 @@ function processChildren(children: React.ReactNode): ProcessedChildren {
 
 type animatedTextProps = HTMLMotionProps<'span'> & {
   children: React.ReactNode
-  split?: 'words' | 'letters'
 }
 
 const AnimatedTextWrapper = React.forwardRef<HTMLSpanElement, animatedTextProps>(
-  ({ children, split = 'words', ...props }, forwardedRef) => {
-    
+  ({ children, ...props }, forwardedRef) => {
+
     const internalRef = useRef<HTMLSpanElement>(null);
 
-    const result = processChildren(children);
+    const processedChildren = processChildren(children);
+    //console.log(processedChildren)
 
     useImperativeHandle(forwardedRef, () => {
       if (internalRef.current) {
@@ -69,18 +70,18 @@ const AnimatedTextWrapper = React.forwardRef<HTMLSpanElement, animatedTextProps>
       <>
         <m.span
           variants={textStaggerChildren}
-          custom={result.totalElements}
+          custom={processedChildren.totalElements}
           ref={internalRef}
           {...props}
         >
-          {result.children.map((item, index) => (
+          {processedChildren.children.map((item, index) => (
             typeof item === 'string' ? (
               <m.span
                 variants={textAppearing}
                 key={index}
                 className='inline-block whitespace-pre-wrap origin-bottom-left'
               >
-                {item}
+                {splitAndFormat(item)}
               </m.span>
             ) : (
               <React.Fragment key={index}>{item}</React.Fragment>

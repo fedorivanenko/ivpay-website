@@ -1,12 +1,17 @@
-import HomepageHero from "@/components/blocks/home_hero";
-import ProductCards from "@/components/blocks/product_cards";
+import EasySafeFastBlock from "@/components/blocks/easy-safe-fast-block";
+import HomeHeroBlock from "@/components/blocks/home-hero-block";
+import OurProductsBlock from "@/components/blocks/our-products-block";
+import ReapTheBenfitsBlock from "@/components/blocks/reap-the-benefits-block";
+import TogetherWithUsBlock from "@/components/blocks/together-with-us-block";
 
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <HomepageHero/>
-      <ProductCards/>
-      <div className="h-[100dvh] bg-soft"/>
+      <HomeHeroBlock/>
+      <OurProductsBlock/>
+      <EasySafeFastBlock/>
+      <ReapTheBenfitsBlock/>
+      <TogetherWithUsBlock/>
     </main>
   );
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import localFont from 'next/font/local'
 import "./globals.css";
 
-import { LazyMotion, domAnimation } from "framer-motion"
 import LazyMotionWrapper from "@/components/motion/lazyMotionWrapper";
 
 export const metadata: Metadata = {
@@ -9,14 +9,33 @@ export const metadata: Metadata = {
   description: "A simple way to start accepting crypto in your business",
 };
 
+const nohemi = localFont({
+  display: 'swap',
+  variable: '--font-nohemi',
+  src: [
+    {
+      path: '../fonts/Nohemi-Light.woff2',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Nohemi-Light.ttf',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Nohemi-Light.otf',
+      style: 'normal',
+    },
+  ],
+})
+
 export default function RootLayout({
-  children,
+children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <LazyMotionWrapper>
-      <html lang="en">
+      <html lang="en" className={`${nohemi.variable}`}>
         <body>
           {children}
         </body>

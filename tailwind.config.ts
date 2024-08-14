@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss"
-import type { PluginAPI } from 'tailwindcss/types/config'
 
 const defaultTheme = require('tailwindcss/defaultTheme')
 
@@ -22,20 +21,26 @@ const config = {
     },
     extend: {
       fontFamily: {
-        'sans': ['Nohemi', ...defaultTheme.fontFamily.sans],
+        'sans': ['var(--font-nohemi)', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
-        'xs': ['0.75rem', '1rem'],  // 12px font-size, 16px line-height
-        'sm': ['0.875rem', '1.25rem'],  // 14px font-size, 20px line-height
-        'base': ['1rem', '1.5rem'],  // 16px font-size, 24px line-height
-        'lg': ['1.125rem', '1.75rem'],  // 18px font-size, 28px line-height
-        'xl': ['1.25rem', '1.75rem'],  // 20px font-size, 28px line-height
-        '2xl': ['1.5rem', '2rem'],  // 24px font-size, 32px line-height
-        '3xl': ['2rem', '2.25rem'],  // 32px font-size, 36px line-height
-        '4xl': ['2.5rem', '2.5rem'],  // 40px font-size, 40px line-height
-        '5xl': ['3.75rem', '4rem'],  // 60px font-size, 64px line-height
-        '6xl': ['5rem', '5rem'],  // 80px font-size, 80px line-height
-        '7xl': ['6.25rem', '6.25rem'],  // 100px font-size, 100px line-height
+        '2.5xl': ['1.75rem', '2.5rem'],  // 28px
+        '3xl': ['2rem', '2.5rem'],       // 32px
+        '6xl': ['4rem', '4rem'],       // 64px
+      },
+      maxWidth : {
+        '1/2' : "50%",
+        '2/3' : "66%",
+        '3/4' : "75%",
+      },
+      spacing: {
+        '2.5': '0.625rem',
+        '7.5': '1.875rem',
+        '12.5': '3.125rem',
+        '15': '3.75rem',
+        '25': '6.25rem',
+        '30': '7.5rem',
+        '90': '22.5rem'
       },
       colors: {
         border: "hsl(var(--border))",
@@ -43,7 +48,11 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        soft: "hsl(var(--soft))",
+        "blue-94": "hsl(var(--blue-94))",
+        "blue-88": "hsl(var(--blue-88))",
+        "blue-70": "hsl(var(--blue-70))",
+        "blue-60": "hsl(var(--blue-60))",
+        "blue-45": "hsl(var(--blue-45))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -74,9 +83,21 @@ const config = {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 0.5rem)",
-        sm: "calc(var(--radius) - 1rem)",
+        DEFAULT: "calc(var(--radius) - 1rem)", //0.5rem -> 8px
+        sm: "calc(var(--radius) - 0.75rem)", //0.75rem -> 12px
+        md: "calc(var(--radius) - 0.5rem)", //1rem -> 16px
+        lg: "var(--radius)", //1.5rem -> 24px
+        xl: "calc(var(--radius) + 0.5rem)", //2rem -> 36px
+        '2xl': "calc(var(--radius) + 1.5rem)", //3rem -> 48px
+      },
+      lineHeight: {
+        'tighten': '1.15',
+        'snug' : '1.4',
+      },
+      backgroundImage: {
+        "soft-gradient": "linear-gradient(to bottom, transparent 0%, hsl(var(--blue-94)) 75%, hsl(var(--blue-94)) 100%)",
+        "blue-88-94-gradient": "radial-gradient(closest-side, hsl(var(--blue-88)) 20%, hsl(var(--blue-94)) 100%)",
+        "blue-60-94-radial-gradient": "radial-gradient(ellipse 100% 80% at top right, hsl(var(--blue-60)) 20%, transparent 90%), radial-gradient(ellipse 100% 80% at bottom left, hsl(var(--blue-60)) 10%, transparent 90%)"
       },
       keyframes: {
         "accordion-down": {
@@ -93,28 +114,17 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       aspectRatio : {
+        "3/4": "0.75",
+        "4/3": "1.33",
         "16/9": "1.77",
-        "5/4": "1.25",
+        "2/1": "2",
+        "11/10": "2.5"
       }
     },
   },
   plugins: [
     require("tailwindcss-animate"),
-    /*
-    function({ addUtilities } : PluginAPI) {
-      const newUtilities = {
-        '.mask-gradient-r': {
-          maskImage: 'linear-gradient(to right, black, transparent)',
-          WebkitMaskImage: 'linear-gradient(to right, black, transparent)',
-        },
-        '.mask-gradient-l': {
-          maskImage: 'linear-gradient(to left, black, transparent)',
-          WebkitMaskImage: 'linear-gradient(to left, black, transparent)',
-        },
-        // Add more directions as needed
-      }
-      addUtilities(newUtilities)
-    }*/
+    require("tailwind-gradient-mask-image")
   ],
 } satisfies Config
 

@@ -5,27 +5,25 @@
   @layer base {
     :root {
       --background: 0 0% 100%;
-      --foreground: 0 0% 3.9%;
+      --foreground: 235 40% 9%;
 
       --card: 0 0% 100%;
-      --card-foreground: 0 0% 3.9%;
+      --card-foreground: 235 40% 9%;
 
       --popover: 0 0% 100%;
-      --popover-foreground: 0 0% 3.9%;
+      --popover-foreground: 235 40% 9%;
 
       --primary: 0 0% 9%;
       --primary-foreground: 0 0% 98%;
 
       --secondary: 0 0% 96.1%;
-      --secondary-foreground: 0 0% 9%;
+      --secondary-foreground: 235 40% 9%;
 
       --muted: 0 0% 96.1%;
       --muted-foreground: 0 0% 45.1%;
 
-      --accent: 235 100% 59%;
-      --accent-foreground: 0 0% 9%;
-
-      --soft: 234 100% 94%;
+      --accent: 235 100% 60%;
+      --accent-foreground: 0 0% 98%;
 
       --destructive: 0 84.2% 60.2%;
       --destructive-foreground: 0 0% 98%;
@@ -35,6 +33,13 @@
       --ring: 0 0% 3.9%;
 
       --radius: 1.5rem;
+
+      --blue-94: 235 100% 94%;
+      --blue-88: 235 100% 88%;
+      --blue-70: 235 100% 70%;
+      --blue-60: 235 100% 60%;
+      --blue-45: 235 60% 45%;
+
     }
 
     .dark {
@@ -76,21 +81,3 @@
       @apply bg-background text-foreground;
     }
   }
-
-  @font-face {
-    font-family: 'Nohemi-Variable';
-    src: url('/fonts/Nohemi-VF.ttf') format('truetype');
-    font-weight: 200 700;
-    font-display: swap;
-  }
-
-  /* Webfont: Nohemi-Light */
-  @font-face {
-    font-family: 'Nohemi';
-    src: url('/fonts/Nohemi-Light.woff') format('woff'), /* Modern Browsers */
-         url('/fonts/Nohemi-Light.woff2') format('woff2'), /* Modern Browsers */
-         url('/fonts/Nohemi-Light.ttf') format('truetype'); /* Safari, Android, iOS */
-    font-weight: 300;
-    font-display: swap;
-}
-

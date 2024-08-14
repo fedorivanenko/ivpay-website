@@ -3,7 +3,9 @@
 import * as React from 'react'
 
 import { useEffect, useState } from 'react'
-import { m, motion, HTMLMotionProps, AnimatePresence } from 'framer-motion'
+import { m, motion, LazyMotion, domAnimation, HTMLMotionProps, AnimatePresence } from 'framer-motion'
+
+import { popLayoutVariants, defaultDuration, contentAppearing } from '@/components/motion/motion_utils'
 
 import { cn } from "@/lib/utils"
 
@@ -18,69 +20,67 @@ const StepMarqueeWrapper = React.forwardRef<
 >(({ children, className, length = 4, ...props }, ref) => {
 
     const [itemArray, setItemArray] = useState<React.ReactNode[]>(() => React.Children.toArray(children));
-    const [visibleItems, setVisibleItems] = useState<React.ReactNode[]>([]);
 
+    //render all children for SEO purpose
+    const [visibleItems, setVisibleItems] = useState<React.ReactNode[]>(itemArray);
+
+    const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
-        setVisibleItems(itemArray.slice(0, length));
+        // Use requestAnimationFrame to prevent render until until animation is ready
+        requestAnimationFrame(() => {
+            setIsReady(true);
+        });
 
-        const interval = setInterval(() => {
-            setItemArray((prevItemArray) => {
-                const [first, ...rest] = prevItemArray;
-                return [...rest, first];
-            });
-        }, 2000);
+        if (typeof window !== 'undefined') { // Client-side only code
+            setVisibleItems(itemArray.slice(0, length));
 
-        return () => clearInterval(interval);
+            const interval = setInterval(() => {
+                setItemArray((prevItemArray) => {
+                    const [first, ...rest] = prevItemArray;
+                    return [...rest, first];
+                });
+            }, defaultDuration * 1000 * 3);
+
+            return () => clearInterval(interval);
+        }
     }, [itemArray, length]);
 
-    const itemVariants = {
-        hidden: {
-            opacity: 0,
-        },
-        visible: {
-            opacity: 1,
-            transition: {
-                delay: 0.5,
-                duration: 0.5,
-            }
-        },
-        exit: {
-            opacity: 0,
-            transition: {
-                duration: 0.25,
-            }
-        }
-    };
+    if (!isReady) {
+        return null;
+    }
 
     return (
         <motion.ul
             ref={ref}
-            className={cn("flex gap-2", className)}
+            className={cn("flex gap-1 xl:gap-2", className)}
+            variants={contentAppearing}
             {...props}
             layout
         >
-            <AnimatePresence initial={false} mode="popLayout">
-                {visibleItems.map((item, index) => {
-                    if (React.isValidElement(item)) {
-                        const MotionTag = motion[item.type as keyof typeof motion] || motion.div;
-                        return (
-                            <MotionTag
-                                key={item.key}
-                                layout
-                                variants={itemVariants}
-                                initial="hidden"
-                                animate="visible"
-                                exit="exit"
-                                {...item.props}
-                            >
-                                {item.props.children}
-                            </MotionTag>
-                        );
-                    }
-                    return null;
-                })}
-            </AnimatePresence>
+            <LazyMotion features={domAnimation}>
+                <AnimatePresence initial={false} mode="popLayout">
+                    {visibleItems.map((item, index) => {
+                        if (React.isValidElement(item)) {
+                            const MotionTag = m[item.type as keyof typeof m] || m.div;
+                            return (
+                                <MotionTag
+                                    key={item.key}
+                                    layout
+                                    variants={popLayoutVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    exit="exit"
+                                    {...item.props}
+                                >
+                                    {item.props.children}
+                                </MotionTag>
+                            );
+                        }
+                        return null;
+                    })}
+                </AnimatePresence>
+            </LazyMotion>
         </motion.ul>
     )
 })

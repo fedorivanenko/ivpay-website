@@ -3,23 +3,24 @@
 import * as React from 'react';
 
 import { m, motion, HTMLMotionProps, ForwardRefComponent } from 'framer-motion'
+import { AnimatedTextWrapper } from '../motion/animatedTextWrapper';
 import { contentAppearing } from '../motion/motion_utils';
 
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
-import { AnimatedTextWrapper } from '../motion/animatedTextWrapper';
 
 const headingVariants = cva(
-    "leading-none tracking-tight uppercase",
+    "capitalize",
     {variants: {
         size: {
-            '100': 'text-5xl md:text-7xl',
-            '80': 'text-4xl md:text-6xl',
-            '60': 'text-3xl md:text-5xl',
-            '40': 'text-2xl md:text-4xl',
-            '32': 'text-xl md:text-3xl'
+            '72': 'text-4xl lg:text-6xl xl:text-7xl leading-none',
+            '64': 'text-3xl lg:text-6xl xl:text-6xl leading-tighten sm:leading-none',
+            '48': 'text-xl lg:text-4xl xl:text-5xl leading-tighten sm:leading-none',
+            '32': 'text-xl lg:text-2xl xl:text-3xl leading-tighten sm:leading-none',
         }
-    }}
+    },
+    defaultVariants: {size: "72"}
+}
 )
 
 type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4';
@@ -40,10 +41,10 @@ const Heading = React.forwardRef<HTMLElement, HeadingProps>(
 
         return (
             <MotionTag
-                variants={contentAppearing}
-                {...props}
                 ref={ref}
+                variants={contentAppearing}
                 className={cn(headingVariants({ size, className }))}
+                {...props}
             >
             <AnimatedTextWrapper>
                 {children}

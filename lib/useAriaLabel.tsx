@@ -1,6 +1,14 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
-const useAriaLabel = (ref: React.RefObject<HTMLSpanElement>) => {
+/**
+ * Custom hook to dynamically set the `aria-label` attribute of a HTML element
+ * based on its child text content and aria-label attributes of its child elements.
+ * This ensures accessibility for screen readers.
+ * 
+ * @param ref Ref object pointing to the <span> element whose aria-label needs to be set.
+ */
+
+export const useAriaLabel = (ref: React.RefObject<HTMLElement>) => {
     useEffect(() => {
       const outerSpan = ref.current;
       if (outerSpan) {
@@ -22,5 +30,3 @@ const useAriaLabel = (ref: React.RefObject<HTMLSpanElement>) => {
       }
     }, [ref]);
   };
-
-  export default useAriaLabel
