@@ -2,18 +2,18 @@ import * as React from "react";
 
 import Image from "next/image";
 
-import { Container } from "../layouts/container";
-import { Heading } from "../ui/heading";
-import { Text } from "../ui/text";
-import { Card, CardHeader } from "../ui/card";
-import { InfinityMarque } from "../elements/infinityMarquee";
+import { Container } from "@/components/layouts/container";
+import { Heading } from "@/components/ui/heading";
+import { Text } from "@/components/ui/text";
+import { Card, CardHeader } from "@/components/ui/card";
+import { InfinityMarque } from "@/components/elements/infinity-marquee";
 
 import BTCicon from "@/currencies/btc.svg";
 import ETHicon from "@/currencies/eth.svg";
 import EURicon from "@/currencies/eur.svg";
 import USDTicon from "@/currencies/usdt.svg";
 
-import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
+import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
 export default function EasySafeFastBlock() {
   return (
@@ -23,7 +23,7 @@ export default function EasySafeFastBlock() {
         <div className="pb-25 relative flex min-h-screen w-full flex-col gap-10 overflow-hidden rounded-t-xl bg-blue-70 bg-blue-60-94-radial-gradient p-7.5 pt-10 text-background shadow-2xl shadow-blue-60 lg:gap-10 lg:p-15 lg:pb-40 lg:pt-16">
           {/* Heading Container */}
           <div className="flex flex-col gap-2.5 lg:gap-5">
-            <Heading as="h2" size="80" className="sm:whitespace-nowrap">
+            <Heading as="h2" size="72" className="sm:whitespace-nowrap">
               Easy. Safe. Fast.
             </Heading>
             <Text className="text-base lg:text-lg">
@@ -39,7 +39,7 @@ export default function EasySafeFastBlock() {
             <Card className="grid grid-cols-1 gap-2.5 p-4 sm:col-span-2 sm:aspect-auto sm:grid-cols-2 sm:p-7.5">
               <Heading
                 as="h3"
-                size="60"
+                size="72"
                 className="mb-5 max-w-[10ch] text-3.5xl sm:mb-0"
               >
                 How do payments work?
@@ -52,7 +52,7 @@ export default function EasySafeFastBlock() {
             {/* Card 02 */}
             <Card className="flex flex-col">
               <CardHeader className="sm:pb-7.5 sm:pt-2.5">
-                <Heading as="h3" size="40" className="max-w-[10ch]">
+                <Heading as="h3" size="48" className="max-w-[10ch]">
                   What about the payouts?
                 </Heading>
                 <Text className="sm:pt-2 sm:text-sm lg:text-base">
@@ -74,7 +74,7 @@ export default function EasySafeFastBlock() {
             {/* Card 03 */}
             <Card className="flex flex-col">
               <CardHeader>
-                <Heading as="h3" size="40">
+                <Heading as="h3" size="48">
                   we monitoring transactions
                 </Heading>
                 <Text className="sm:pt-2 sm:text-sm lg:text-base">
