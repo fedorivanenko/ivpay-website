@@ -20,7 +20,7 @@ export default function EasySafeFastBlock() {
     <section className="relative flex flex-col overflow-hidden bg-blue-94 pt-10">
       <Container className="">
         {/* Blue Container */}
-        <div className="pb-25 relative flex min-h-screen w-full flex-col gap-10 overflow-hidden rounded-t-xl bg-blue-70 bg-blue-60-94-radial-gradient p-7.5 pt-10 text-background shadow-2xl shadow-blue-60 lg:gap-10 lg:p-15 lg:pb-40 lg:pt-16">
+        <div className="relative flex min-h-screen w-full flex-col gap-10 overflow-hidden rounded-t-xl bg-blue-70 bg-blue-60-94-radial-gradient p-7.5 pb-25 pt-10 text-background shadow-2xl shadow-blue-60 lg:gap-10 lg:p-15 lg:pb-40 lg:pt-16">
           {/* Heading Container */}
           <div className="flex flex-col gap-2.5 lg:gap-5">
             <Heading as="h2" size="72" className="sm:whitespace-nowrap">
@@ -40,7 +40,7 @@ export default function EasySafeFastBlock() {
               <Heading
                 as="h3"
                 size="72"
-                className="mb-5 max-w-[10ch] text-3.5xl sm:mb-0"
+                className="text-3.5xl mb-5 max-w-[10ch] sm:mb-0"
               >
                 How do payments work?
               </Heading>

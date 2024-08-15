@@ -27,7 +27,7 @@ export default function ReapTheBenfitsBlock() {
               more businesses globally are getting on board.
             </Text>
           </div>
-          <div className="grid max-w-screen-lg grid-cols-1 gap-5 sm:grid-cols-3 my-10">
+          <div className="my-10 grid max-w-screen-lg grid-cols-1 gap-5 sm:grid-cols-3">
             <div>
               <Text className="mb-1 text-5xl sm:mb-2 sm:text-6xl xl:text-8xl">
                 <Counter to={40} />%
@@ -71,7 +71,7 @@ export default function ReapTheBenfitsBlock() {
           <BrandWall />
           <Separator className="my-10 sm:my-20" />
           {/* Crypto Growth */}
-          <div className="grid grid-cols-1 gap-x-5 gap-y-5 sm:grid-cols-3 mb-10 sm:mb-20">
+          <div className="mb-10 grid grid-cols-1 gap-x-5 gap-y-5 sm:mb-20 sm:grid-cols-3">
             <Text className="text-6xl sm:text-8xl xl:text-9xl">
               <Counter to={580} />%
             </Text>
@@ -79,16 +79,17 @@ export default function ReapTheBenfitsBlock() {
               growth has been shown in cryptocurrency transactions in the last
               five years alone
             </Text>
-            <div className='order-last sm:order-none'>
-                COUNRTY FLAGS
-                {/*
+            <div className="order-last sm:order-none">
+              COUNRTY FLAGS
+              {/*
               <FlagMarquee
               className="h-8 xl:h-12 mb-2"
                 countries={["eu", "fr", "ua", "ng", "ae", "bs", "hn", "pt"]}
               />
                  */}
               <Text>
-              Crypto holders have massive buying power and are looking to spend at crypto-accepting merchants
+                Crypto holders have massive buying power and are looking to
+                spend at crypto-accepting merchants
               </Text>
             </div>
             <div>

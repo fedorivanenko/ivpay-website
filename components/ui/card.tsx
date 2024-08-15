@@ -10,22 +10,26 @@ import {
   contentAppearing
  } from "@/components/motion/motion_utils"
 
-type DivProps = Omit<React.HTMLAttributes<HTMLDivElement>, keyof MotionProps> &
+export type DivProps = Omit<React.HTMLAttributes<HTMLDivElement>, keyof MotionProps> &
 MotionProps & {
   className?: string
+  children: React.ReactNode
 }
 
 const Card = React.forwardRef<HTMLDivElement, DivProps>(
-  ({ className, ...props }, ref) => (
+  ({ className, children, ...props }, ref) => (
     <m.div
       ref={ref}
       variants={cardAppearing}
       className={cn(
-        "rounded-lg sm:rounded-2xl bg-card text-card-foreground overflow-hidden relative z-0",
+        "rounded-lg border box-border border-background/50 sm:rounded-2xl bg-background/20 backdrop-blur-2xl text-card-foreground overflow-hidden relative z-0 shadow-2xl shadow-accent/30",
         className
       )}
       {...props}
-    />
+      >
+        <div aria-hidden className="absolute inset-0 m-10 bg-background/40 blur-xl rounded-lg -z-50"/>
+      {children}
+      </m.div>
   )
 )
 Card.displayName = "Card"

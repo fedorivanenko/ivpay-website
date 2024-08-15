@@ -3,6 +3,13 @@ import { Heading } from "@/components/ui/heading";
 import { Card } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
 
+import { InfinityMarque } from "@/components/elements/infinity-marquee";
+
+import BTCicon from "@/resources/currencies/btc.svg";
+import ETHicon from "@/resources/currencies/eth.svg";
+import EURicon from "@/resources/currencies/eur.svg";
+import USDTicon from "@/resources/currencies/usdt.svg";
+
 export default function EasySafeFastBlock() {
   return (
     <section id="easy-safe-fast-block" className="bg-blue-94 py-20">
@@ -30,8 +37,13 @@ export default function EasySafeFastBlock() {
           </Card>
           <div className="flex flex-1 flex-col gap-2 sm:flex-row sm:gap-5">
             <Card className="flex aspect-square flex-1 flex-col sm:aspect-auto">
-              <div className="flex-1 bg-slate-400">
-                cryptocurrecies image
+              <div className="flex-1 flex flex-col">
+              <InfinityMarque>
+                  <BTCicon className="aspect-square flex-1 rounded-full" />
+                  <ETHicon className="aspect-square flex-1 rounded-full" />
+                  <USDTicon className="aspect-square flex-1 rounded-full" />
+                  <EURicon className="aspect-square flex-1 rounded-full" />
+                </InfinityMarque>
               </div>
               <div className="p-5 sm:p-7.5 xl:p-10">
                 <Heading as="h3" size="32" className="mb-1.5">

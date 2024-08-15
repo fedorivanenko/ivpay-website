@@ -13,10 +13,10 @@ const headingVariants = cva(
     "capitalize",
     {variants: {
         size: {
-            '72': 'text-4xl lg:text-6xl xl:text-7xl leading-none',
-            '64': 'text-3xl lg:text-6xl xl:text-6xl leading-tighten sm:leading-none',
-            '48': 'text-xl lg:text-4xl xl:text-5xl leading-tighten sm:leading-none',
-            '32': 'text-xl lg:text-2xl xl:text-3xl leading-tighten sm:leading-none',
+            '72': 'text-4xl lg:text-6xl xl:text-7xl leading-none lg:leading-none xl:leading-none',
+            '64': 'text-3xl lg:text-6xl xl:text-6xl leading-tighten sm:leading-none lg:leading-none xl:leading-none',
+            '48': 'text-xl lg:text-4xl xl:text-5xl leading-tighten sm:leading-none lg:leading-none xl:leading-none',
+            '32': 'text-xl sm:text-2xl xl:text-3xl leading-tighten sm:leading-none xl:leading-none',
         }
     },
     defaultVariants: {size: "72"}
