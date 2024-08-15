@@ -2,6 +2,7 @@ import { Container } from "@/components/layouts/container";
 import { Heading } from "@/components/ui/heading";
 import { Card } from "@/components/ui/card";
 import { Text } from "@/components/ui/text";
+import Image from "next/image";
 
 import { InfinityMarque } from "@/components/elements/infinity-marquee";
 
@@ -19,7 +20,7 @@ export default function EasySafeFastBlock() {
             Easy Safe Fast Payments
           </Heading>
         </div>
-        <div className="-mt-6 flex w-full flex-col gap-2 sm:-mt-12 sm:aspect-square sm:gap-5">
+        <div className="-mt-6 flex w-full flex-col gap-2 sm:-mt-12 sm:aspect-square sm:gap-5 bg-blue-gradient">
           <Card className="grid flex-1 grid-cols-1 p-5 sm:grid-flow-col sm:grid-cols-2 sm:p-7.5 xl:p-10">
             <Heading
               as="h3"
@@ -45,25 +46,30 @@ export default function EasySafeFastBlock() {
                   <EURicon className="aspect-square flex-1 rounded-full" />
                 </InfinityMarque>
               </div>
-              <div className="p-5 sm:p-7.5 xl:p-10">
-                <Heading as="h3" size="32" className="mb-1.5">
+              <div className="p-5 sm:p-7.5 xl:p-10 pt-0 sm:pt-0 xl:pt-0">
+                <Heading as="h3" size="32" className="mb-1.5 sm:mb-2">
                   Get money as you prefer
                 </Heading>
-                <Text size="18">
+                <Text size="24">
                   Choose your ticker. Keep crypto or instantly convert to fiat
                   for no volatility
                 </Text>
               </div>
             </Card>
             <Card className="flex aspect-square flex-1 flex-col sm:aspect-auto">
-              <div className="order-first flex-1 bg-slate-400 sm:order-last">
-                dasboard image
+              <div className="order-first flex-1 sm:order-last relative">
+              <Image
+                  src="/e-commerce-cover.png"
+                  alt="IvPay POS Machine"
+                  fill
+                  className="object-cover object-right-bottom sm:object-left-top"
+                />
               </div>
-              <div className="p-5 sm:p-7.5 xl:p-10">
-                <Heading as="h3" size="32" className="mb-1.5">
+              <div className="p-5 sm:p-7.5 xl:p-10 pt-0 sm:pb-0 xl:pb-0">
+                <Heading as="h3" size="32" className="mb-1.5 sm:mb-2">
                   We monitoring transactions
                 </Heading>
-                <Text size="18">
+                <Text size="24">
                   Choose your ticker. Keep crypto or instantly convert to fiat
                   for no volatility
                 </Text>

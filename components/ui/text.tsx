@@ -21,6 +21,7 @@ const textVariants = cva(
         size: {
             '16': 'text-base leading-snug',
             '18': 'text-base lg:text-lg xl:text-lg leading-snug lg:leading-snug xl:leading-snug',
+            '24': 'text-base lg:text-xl xl:text-2xl leading-snug lg:leading-snug xl:leading-snug',
             '28': 'text-base lg:text-2xl xl:text-2.5xl leading-snug lg:leading-snug xl:leading-snug',
             '32': 'text-base lg:text-2xl xl:text-3xl leading-snug lg:leading-snug xl:leading-snug',
         }

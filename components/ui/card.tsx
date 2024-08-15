@@ -22,12 +22,12 @@ const Card = React.forwardRef<HTMLDivElement, DivProps>(
       ref={ref}
       variants={cardAppearing}
       className={cn(
-        "rounded-lg border box-border border-background/50 sm:rounded-2xl bg-background/20 backdrop-blur-2xl text-card-foreground overflow-hidden relative z-0 shadow-2xl shadow-accent/30",
+        "rounded-lg border box-border border-background/60 sm:rounded-2xl bg-background/50 text-card-foreground overflow-hidden relative z-0 shadow-2xl shadow-accent/30",
         className
       )}
       {...props}
       >
-        <div aria-hidden className="absolute inset-0 m-10 bg-background/40 blur-xl rounded-lg -z-50"/>
+        <div aria-hidden className="absolute inset-0 m-10 bg-background/50 blur-md rounded-lg -z-50"/>
       {children}
       </m.div>
   )

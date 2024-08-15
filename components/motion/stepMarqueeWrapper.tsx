@@ -53,7 +53,7 @@ const StepMarqueeWrapper = React.forwardRef<
     return (
         <motion.ul
             ref={ref}
-            className={cn("flex gap-1 xl:gap-2", className)}
+            className={cn("flex gap-2 xl:gap-3", className)}
             variants={contentAppearing}
             {...props}
             layout

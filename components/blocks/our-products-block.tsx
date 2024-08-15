@@ -11,7 +11,7 @@ export default function OurProductsBlock() {
           size="64"
           className="mb-2 ml-auto mr-3 max-w-[12ch] sm:max-w-[18ch] text-right sm:mb-5 sm:mr-6"
         >
-          Our powerful tools to accept crypto payments
+          Our powerful tools
         </Heading>
         <ProductCard
           badge="Crypto POS"

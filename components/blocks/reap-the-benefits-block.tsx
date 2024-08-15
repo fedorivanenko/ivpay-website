@@ -12,43 +12,42 @@ export default function ReapTheBenfitsBlock() {
   return (
     <section id="reap-the-benefits-block" className="bg-blue-94 py-20">
       <Container>
-        <Card className="p-5 sm:p-7.5 xl:p-10">
+        <Card className="p-5 sm:p-7.5 xl:p-12">
           {/* Benefits */}
           <div>
             <Heading
               as="h2"
               size="64"
-              className="mb-2 max-w-[12ch] sm:mb-4 sm:max-w-[18ch]"
+              className="mb-2 max-w-[12ch] sm:mb-5 sm:max-w-[14ch]"
             >
-              Businesses that accept crypto payments reap the benefits
+              reap the benefits of crypto payments.
             </Heading>
             <Text size="32" className="max-w-[40ch]">
-              The benefits of accepting crypto payments are clear. That’s why
-              more businesses globally are getting on board.
+              The benefits of accepting crypto are clear. More and more businesses from around the world are getting on board each day to claim them.
             </Text>
           </div>
-          <div className="my-10 grid max-w-screen-lg grid-cols-1 gap-5 sm:grid-cols-3">
+          <div className="my-10 sm:my-16 grid max-w-screen-lg grid-cols-1 gap-5 sm:grid-cols-3">
             <div>
-              <Text className="mb-1 text-5xl sm:mb-2 sm:text-6xl xl:text-8xl">
+              <Text className="mb-1 text-5xl sm:mb-1.5 sm:text-6xl xl:text-8xl">
                 <Counter to={40} />%
               </Text>
-              <Text size="18" className="max-w-[12ch]">
+              <Text size="24" className="max-w-[12ch] leading-none lg:leading-none xl:leading-none">
                 New customer sales on average
               </Text>
             </div>
             <div>
-              <Text className="mb-1 text-5xl sm:mb-2 sm:text-6xl xl:text-8xl">
+              <Text className="mb-1 text-5xl sm:mb-1.5 sm:text-6xl xl:text-8xl">
                 <Counter to={2} />X
               </Text>
-              <Text size="18" className="max-w-[12ch]">
+              <Text size="24" className="max-w-[12ch] leading-none lg:leading-none xl:leading-none">
                 Higher order value on average
               </Text>
             </div>
             <div>
-              <Text className="mb-1 text-5xl sm:mb-2 sm:text-6xl xl:text-8xl">
+              <Text className="mb-1 text-5xl sm:mb-1.5 sm:text-6xl xl:text-8xl">
                 <Counter to={55} />%
               </Text>
-              <Text size="18" className="max-w-[12ch]">
+              <Text size='24' className="max-w-[12ch] leading-none lg:leading-none xl:leading-none">
                 Reduction in transaction fees
               </Text>
             </div>
@@ -71,29 +70,26 @@ export default function ReapTheBenfitsBlock() {
           <BrandWall />
           <Separator className="my-10 sm:my-20" />
           {/* Crypto Growth */}
-          <div className="mb-10 grid grid-cols-1 gap-x-5 gap-y-5 sm:mb-20 sm:grid-cols-3">
-            <Text className="text-6xl sm:text-8xl xl:text-9xl">
+          <div className="mb-10 grid grid-cols-1 gap-x-7.5 gap-y-7.5 sm:mb-20 sm:grid-cols-3">
+            <Text className="text-6xl sm:text-[7rem] sm:translate-y-[0.12em]">
               <Counter to={580} />%
             </Text>
-            <Text size="28" className="max-w-[21ch] capitalize sm:col-span-2">
+            <Text size="24" className="max-w-[21ch] capitalize sm:col-span-2 my-auto">
               growth has been shown in cryptocurrency transactions in the last
               five years alone
             </Text>
             <div className="order-last sm:order-none">
-              COUNRTY FLAGS
-              {/*
               <FlagMarquee
-              className="h-8 xl:h-12 mb-2"
-                countries={["eu", "fr", "ua", "ng", "ae", "bs", "hn", "pt"]}
+              className="h-6 py-1 xl:h-12 mb-2"
+                countries={["eu", "fr", "ua", "ng", "ae", "bs", "hn", "pt", "ci"]}
               />
-                 */}
               <Text>
                 Crypto holders have massive buying power and are looking to
                 spend at crypto-accepting merchants
               </Text>
             </div>
             <div>
-              <Text className="mb-2 text-4xl xl:text-6xl">
+              <Text className="mb-2 text-4xl xl:text-5xl">
                 <Counter to={2100000} />
               </Text>
               <Text>
@@ -101,7 +97,7 @@ export default function ReapTheBenfitsBlock() {
               </Text>
             </div>
             <div>
-              <Text className="mb-2 text-4xl xl:text-6xl">
+              <Text className="mb-2 text-4xl xl:text-5xl">
                 <Counter to={100} />
               </Text>
               <Text>

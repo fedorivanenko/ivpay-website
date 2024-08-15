@@ -97,12 +97,12 @@ const config = {
         "2xl": "calc(var(--radius) + 1.5rem)", 
       },
       lineHeight: {
-        tighten: "1.15",
-        snug: "1.4",
-        none: "1.075",
+        snug: "1.35",
+        none: "1.12",
       },
       backgroundImage: {
         "soft-gradient": "linear-gradient(to bottom, transparent 0%, hsl(var(--blue-94)) 75%, hsl(var(--blue-94)) 100%)",
+        "blue-gradient": "radial-gradient(closest-side, hsla(235, 100%, 60%, 0.4) 0%, hsla(235, 100%, 60%, 0.2) 20%, hsla(235, 100%, 60%, 0) 100%)",
         "blue-88-94-gradient": "radial-gradient(closest-side, hsl(var(--blue-88)) 20%, hsl(var(--blue-94)) 100%)",
         "blue-60-94-radial-gradient": "radial-gradient(ellipse 100% 80% at top right, hsl(var(--blue-60)) 20%, transparent 90%), radial-gradient(ellipse 100% 80% at bottom left, hsl(var(--blue-60)) 10%, transparent 90%)"
       },
