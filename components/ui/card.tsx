@@ -13,7 +13,7 @@ import {
 export type DivProps = Omit<React.HTMLAttributes<HTMLDivElement>, keyof MotionProps> &
 MotionProps & {
   className?: string
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const Card = React.forwardRef<HTMLDivElement, DivProps>(
