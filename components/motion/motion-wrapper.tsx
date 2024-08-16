@@ -29,12 +29,12 @@ type MotionWrapperProps = MotionProps & {
  */
 
 const MotionWrapper = React.forwardRef<HTMLElement, MotionWrapperProps>(
-  ({ children, ...motionProps }, ref) => {
+  ({ children, variants = contentAppearing, ...motionProps }, ref) => {
     React.Children.only(children)
     if (React.isValidElement(children)) {
       const MotionComponent = m(children.type)
       return <MotionComponent
-        variants={contentAppearing} //Default appearing animation
+        variants={variants}
         {...children.props} {...motionProps} ref={ref} />
     }
     throw new Error('MotionWrapper only accepts a single React element as a child')

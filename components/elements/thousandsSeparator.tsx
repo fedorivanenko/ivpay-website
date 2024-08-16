@@ -1,24 +1,5 @@
 import React from 'react';
 
-/**
- * ThousandsSeparator component formats a given number by adding thousands separators and
- * optional decimal separators. The component accepts the following props:
- * - number: The number to be formatted, which can be a string or number.
- * - decimal (optional): Specifies the character used for the decimal point, either 'comma' or 'dot'. Default is 'dot'.
- * - separator (optional): Specifies the character used for thousands separators, either 'comma', 'dot', or 'space'. Default is 'space'.
- *
- * The component first converts the number to a string if it isn't already. It then separates
- * the integer part and the decimal part based on the specified decimal character.
- *
- * The integer part is split into groups of three digits, and each group is separated by the specified
- * thousands separator. The formatted integer part is stored in the integerSpans array.
- *
- * The decimal part is split into groups of three digits if it exists, and each group is added to the
- * decimalSpans array. If there is a decimal part, a decimal separator is added before the decimalSpans.
- *
- * Finally, the component returns a JSX fragment containing the formatted integer and decimal parts.
- */
-
 type ThousandsSeparatorProps = {
   number: string | number;
   decimal?: 'comma' | 'dot';

@@ -64,7 +64,7 @@ const AnimatedTextWrapper = React.forwardRef<
   useAriaLabel(internalRef);
 
   return (
-    <>
+    
       <m.span
         variants={textStaggerChildren}
         custom={processedChildren.totalElements}
@@ -81,7 +81,7 @@ const AnimatedTextWrapper = React.forwardRef<
           </m.span>
         ))}
       </m.span>
-    </>
+   
   );
 });
 AnimatedTextWrapper.displayName = "animatedTextWrapper";

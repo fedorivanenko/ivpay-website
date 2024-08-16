@@ -13,8 +13,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-accent text-accent-foreground hover:bg-accent/90",
-        white: "bg-background text-primary hover:bg-background/60",
+        default: "bg-accent text-accent-foreground hover:bg-accent/90 shadow-xl shadow-accent/40 border border-background/30",
+        white: "bg-background text-primary hover:bg-background/70 shadow-xl shadow-accent/20 border border-background/50",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

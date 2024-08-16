@@ -103,7 +103,7 @@ const config = {
       backgroundImage: {
         "soft-gradient": "linear-gradient(to bottom, transparent 0%, hsl(var(--blue-94)) 75%, hsl(var(--blue-94)) 100%)",
         "blue-gradient": "radial-gradient(closest-side, hsla(235, 100%, 60%, 0.4) 0%, hsla(235, 100%, 60%, 0.2) 20%, hsla(235, 100%, 60%, 0) 100%)",
-        "blue-88-94-gradient": "radial-gradient(closest-side, hsl(var(--blue-88)) 20%, hsl(var(--blue-94)) 100%)",
+        "hero-gradient": "linear-gradient(to bottom, hsla(234, 100%, 80%, 0) 0%, hsla(234, 100%, 80%, 0.2) 20%, hsla(235, 100%, 80%, 0.8) 80%, hsla(235, 100%, 75%, 0.8) 100%), radial-gradient(ellipse 100% 100% at bottom left, hsl(var(--blue-60)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at bottom right, hsl(var(--blue-60)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at center, hsl(var(--background)) 20%, transparent 100%)",
         "blue-60-94-radial-gradient": "radial-gradient(ellipse 100% 80% at top right, hsl(var(--blue-60)) 20%, transparent 90%), radial-gradient(ellipse 100% 80% at bottom left, hsl(var(--blue-60)) 10%, transparent 90%)"
       },
       keyframes: {
