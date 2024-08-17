@@ -29,15 +29,15 @@ const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(
           >
             {heading}
           </Heading>
-          <div className="absolute bottom-0 -z-0 h-[60%] gradient-mask-b-[rgba(0,0,0,1.0)_60%,rgba(0,0,0,0.2)_85%]">
             <MotionWrapper>
+          <div className="absolute bottom-0 -z-0 h-[60%] gradient-mask-b-[rgba(0,0,0,1.0)_60%,rgba(0,0,0,0.2)_85%]">
             <div className="aspect-square sm:aspect-4/3 h-full">
               <Image src={heroImage?.src} alt={heroImage?.alt} fill
               className="object-cover object-top"
               />
             </div>
-              </MotionWrapper>
           </div>
+              </MotionWrapper>
           <div className="z-10 flex w-full justify-between">
             {action}
           </div>

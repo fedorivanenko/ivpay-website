@@ -32,7 +32,7 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
     return (
       <Card
         className={cn(
-          "sm:aspect-11/10 flex aspect-3/4 flex-col sm:flex-row relative",
+          "sm:aspect-2/1 xl:aspect-11/10 flex aspect-3/4 flex-col sm:flex-row relative mb-20",
           className,
         )}
         ref={ref}
@@ -54,9 +54,9 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
             </Button>
           </div>
         </div>
-        <div className="order-first h-1/2 bg-slate-500 gradient-mask-b-[rgba(0,0,0,1.0)_50%,rgba(0,0,0,0.5)_100%] sm:order-last sm:aspect-square sm:h-full sm:max-w-[50%]">
-          <div className="mx-auto aspect-square h-full bg-slate-700">
-            Picture
+        <div className="order-first h-1/2 bg-slate-200 gradient-mask-b-[rgba(0,0,0,1.0)_50%,rgba(0,0,0,0.5)_100%] sm:order-last sm:aspect-square sm:h-full sm:max-w-[50%]">
+          <div className="mx-auto aspect-square h-full ">
+            
           </div>
         </div>
       </Card>

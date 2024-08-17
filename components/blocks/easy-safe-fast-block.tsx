@@ -65,7 +65,7 @@ export default function EasySafeFastBlock() {
                   className="object-cover object-right-bottom sm:object-left-top"
                 />
               </div>
-              <div className="p-5 sm:p-7.5 xl:p-10 pt-0 sm:pb-0 xl:pb-0">
+              <div className="p-5 sm:p-7.5 xl:p-10 pt-0 xl:pb-0">
                 <Heading as="h3" size="32" className="mb-1.5 sm:mb-2">
                   We monitoring transactions
                 </Heading>

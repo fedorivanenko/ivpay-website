@@ -1,18 +1,20 @@
 import { Container } from "@/components/layouts/container";
 import { Heading } from "@/components/ui/heading";
 import { ProductCard } from "../elements/product-card";
+import { ScrollStackedCard } from "../motion/scroll-stacked-cards";
 
 export default function OurProductsBlock() {
   return (
     <section id="our-products-block" className="bg-blue-94 py-40">
-      <Container className="flex flex-col gap-4">
+      <Container className="flex flex-col gap-4 relative">
         <Heading
           as="h2"
           size="64"
-          className="mb-2 ml-auto mr-3 max-w-[12ch] sm:max-w-[18ch] text-right sm:mb-5 sm:mr-6"
+          className="mb-0 ml-auto mr-3 max-w-[18ch] text-right sm:mb-5 sm:mr-6"
         >
           Our powerful tools
         </Heading>
+        <ScrollStackedCard>
         <ProductCard
           badge="Crypto POS"
           heading="Everything you need to accept crypto"
@@ -43,6 +45,7 @@ export default function OurProductsBlock() {
           content="REST API integration will cover every need of your business."
           cta="Explore API"
         />
+        </ScrollStackedCard>
       </Container>
     </section>
   );

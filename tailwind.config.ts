@@ -89,8 +89,8 @@ const config = {
         sm: "calc(var(--radius) - 0.75rem)", 
         /**1rem -> 16px*/
         md: "calc(var(--radius) - 0.5rem)", 
-        /**1.5rem -> 24px*/
-        lg: "var(--radius)", 
+        /**1.75rem -> 28px*/
+        lg: "calc(var(--radius) + 0.25rem)", 
         /** 2rem -> 36px */
         xl: "calc(var(--radius) + 0.5rem)", 
         /*3rem -> 48px*/

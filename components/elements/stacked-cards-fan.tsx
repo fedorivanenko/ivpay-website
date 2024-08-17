@@ -77,6 +77,7 @@ const StackedCardsFan = React.forwardRef<HTMLDivElement, StackedCardsFanType>(
               variants={variants}
               initial="hidden"
               animate={variantKeys[index]}
+              style={{transform: "translate3d(0, 0, 0)"}} //safari fix to force it use GPU
               transition={{ duration: 0.75, ease: circOut }}
               className="absolute origin-bottom"
             >

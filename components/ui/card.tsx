@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
-import { m, motion, MotionProps, HTMLMotionProps } from 'framer-motion'
+import { m, motion, MotionProps } from 'framer-motion'
 
 import { 
   cardAppearing,
@@ -22,12 +22,13 @@ const Card = React.forwardRef<HTMLDivElement, DivProps>(
       ref={ref}
       variants={cardAppearing}
       className={cn(
-        "rounded-lg border box-border border-background/60 sm:rounded-2xl bg-background/60 text-card-foreground overflow-hidden relative z-0 shadow-2xl shadow-accent/30",
+        "rounded-lg border backdrop-blur box-border border-background/20 sm:rounded-2xl bg-background/60 text-card-foreground overflow-hidden relative z-0 shadow-2xl shadow-accent/40",
         className
       )}
+      //style={{transform: "translate3d(0, 0, 0)"}} //safari fix to force it use GPU
       {...props}
       >
-        <div aria-hidden className="absolute inset-0 m-10 bg-background/50 blur-md rounded-lg -z-50"/>
+        <div aria-hidden className="absolute inset-0 m-10 bg-background/50 blur-md rounded-lg -z-10"/>
       {children}
       </m.div>
   )
