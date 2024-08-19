@@ -12,14 +12,8 @@ import {
   circOut,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useMultipleTransform } from "./useMultipleTransofrm";
 
-type ScrollStackedCardItemType = React.HTMLAttributes<HTMLDivElement> &
-  MotionProps & {
-    children: React.ReactNode;
-    index: number;
-    amount: number;
-    container: React.RefObject<HTMLDivElement>;
-  };
 type ScrollStackedCardType = React.HTMLAttributes<HTMLDivElement> &
   MotionProps & {
     children: React.ReactNode;
@@ -58,84 +52,6 @@ function calculateOpacity(n: number, diff: number, i: number) {
   //return 1 - (n - i - 1) * diff; //for real opacity
 }
 
-const ScrollStackedCardItem = React.forwardRef<
-  HTMLDivElement,
-  ScrollStackedCardItemType
->(
-  (
-    { children, index, amount, container, className, ...props },
-    forwardedRef,
-  ) => {
-    const { scrollYProgress } = useScroll({
-      target: container,
-      offset: ["start start", "end start"],
-    });
-
-    const perspectiveScale = calculatePerspectiveScale(
-      amount,
-      0.025,
-      0.015,
-      index,
-    );
-
-    const scale = useTransform(
-      scrollYProgress,
-      [0, 0.19 * index, 0.2 * (amount - 1)],
-      [1, 1, perspectiveScale],
-      { ease: circOut },
-    );
-
-    const offset = useTransform(
-      scrollYProgress,
-      [0, 0.19 * index, 0.2 * (amount - 1)],
-      [(100 / amount) * index, (100 / amount) * index, (100 / amount) * index],
-    );
-
-    const calculatedOpacity = calculateOpacity(amount, 0.1, index);
-
-    const opacity = useTransform(
-      scrollYProgress,
-      [0, 0.19 * index, 0.2 * (amount - 1)],
-      [0, 0, calculatedOpacity],
-      { ease: circOut },
-    );
-
-    /* interfere with card backdrop-blur
-    const blur = useTransform(
-      scrollYProgress,
-      [0, 0.19 * (index+1), 0.2 * (index+1), 1],
-      ['blur(0px)', 'blur(0px)', 'blur(1px)', 'blur(2px'],
-      {
-        ease: circIn,
-      },
-    );
-    */
-
-    return (
-      <m.div
-        className="sticky top-2 origin-top sm:top-10"
-        ref={forwardedRef}
-        style={{
-          translateY: offset,
-          scale: scale,
-          //filter: blur,
-        }}
-        {...props}
-      >
-        <m.div
-          style={{
-            opacity: opacity,
-          }}
-          aria-hidden
-          className="pointer-events-none absolute inset-0 z-10 bg-blue-94"
-        />
-        {children}
-      </m.div>
-    );
-  },
-);
-ScrollStackedCardItem.displayName = "ScrollStackedCardItem";
-
 const ScrollStackedCard = React.forwardRef<
   HTMLDivElement,
   ScrollStackedCardType
@@ -150,19 +66,64 @@ const ScrollStackedCard = React.forwardRef<
     throw new Error("internalRef.current is null");
   });
 
+  const { scrollYProgress } = useScroll({
+    target: internalRef,
+    offset: ["start start", "end start"],
+  });
+
+  const amount = processedChildren.length;
+
+  /* OFFSETS */
+  const offsetsInputRanges = processedChildren.map((_, index) => [
+    0, 0.1 * index, 0.2 * (amount - 1)
+  ]);
+  const offsetsOutputRanges = processedChildren.map((_, index) => 
+    [(100 / amount) * index, (100 / amount) * (index + 1), (100 / amount) * (index + 2)],
+  );
+  const offsets = useMultipleTransform(scrollYProgress, offsetsInputRanges, offsetsOutputRanges);
+
+  /* OPACITIES */
+  const opacitiesInputRanges = processedChildren.map((_, index) => 
+    [0, 0.19 * index, 0.2 * (amount - 1)],
+  );
+  const opacitiesOutputRanges = processedChildren.map((_, index) => 
+    [0, 0, calculateOpacity(amount, 0.1, index)],
+  );
+  const opacities = useMultipleTransform(scrollYProgress, opacitiesInputRanges, opacitiesOutputRanges);
+
+  /* SCALES */
+  const scalesInputRanges = processedChildren.map((_, index) => 
+    [0, 0.19 * index, 0.2 * (amount - 1)],
+  );
+  const scalesOutputRanges = processedChildren.map((_, index) => 
+    [1, 1, calculatePerspectiveScale(amount, 0.025, 0.015, index)],
+  );
+  const scales = useMultipleTransform(scrollYProgress, scalesInputRanges, scalesOutputRanges);
+
   return (
     <m.div ref={internalRef} className={cn("relative", className)} {...props}>
       {processedChildren.map((child, index) => {
         if (React.isValidElement(child)) {
           return (
-            <ScrollStackedCardItem
-              key={index}
-              container={internalRef}
-              amount={processedChildren.length}
-              index={index}
-            >
-              {child}
-            </ScrollStackedCardItem>
+            <m.div
+            key={index}
+            className="sticky top-0 origin-top sm:top-10"
+            ref={forwardedRef}
+            style={{
+              transform: `scale(${scales[index]}) translateY(${offsets[index]}px)`,
+              //filter: blur,
+            }}
+            {...props}
+          >
+            <m.div
+              style={{
+                opacity: opacities[index],
+              }}
+              aria-hidden
+              className="pointer-events-none absolute inset-0 z-10 bg-blue-94"
+            />
+            {child}
+          </m.div>
           );
         }
         return child;
