@@ -6,7 +6,7 @@ const config = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx,jsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
@@ -51,7 +51,6 @@ const config = {
         "blue-94": "hsl(var(--blue-94))",
         "blue-88": "hsl(var(--blue-88))",
         "blue-70": "hsl(var(--blue-70))",
-        "blue-60": "hsl(var(--blue-60))",
         "blue-45": "hsl(var(--blue-45))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -102,9 +101,13 @@ const config = {
       },
       backgroundImage: {
         "soft-gradient": "linear-gradient(to bottom, transparent 0%, hsl(var(--blue-94)) 75%, hsl(var(--blue-94)) 100%)",
-        "blue-gradient": "radial-gradient(closest-side, hsla(235, 100%, 60%, 0.4) 0%, hsla(235, 100%, 60%, 0.2) 20%, hsla(235, 100%, 60%, 0) 100%)",
-        "hero-gradient": "linear-gradient(to bottom, hsla(234, 100%, 80%, 0) 0%, hsla(234, 100%, 80%, 0.2) 20%, hsla(235, 100%, 80%, 0.8) 80%, hsla(235, 100%, 75%, 0.8) 100%), radial-gradient(ellipse 100% 100% at bottom left, hsl(var(--blue-60)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at bottom right, hsl(var(--blue-60)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at center, hsl(var(--background)) 20%, transparent 100%)",
-        "blue-60-94-radial-gradient": "radial-gradient(ellipse 100% 80% at top right, hsl(var(--blue-60)) 20%, transparent 90%), radial-gradient(ellipse 100% 80% at bottom left, hsl(var(--blue-60)) 10%, transparent 90%)"
+        "blue-shadow-gradient": "radial-gradient(closest-side, hsla(235, 100%, 60%, 0.4) 0%, hsla(235, 100%, 60%, 0.2) 20%, hsla(235, 100%, 60%, 0) 100%)",
+        "hero-gradient": "linear-gradient(to bottom, hsla(234, 100%, 80%, 0) 0%, hsla(234, 100%, 80%, 0.2) 20%, hsla(235, 100%, 80%, 0.8) 80%, hsla(235, 100%, 75%, 0.8) 100%), radial-gradient(ellipse 100% 100% at bottom left, hsl(var(--accent)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at bottom right, hsl(var(--accent)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at center, hsl(var(--background)) 20%, transparent 100%)",
+        "blue-gradient" : "radial-gradient(ellipse 80% 180% at top left, hsl(var(--accent)) 10%, transparent 100%), radial-gradient(ellipse 80% 180% at bottom right, hsl(var(--accent)) 10%, transparent 100%), linear-gradient(to bottom, hsla(235, 100%, 60%, 0.2) 0%, transparent 50%)"
+      },
+      boxShadow: {
+        'on-blue-header-sm': '0px -40px 40px -40px hsl(var(--accent))',
+        'on-blue-header-xl': '0px -60px 80px -80px hsl(var(--accent))',
       },
       keyframes: {
         "accordion-down": {

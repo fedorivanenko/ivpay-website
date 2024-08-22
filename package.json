@@ -22,6 +22,7 @@
     "react": "^18",
     "react-circle-flags": "^0.0.20",
     "react-dom": "^18",
+    "react-globe.gl": "^2.27.2",
     "react-hook-form": "^7.52.1",
     "tailwind-gradient-mask-image": "^1.2.0",
     "tailwind-merge": "^2.3.0",

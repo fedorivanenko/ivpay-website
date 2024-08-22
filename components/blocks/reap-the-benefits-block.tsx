@@ -71,7 +71,7 @@ export default function ReapTheBenfitsBlock() {
           <Separator className="my-10 sm:my-20" />
           {/* Crypto Growth */}
           <div className="mb-10 grid grid-cols-1 gap-x-7.5 gap-y-7.5 sm:mb-20 sm:grid-cols-3">
-            <Text className="text-6xl sm:text-[7rem] sm:translate-y-[0.12em]">
+            <Text className="text-6xl sm:text-5xl xl:text-[7rem] xl:translate-y-[0.12em]">
               <Counter to={580} />%
             </Text>
             <Text size="24" className="max-w-[21ch] capitalize sm:col-span-2 my-auto">
@@ -80,8 +80,7 @@ export default function ReapTheBenfitsBlock() {
             </Text>
             <div className="order-last sm:order-none">
               <FlagMarquee
-              className="h-6 py-1 xl:h-12 mb-2"
-                countries={["eu", "fr", "ua", "ng", "ae", "bs", "hn", "pt", "ci"]}
+              className="h-9 py-1 xl:h-12 mb-2"
               />
               <Text>
                 Crypto holders have massive buying power and are looking to

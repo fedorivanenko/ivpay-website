@@ -13,6 +13,7 @@ type StepMarqueeWrapperProps = HTMLMotionProps<'ul'> & {
     length?: number
     children?: React.ReactNode
 }
+//TODO: fix SEO related code
 
 const StepMarqueeWrapper = React.forwardRef<
     HTMLUListElement,

@@ -1,17 +1,18 @@
 import * as React from "react";
 
-import { iconMap, IconCode } from "@/lib/coin-map";
 import { Text } from "@/components/ui/text";
 
-export type CoinItemType = React.HTMLAttributes<HTMLDivElement> & {
-  displayName?: string;
-  displayCode?: string;
-  code: IconCode;
+import { coinData, CoinType } from "../data-providers/supported-coins";
+
+const getCoinIcon = (code: string) => {
+  const coin = coinData.find(c => c.code === code);
+  return coin ? coin.icon : null;
 };
 
-const CoinItem = React.forwardRef<HTMLDivElement, CoinItemType>(
+const CoinItem = React.forwardRef<HTMLDivElement, CoinType>(
   ({ code, displayCode, displayName, ...props }, forwardedRef) => {
-    const IconComponent = iconMap[code];
+
+    const IconComponent = getCoinIcon(code);
 
     return (
       <div ref={forwardedRef} className="w-full aspect-square sm:aspect-auto overflow-hidden p-2.5 sm:p-5 flex flex-col" {...props}>

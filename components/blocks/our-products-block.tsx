@@ -2,10 +2,12 @@ import { Container } from "@/components/layouts/container";
 import { Heading } from "@/components/ui/heading";
 import { ProductCard } from "../elements/product-card";
 import { ScrollStackedCard } from "../motion/scroll-stacked-cards";
+import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
 
 export default function OurProductsBlock() {
   return (
     <section id="our-products-block" className="bg-blue-94 py-40">
+      <MotionTriggerWrapper>
       <Container className="relative flex flex-col gap-4">
         <Heading
           as="h2"
@@ -47,6 +49,7 @@ export default function OurProductsBlock() {
           />
         </ScrollStackedCard>
       </Container>
+      </MotionTriggerWrapper>
     </section>
   );
 }

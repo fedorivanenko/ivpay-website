@@ -36,13 +36,13 @@ export type HeadingProps = MotionHeadingProps &
   };
 
 const Heading = React.forwardRef<HTMLElement, HeadingProps>(
-    ({ children, className, as = 'h1', size, ...props }, ref) => {
+    ({ children, variants = contentAppearing, className, as = 'h1', size, ...props }, ref) => {
         const MotionTag = m[as] as ForwardRefComponent<HTMLElement, MotionHeadingProps>;
 
         return (
             <MotionTag
                 ref={ref}
-                variants={contentAppearing}
+                variants={variants}
                 className={cn(headingVariants({ size, className }))}
                 {...props}
             >

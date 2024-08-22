@@ -131,7 +131,8 @@ const MotionTriggerWrapper = React.forwardRef<HTMLDivElement, MotionDivWrapperPr
           //console.log("Triggering hiddenToBottom animation");
         }
       }
-    }
+    
+  }
 
     // Update the ref with the current isInView state for the next render
     prevInViewRef.current = isInView;

@@ -2,20 +2,10 @@ import { Container } from "@/components/layouts/container";
 import { Heading } from "@/components/ui/heading";
 import { Text } from "@/components/ui/text";
 import { TicTacToeGridLayout } from "../layouts/tic-tac-toe-grid-layout";
-import { CoinItemType, CoinItem } from "../elements/coin-item";
 import { Button } from "@/components/ui/button";
 
-const coinList: CoinItemType[] = [
-  { code: "eth", displayName: "Etherium" },
-  { code: "btc", displayName: "Bitcoin", displayCode: "" },
-  { code: "eur", displayName: "Euro" },
-  { code: "usdt", displayCode: "ERC-20, TRC-20, BEP-20, Polygon, OKC" },
-  {
-    code: "usdt",
-    displayName: "The open network",
-    displayCode: "ERC-20, TRC-20, BEP-20, Polygon, OKC",
-  },
-];
+import { CoinItem } from "../elements/coin-item";
+import { coinData } from "../data-providers/supported-coins";
 
 export default function CoinsListBlock() {
   return (
@@ -38,7 +28,7 @@ export default function CoinsListBlock() {
           Become a partner
         </Button>
         <TicTacToeGridLayout animated={false} className="my-4 max-w-screen-lg">
-          {coinList.map((item, index) => (
+          {coinData.map((item, index) => (
             <CoinItem
               key={index}
               code={item.code}
