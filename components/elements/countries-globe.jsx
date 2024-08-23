@@ -1,17 +1,17 @@
 'use client'
 
-//https://github.com/nvkelso/natural-earth-vector/tree/master/geojson
-
 import * as three from 'three'
 import Globe from 'react-globe.gl'
 import { useRef, useMemo, useState, useLayoutEffect, useEffect } from 'react';
 
+import geoJsonData from '@/resources/ne_110m_land.json'
 
-const CITIES_DATA = [
+const citiesData = [
   { name: 'Lisbon', latitude: 38.7223, longitude: -9.1393 },
   { name: 'Berlin', latitude: 52.5200, longitude: 13.4050 },
   { name: 'London', latitude: 51.5074, longitude: -0.1278 },
   { name: 'Mumbai', latitude: 19.0760, longitude: 72.8777 },
+  { name: 'Delhi', latitude: 28.7041, longitude: 77.1025 },
   { name: 'Rio', latitude: -22.9068, longitude: -43.1729 },
   { name: 'Calicut', latitude: 11.2588, longitude: 75.7804 },
   { name: 'Manaus', latitude: -3.1190, longitude: -60.0217 }
@@ -22,15 +22,17 @@ export default function CountriesGlobe() {
   const globeRef = useRef(null);
   const containerRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [countries] = useState(geoJsonData);
 
-  const ringsData = CITIES_DATA.map(city => ({
+  const ringsData = citiesData.map(city => ({
     lat: city.latitude,
     lng: city.longitude,
     radius: 20,
     propagationSpeed: 2,
-    repeatPeriod: 80
+    repeatPeriod: 800
   }));
 
+  /* Resizer */
   useEffect(() => {
     const updateDimensions = () => {
       if (containerRef.current) {
@@ -52,30 +54,24 @@ export default function CountriesGlobe() {
     };
   }, []);
 
-  const bumpImageUrl = 'earth-topology.png'; // Ensure this path is correct
-
   const globeMaterial = useMemo(() => {
-    const material = new three.MeshPhongMaterial({
-      bumpMap: new three.TextureLoader().load(bumpImageUrl),
-      bumpScale: 40,
-      transparent: true,
-      opacity: 0.9,
-      specular: new three.Color("white"),
-    });
+    const material = new three.MeshPhongMaterial();
+    material.transparent = true;
+    material.opacity = 0.8;
+    material.specular = new three.Color("white");
     return material;
-  }, [bumpImageUrl]);
+  }, []);
 
   const colorInterpolator = t => `rgba(0,0,255,${Math.sqrt(1-t)})`;
-    
+
     useLayoutEffect(() => {
     if (globeRef.current) {
-      const MapToLisbon = { lat: 24, lng: 34, altitude: 2};
       const globeInstance = globeRef.current;
-
-      const scene = globeInstance.scene();
-
-      globeInstance.pointOfView(MapToLisbon, 0);
+      globeInstance.pointOfView({ lat: 12, lng: 60, altitude: 2}, 0);
       globeInstance.controls().enableZoom = false;
+      globeInstance.controls().enableZoom = false;
+      globeInstance.controls().enableRotate = false;
+      globeInstance.controls().enablePan = false;
       globeInstance.controls().autoRotate = true;
       globeInstance.controls().autoRotateSpeed = 0.5;
     }
@@ -91,11 +87,17 @@ export default function CountriesGlobe() {
             globeMaterial={globeMaterial}
             showAtmosphere={false}
             backgroundColor="rgba(0,0,0,0)"
+            hexPolygonsData={countries.features}
+            hexPolygonResolution={3}
+            hexPolygonMargin={0.3}
+            hexPolygonUseDots={true}
+            hexPolygonColor={() => "rgba(0,0,0,0.4)"}
             ringsData={ringsData}
+            ringResolution={256}
             ringColor={() => colorInterpolator}
             ringMaxRadius="radius"
             ringPropagationSpeed="propagationSpeed"
-            //ringRepeatPeriod="repeatPeriod"
+            ringRepeatPeriod="repeatPeriod"
           />
           </div>
           {/* 

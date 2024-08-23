@@ -64,14 +64,16 @@ const AnimatedTextWrapper = React.forwardRef<
   useAriaLabel(internalRef);
 
   return (
-    
-      <m.span
-        variants={textStaggerChildren}
-        custom={processedChildren.totalElements}
-        ref={internalRef}
-        {...props}
-      >
-        {processedChildren.children.map((item, index) => (
+    <m.span
+      variants={textStaggerChildren}
+      custom={processedChildren.totalElements}
+      ref={internalRef}
+      {...props}
+    >
+      {processedChildren.children.map((item, index) =>
+        React.isValidElement(item) && item.type === "br" ? (
+          <br key={index} />
+        ) : (
           <m.span
             variants={textAppearing}
             key={index}
@@ -79,9 +81,9 @@ const AnimatedTextWrapper = React.forwardRef<
           >
             {typeof item === "string" ? splitAndFormat(item) : item}
           </m.span>
-        ))}
-      </m.span>
-   
+        ),
+      )}
+    </m.span>
   );
 });
 AnimatedTextWrapper.displayName = "animatedTextWrapper";
