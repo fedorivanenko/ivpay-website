@@ -16,6 +16,7 @@ import {
   popLayoutVariants,
   defaultDuration,
   cardAppearing,
+  contentAppearing,
 } from "../motion/motion_utils";
 
 import { cn } from "@/lib/utils";
@@ -31,7 +32,7 @@ type TicTacToeGridLayoutProps = HTMLMotionProps<"div"> & {
   children?: React.ReactNode;
 };
 
-const gridVariants = cva("grid w-full relative", {
+const gridVariants = cva("grid w-full gap-2.5 relative", {
   variants: {
     cols: {
       2: "grid-cols-2",
@@ -99,8 +100,8 @@ const TicTacToeGridLayout = React.forwardRef<
     return (
       <m.div
         ref={ref}
-        className={cn("relative w-full overflow-hidden", className)}
-        variants={cardAppearing}
+        className={cn("flex flex-col gap-2.5 relative w-full", className)}
+        variants={contentAppearing}
         {...props}
       >
         <LazyMotion features={domAnimation}>
@@ -119,7 +120,9 @@ const TicTacToeGridLayout = React.forwardRef<
                     {...item.props}
                   >
                     {item.props.children}
+                    {/*
                     <div className="absolute -bottom-[1px] left-0 h-[1px] w-full origin-top-left bg-border" />
+                     */}
                   </MotionTag>
                 );
               }
@@ -127,7 +130,7 @@ const TicTacToeGridLayout = React.forwardRef<
             })}
           </AnimatePresence>
         </LazyMotion>
-        
+        {/*
         <div className="aria-hidden: pointer-events-none absolute left-0 top-0 h-full w-full">
           {[...Array(cols - 1)].map((_, index) => (
             <motion.div
@@ -144,6 +147,7 @@ const TicTacToeGridLayout = React.forwardRef<
           ))}
           {}
         </div>
+         */}
       </m.div>
     );
   },

@@ -272,7 +272,6 @@ export const popLayoutVariants = {
 export const imageAppearingVariant = {
     hiddenToTop: {
         opacity: 0,
-        y: -12,
         maskImage: "linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%)",
         transition: {
             duration: defaultDuration*1.25,
@@ -281,7 +280,6 @@ export const imageAppearingVariant = {
     },
     hiddenToBottom: {
         opacity: 0,
-        y: 12,
         maskImage: "linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%)",
         transition: {
             duration: defaultDuration*1.25,
@@ -290,7 +288,6 @@ export const imageAppearingVariant = {
     },
     visibleFromBottom: {
         opacity: 1,
-        y: 0,
         maskImage: "linear-gradient(135deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%)",
         transition: {
             duration: defaultDuration*1.25,
@@ -299,7 +296,6 @@ export const imageAppearingVariant = {
     },
     visibleFromTop: {
         opacity: 1,
-        y: 0,
         maskImage: "linear-gradient(135deg, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%)",
         transition: {
             duration: defaultDuration*1.25,

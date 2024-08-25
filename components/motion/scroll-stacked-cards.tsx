@@ -2,27 +2,26 @@
 
 import * as React from "react";
 
-import { useRef, useImperativeHandle } from "react";
-
 import {
-  m,
-  useScroll,
-  MotionProps,
-  useTransform,
-  circOut,
-} from "framer-motion";
+  useRef,
+  useState,
+  useEffect,
+  useMemo,
+  useImperativeHandle,
+} from "react";
+
+import debounce from "lodash/debounce";
+
+import { m, useScroll, MotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { useMultipleTransform } from "./useMultipleTransofrm";
+import { useMultipleTransform } from "@/components/motion/useMultipleTransofrm";
 
-type ScrollStackedCardType = React.HTMLAttributes<HTMLDivElement> &
-  MotionProps & {
-    children: React.ReactNode;
-  };
-
-/* Helper for calculate perspective       
-    default X: 0.025,
-    default power: 0.015
-  */
+/** Helper for calculate perspective
+ * n - amount of elements
+ * i - number of current element
+ * X - linear difference. defualt = 0.025
+ * power - progressive difference. defautl = 0.015
+ */
 function calculatePerspectiveScale(
   n: number,
   X: number,
@@ -52,12 +51,22 @@ function calculateOpacity(n: number, diff: number, i: number) {
   //return 1 - (n - i - 1) * diff; //for real opacity
 }
 
+type HeightData = {
+  accumulatedHeight: number;
+  elementHeight: number;
+}
+
+type ScrollStackedCardType = React.HTMLAttributes<HTMLDivElement> &
+  MotionProps & {
+    children: React.ReactNode;
+    backgroundColor?: string; //tailwind bg
+  };
+
 const ScrollStackedCard = React.forwardRef<
   HTMLDivElement,
   ScrollStackedCardType
->(({ children, className, ...props }, forwardedRef) => {
+>(({ children, className, backgroundColor, ...props }, forwardedRef) => {
   const internalRef = useRef<HTMLDivElement>(null);
-  const processedChildren = React.Children.toArray(children);
 
   useImperativeHandle(forwardedRef, () => {
     if (internalRef.current) {
@@ -66,39 +75,133 @@ const ScrollStackedCard = React.forwardRef<
     throw new Error("internalRef.current is null");
   });
 
+  const processedChildren = React.Children.toArray(children);
+
+  const childrenRefs = useRef<React.RefObject<HTMLDivElement>[]>(
+    processedChildren.map(() => React.createRef<HTMLDivElement>()),
+  );
+
+  const amountOfChildren = processedChildren.length;
+
+  const [heightData, setHeightData] = useState<HeightData[]>([]);
+  const [containerHeight, setContainerHeight] = useState(0);
+
+  useEffect(() => {
+    const updateHeightData = () => {
+      if (!internalRef.current) return;
+
+      const container = internalRef.current;
+      const newContainerHeight = container.offsetHeight;
+
+      let accumulatedHeight = 0;
+      const newHeightData = childrenRefs.current.map((childRef) => {
+        const childElement = childRef?.current;
+        if (!childElement) return { accumulatedHeight: 0, elementHeight: 0 };
+
+        const elementHeight = childElement.offsetHeight;
+        const data = { accumulatedHeight, elementHeight };
+        accumulatedHeight += elementHeight + 100 / childrenRefs.current.length; // Adding spacing
+        return data;
+      });
+
+      setHeightData(newHeightData);
+      setContainerHeight(newContainerHeight);
+    };
+
+    updateHeightData();
+
+    const debouncedUpdate = debounce(updateHeightData, 100);
+    const resizeObserver = new ResizeObserver(debouncedUpdate);
+
+    if (internalRef.current) {
+      resizeObserver.observe(internalRef.current);
+    }
+
+    childrenRefs.current.forEach((ref) => {
+      if (ref && ref.current) {
+        resizeObserver.observe(ref.current);
+      }
+    });
+
+    return () => resizeObserver.disconnect();
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: internalRef,
     offset: ["start start", "end start"],
   });
 
-  const amount = processedChildren.length;
-
   /* OFFSETS */
-  const offsetsInputRanges = processedChildren.map((_, index) => [
-    0, 0.1 * index, 0.2 * (amount - 1)
-  ]);
-  const offsetsOutputRanges = processedChildren.map((_, index) => 
-    [(100 / amount) * index, (100 / amount) * (index + 1), (100 / amount) * (index + 2)],
+  const offsetsInputRanges = useMemo(() => {
+    return heightData.map(({ accumulatedHeight, elementHeight }, index) => {
+      const scrollStart = 0;
+      const scrollEnd = (accumulatedHeight + elementHeight) / containerHeight;
+      return [0, scrollStart, scrollEnd];
+    });
+  }, [heightData, containerHeight]);
+
+  const offsetsOutputRanges = useMemo(() => {
+    return processedChildren.map((_, index) => [
+      0,
+      (100 / amountOfChildren) * index,
+      (100 / amountOfChildren) * index,
+    ]);
+  }, [processedChildren, amountOfChildren]);
+
+  const offsets = useMultipleTransform(
+    scrollYProgress,
+    offsetsInputRanges,
+    offsetsOutputRanges,
   );
-  const offsets = useMultipleTransform(scrollYProgress, offsetsInputRanges, offsetsOutputRanges);
 
   /* OPACITIES */
-  const opacitiesInputRanges = processedChildren.map((_, index) => 
-    [0, 0.19 * index, 0.2 * (amount - 1)],
+  const opacitiesInputRanges = useMemo(() => {
+    return heightData.map(({ accumulatedHeight, elementHeight }, index) => {
+      const scrollStart = accumulatedHeight / containerHeight;
+      const scrollEnd =
+        (accumulatedHeight + elementHeight + 20) / containerHeight;
+      return [0, scrollStart, scrollEnd];
+    });
+  }, [heightData, containerHeight]);
+
+  const opacitiesOutputRanges = useMemo(() => {
+    return processedChildren.map((_, index) => [
+      0,
+      0,
+      calculateOpacity(amountOfChildren, 0.1, index),
+    ]);
+  }, [processedChildren, amountOfChildren]);
+
+  const opacities = useMultipleTransform(
+    scrollYProgress,
+    opacitiesInputRanges,
+    opacitiesOutputRanges,
   );
-  const opacitiesOutputRanges = processedChildren.map((_, index) => 
-    [0, 0, calculateOpacity(amount, 0.1, index)],
-  );
-  const opacities = useMultipleTransform(scrollYProgress, opacitiesInputRanges, opacitiesOutputRanges);
 
   /* SCALES */
-  const scalesInputRanges = processedChildren.map((_, index) => 
-    [0, 0.19 * index, 0.2 * (amount - 1)],
+  const scalesInputRanges = useMemo(() => {
+    return heightData.map(({ accumulatedHeight, elementHeight }, index) => {
+      const scrollStart = (accumulatedHeight - 60) / containerHeight;
+      const scrollEnd =
+        (accumulatedHeight + elementHeight + 20) / containerHeight;
+
+      return [0, scrollStart, scrollEnd];
+    });
+  }, [heightData, containerHeight]);
+
+  const scalesOutputRanges = useMemo(() => {
+    return processedChildren.map((_, index) => [
+      1,
+      1,
+      calculatePerspectiveScale(amountOfChildren, 0.025, 0.015, index),
+    ]);
+  }, [processedChildren, amountOfChildren]);
+
+  const scales = useMultipleTransform(
+    scrollYProgress,
+    scalesInputRanges,
+    scalesOutputRanges,
   );
-  const scalesOutputRanges = processedChildren.map((_, index) => 
-    [1, 1, calculatePerspectiveScale(amount, 0.025, 0.015, index)],
-  );
-  const scales = useMultipleTransform(scrollYProgress, scalesInputRanges, scalesOutputRanges);
 
   return (
     <m.div ref={internalRef} className={cn("relative", className)} {...props}>
@@ -106,24 +209,27 @@ const ScrollStackedCard = React.forwardRef<
         if (React.isValidElement(child)) {
           return (
             <m.div
-            key={index}
-            className="sticky top-0 origin-top sm:top-10"
-            ref={forwardedRef}
-            style={{
-              transform: `scale(${scales[index]}) translateY(${offsets[index]}px)`,
-              //filter: blur,
-            }}
-            {...props}
-          >
-            <m.div
+              key={index}
+              className="sticky top-0 origin-top sm:top-10"
+              ref={childrenRefs.current[index]}
               style={{
-                opacity: opacities[index],
+                transform: `scale(${scales[index]}) translateY(${offsets[index]}px)`,
               }}
-              aria-hidden
-              className="pointer-events-none absolute inset-0 z-10 bg-blue-94"
-            />
-            {child}
-          </m.div>
+              {...props}
+            >
+              <m.div
+                //Opacity emulation. It needed because opacity mess with filter:blur
+                style={{
+                  opacity: opacities[index],
+                }}
+                aria-hidden
+                className={cn(
+                  "bg-background) pointer-events-none absolute inset-0 z-10",
+                  backgroundColor,
+                )}
+              />
+              {child}
+            </m.div>
           );
         }
         return child;

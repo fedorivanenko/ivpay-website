@@ -9,10 +9,7 @@ type MotionWrapperProps = MotionProps & {
 }
 
 /**
- * MotionWrapper
- * 
  * Wraps a single child element with Framer Motion capabilities.
- * It's designed to easily add motion properties to any React component or HTML element.
  * 
  * Key features:
  * 1. Accepts only one child element

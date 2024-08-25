@@ -16,7 +16,7 @@ export default function OurProductsBlock() {
         >
           Our powerful tools
         </Heading>
-        <ScrollStackedCard>
+        <ScrollStackedCard backgroundColor="bg-blue-94">
           <ProductCard
             badge="Crypto POS"
             heading="Everything you need to accept crypto"

@@ -1,35 +1,34 @@
-'use client'
+"use client";
 
-import * as three from 'three'
-import Globe from 'react-globe.gl'
-import { useRef, useMemo, useState, useLayoutEffect, useEffect } from 'react';
+import * as three from "three";
+import Globe from "react-globe.gl";
+import { useRef, useMemo, useState, useLayoutEffect, useEffect } from "react";
 
-import geoJsonData from '@/resources/ne_110m_land.json'
+import geoJsonData from "@/resources/ne_110m_land.json";
 
 const citiesData = [
-  { name: 'Lisbon', latitude: 38.7223, longitude: -9.1393 },
-  { name: 'Berlin', latitude: 52.5200, longitude: 13.4050 },
-  { name: 'London', latitude: 51.5074, longitude: -0.1278 },
-  { name: 'Mumbai', latitude: 19.0760, longitude: 72.8777 },
-  { name: 'Delhi', latitude: 28.7041, longitude: 77.1025 },
-  { name: 'Rio', latitude: -22.9068, longitude: -43.1729 },
-  { name: 'Calicut', latitude: 11.2588, longitude: 75.7804 },
-  { name: 'Manaus', latitude: -3.1190, longitude: -60.0217 }
+  { name: "Lisbon", latitude: 38.7223, longitude: -9.1393 },
+  { name: "Berlin", latitude: 52.52, longitude: 13.405 },
+  { name: "London", latitude: 51.5074, longitude: -0.1278 },
+  { name: "Mumbai", latitude: 19.076, longitude: 72.8777 },
+  { name: "Delhi", latitude: 28.7041, longitude: 77.1025 },
+  { name: "Rio", latitude: -22.9068, longitude: -43.1729 },
+  { name: "Calicut", latitude: 11.2588, longitude: 75.7804 },
+  { name: "Manaus", latitude: -3.119, longitude: -60.0217 },
 ];
 
 export default function CountriesGlobe() {
-
   const globeRef = useRef(null);
   const containerRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [countries] = useState(geoJsonData);
 
-  const ringsData = citiesData.map(city => ({
+  const ringsData = citiesData.map((city) => ({
     lat: city.latitude,
     lng: city.longitude,
     radius: 20,
     propagationSpeed: 2,
-    repeatPeriod: 800
+    repeatPeriod: 800,
   }));
 
   /* Resizer */
@@ -41,15 +40,15 @@ export default function CountriesGlobe() {
         setDimensions({ width: size, height: size });
       }
     };
-  
-    if (typeof window !== 'undefined') {
+
+    if (typeof window !== "undefined") {
       updateDimensions();
-      window.addEventListener('resize', updateDimensions);
+      window.addEventListener("resize", updateDimensions);
     }
-  
+
     return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', updateDimensions);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", updateDimensions);
       }
     };
   }, []);
@@ -62,12 +61,12 @@ export default function CountriesGlobe() {
     return material;
   }, []);
 
-  const colorInterpolator = t => `rgba(0,0,255,${Math.sqrt(1-t)})`;
+  const colorInterpolator = (t) => `rgba(0,0,255,${Math.sqrt(1 - t)})`;
 
-    useLayoutEffect(() => {
+  useLayoutEffect(() => {
     if (globeRef.current) {
       const globeInstance = globeRef.current;
-      globeInstance.pointOfView({ lat: 12, lng: 60, altitude: 2}, 0);
+      globeInstance.pointOfView({ lat: 12, lng: 60, altitude: 2 }, 0);
       globeInstance.controls().enableZoom = false;
       globeInstance.controls().enableZoom = false;
       globeInstance.controls().enableRotate = false;
@@ -79,29 +78,29 @@ export default function CountriesGlobe() {
 
   return (
     <div ref={containerRef} className="relative w-full pb-[100%]">
-        <div className="absolute inset-0">
-          <Globe
-            ref={globeRef}
-            width={dimensions.width}
-            height={dimensions.height}
-            globeMaterial={globeMaterial}
-            showAtmosphere={false}
-            backgroundColor="rgba(0,0,0,0)"
-            hexPolygonsData={countries.features}
-            hexPolygonResolution={3}
-            hexPolygonMargin={0.3}
-            hexPolygonUseDots={true}
-            hexPolygonColor={() => "rgba(0,0,0,0.4)"}
-            ringsData={ringsData}
-            ringResolution={256}
-            ringColor={() => colorInterpolator}
-            ringMaxRadius="radius"
-            ringPropagationSpeed="propagationSpeed"
-            ringRepeatPeriod="repeatPeriod"
-          />
-          </div>
-          {/* 
-            */}
+      <div className="absolute inset-0">
+        <Globe
+          ref={globeRef}
+          width={dimensions.width}
+          height={dimensions.height}
+          globeMaterial={globeMaterial}
+          showAtmosphere={false}
+          backgroundColor="rgba(0,0,0,0)"
+          hexPolygonsData={countries.features}
+          hexPolygonResolution={3}
+          hexPolygonMargin={0.3}
+          hexPolygonUseDots={true}
+          hexPolygonColor={() => "rgba(0,0,0,0.4)"}
+          ringsData={ringsData}
+          ringResolution={256}
+          ringColor={() => colorInterpolator}
+          ringMaxRadius="radius"
+          ringPropagationSpeed="propagationSpeed"
+          ringRepeatPeriod="repeatPeriod"
+        />
+      </div>
+      {/*
+       */}
     </div>
   );
 }

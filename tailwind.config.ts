@@ -70,6 +70,7 @@ const config = {
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
+          second: "hsl(var(--accent-second))",
           foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
@@ -97,18 +98,19 @@ const config = {
       },
       lineHeight: {
         snug: "1.35",
-        none: "1.12",
+        none: "1.08",
       },
       backgroundImage: {
         "soft-gradient": "linear-gradient(to bottom, transparent 0%, hsl(var(--blue-94)) 75%, hsl(var(--blue-94)) 100%)",
-        "blue-shadow-gradient": "radial-gradient(closest-side, hsla(235, 100%, 60%, 0.4) 0%, hsla(235, 100%, 60%, 0.2) 20%, hsla(235, 100%, 60%, 0) 100%)",
+        "blue-shadow-gradient": "radial-gradient(closest-side, hsla(235, 100%, 60%, 0.25) 0%, hsla(235, 100%, 60%, 0) 100%)",
+        "white-shadow-gradient": "radial-gradient(closest-side, hsla(0, 0%, 100%, 0.5) 0%, hsla(0, 0%, 100%, 0.25) 60%, hsla(0, 0%, 100%, 0) 100%)",
         "hero-gradient": "linear-gradient(to bottom, hsla(234, 100%, 80%, 0) 0%, hsla(234, 100%, 80%, 0.2) 20%, hsla(235, 100%, 80%, 0.8) 80%, hsla(235, 100%, 75%, 0.8) 100%), radial-gradient(ellipse 100% 100% at bottom left, hsl(var(--accent)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at bottom right, hsl(var(--accent)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at center, hsl(var(--background)) 20%, transparent 100%)",
-        "blue-gradient" : "radial-gradient(ellipse 80% 180% at top left, hsl(var(--accent)) 10%, transparent 100%), radial-gradient(ellipse 80% 180% at bottom right, hsl(var(--accent)) 10%, transparent 100%), linear-gradient(to bottom, hsla(235, 100%, 60%, 0.2) 0%, transparent 50%)",
-        "globe-cta-gradient" : ""
+        "blue-gradient" : "radial-gradient(ellipse 90% 180% at top left, hsl(var(--accent)) 10%, transparent 100%), radial-gradient(ellipse 90% 180% at bottom right, hsl(var(--accent)) 10%, transparent 100%), linear-gradient(to bottom, hsla(235, 100%, 60%, 0.4) 0%, transparent 60px)",
       },
       boxShadow: {
         'on-blue-header-sm': '0px -40px 40px -40px hsl(var(--accent))',
         'on-blue-header-xl': '0px -60px 80px -80px hsl(var(--accent))',
+        'card-shadow': '0 20px 25px -5px hsla(235, 80%, 60%, 0.15), 0 8px 10px -6px hsla(235, 80%, 60%, 0.2)',
       },
       keyframes: {
         "accordion-down": {
@@ -127,6 +129,7 @@ const config = {
       aspectRatio: {
         "3/4": "0.75",
         "4/3": "1.33",
+        "8/5": "1.6",
         "16/9": "1.77",
         "2/1": "2",
         "11/10": "2.5",

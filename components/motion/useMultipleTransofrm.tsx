@@ -6,17 +6,39 @@ function useMultipleTransform(
   inputRanges: number[][],
   outputRanges: number[][],
 ): number[] {
-  const [currentValue, setCurrentValue] = useState(value.get());
+
+  const [currentValue, setCurrentValue] = useState<number | null>(null);
 
   useEffect(() => {
-    const handleChange = (latestValue: number) => {
-      setCurrentValue(latestValue);
+    const updateValue = () => {
+      const newValue = value.get();
+      setCurrentValue(newValue);
     };
-    const unsubscribe = value.on("change", handleChange);
+
+    // Initial update
+    updateValue();
+
+    // Subscribe to changes
+    const unsubscribe = value.on("change", updateValue);
+
+    // Force recalculation if value is null
+    if (currentValue === null) {
+      const timeoutId = setTimeout(updateValue, 100);
+      return () => {
+        clearTimeout(timeoutId);
+        unsubscribe();
+      };
+    }
+
     return () => unsubscribe();
-  }, [value]);
+  }, [value, currentValue]);
 
   return useMemo(() => {
+    //fallback if value is still null
+    if (currentValue === null) {
+      return outputRanges[0] || [];
+    }
+
     // Check if the number of input ranges matches the number of output ranges
     if (inputRanges.length !== outputRanges.length) {
       throw new Error("inputRanges and outputRanges must have the same length");

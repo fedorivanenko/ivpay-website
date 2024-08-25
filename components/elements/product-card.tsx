@@ -38,7 +38,7 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
         ref={ref}
         {...props}
       >
-        <div className="flex flex-1 flex-col justify-between p-5 sm:p-10">
+        <div className="flex flex-1 flex-col justify-between p-5 sm:p-7.5 lg:p-10">
           <div>
             <Badge className="mb-3 sm:mb-6 absolute top-5 sm:top-auto sm:relative">
                 {badge}
