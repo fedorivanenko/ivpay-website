@@ -20,7 +20,6 @@ export type HeroLayoutType = React.HTMLAttributes<HTMLDivElement> & {
 
 const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(
   ({ heading, action, heroImage, text, ...props }, forwardedRef) => {
-
     return (
       <Container ref={forwardedRef} {...props}>
         <div className="relative my-3 flex aspect-3/4 w-full flex-col items-center justify-between overflow-hidden p-5 sm:aspect-16/9 xl:my-8 xl:p-10">
@@ -39,7 +38,7 @@ const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(
           </Heading>
           <MotionWrapper>
             <div className="absolute bottom-0 -z-0 h-[60%] gradient-mask-b-[rgba(0,0,0,1.0)_60%,rgba(0,0,0,0.2)_85%]">
-                <HeroImage src={heroImage.src} alt={heroImage.alt} />
+              <HeroImage src={heroImage.src} alt={heroImage.alt} />
             </div>
           </MotionWrapper>
           <div className="z-10 flex w-full justify-between">{action}</div>

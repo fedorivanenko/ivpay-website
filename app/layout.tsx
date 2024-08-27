@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import "./globals.css";
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import LazyMotionWrapper from "@/components/motion/lazyMotionWrapper";
 
 export const metadata: Metadata = {
@@ -38,6 +40,7 @@ children,
       <html lang="en" className={`${nohemi.variable}`}>
         <body>
           {children}
+          <SpeedInsights />
         </body>
       </html>
     </LazyMotionWrapper>
