@@ -1,92 +1,108 @@
-'use client'
+"use client";
 
-import * as React from 'react'
+import * as React from "react";
 
-import { useEffect, useState } from 'react'
-import { m, motion, LazyMotion, domAnimation, HTMLMotionProps, AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from "react";
+import {
+  m,
+  motion,
+  LazyMotion,
+  domAnimation,
+  HTMLMotionProps,
+  AnimatePresence,
+} from "framer-motion";
 
-import { popLayoutVariants, defaultDuration, contentAppearing } from '@/components/motion/motion_utils'
+import {
+  popLayoutVariants,
+  defaultDuration,
+  contentAppearing,
+} from "@/components/motion/motion_utils";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-type StepMarqueeWrapperProps = HTMLMotionProps<'ul'> & {
-    length?: number
-    children?: React.ReactNode
-}
-//TODO: fix SEO related code
+type StepMarqueeWrapperProps = HTMLMotionProps<"ul"> & {
+  length?: number;
+  children?: React.ReactNode;
+};
 
 const StepMarqueeWrapper = React.forwardRef<
-    HTMLUListElement,
-    StepMarqueeWrapperProps
+  HTMLUListElement,
+  StepMarqueeWrapperProps
 >(({ children, className, length = 4, ...props }, ref) => {
+  const [itemArray, setItemArray] = useState<React.ReactNode[]>(() =>
+    React.Children.toArray(children),
+  );
 
-    const [itemArray, setItemArray] = useState<React.ReactNode[]>(() => React.Children.toArray(children));
+  //render all children for SEO purpose
+  const [visibleItems, setVisibleItems] =
+    useState<React.ReactNode[]>(itemArray);
 
-    //render all children for SEO purpose
-    const [visibleItems, setVisibleItems] = useState<React.ReactNode[]>(itemArray);
+  const [isReady, setIsReady] = useState(false);
 
-    const [isReady, setIsReady] = useState(false);
+  useEffect(() => {
+    // Use requestAnimationFrame to prevent render until until animation is ready
+    requestAnimationFrame(() => {
+      setIsReady(true);
+    });
 
-    useEffect(() => {
-        // Use requestAnimationFrame to prevent render until until animation is ready
-        requestAnimationFrame(() => {
-            setIsReady(true);
-        });
+    if (typeof window !== "undefined") {
+      // Client-side only code
+      setVisibleItems(itemArray.slice(0, length));
 
-        if (typeof window !== 'undefined') { // Client-side only code
-            setVisibleItems(itemArray.slice(0, length));
+      const interval = setInterval(
+        () => {
+          setItemArray((prevItemArray) => {
+            const [first, ...rest] = prevItemArray;
+            return [...rest, first];
+          });
+        },
+        defaultDuration * 1000 * 3,
+      );
 
-            const interval = setInterval(() => {
-                setItemArray((prevItemArray) => {
-                    const [first, ...rest] = prevItemArray;
-                    return [...rest, first];
-                });
-            }, defaultDuration * 1000 * 3);
-
-            return () => clearInterval(interval);
-        }
-    }, [itemArray, length]);
-
-    if (!isReady) {
-        return null;
+      return () => clearInterval(interval);
     }
+  }, [itemArray, length]);
 
-    return (
-        <motion.ul
-            ref={ref}
-            className={cn("flex gap-2 xl:gap-3", className)}
-            variants={contentAppearing}
-            {...props}
-            layout
-        >
-            <LazyMotion features={domAnimation}>
-                <AnimatePresence initial={false} mode="popLayout">
-                    {visibleItems.map((item, index) => {
-                        if (React.isValidElement(item)) {
-                            const MotionTag = m[item.type as keyof typeof m] || m.div;
-                            return (
-                                <MotionTag
-                                    key={item.key}
-                                    layout
-                                    variants={popLayoutVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                    exit="exit"
-                                    {...item.props}
-                                >
-                                    {item.props.children}
-                                </MotionTag>
-                            );
-                        }
-                        return null;
-                    })}
-                </AnimatePresence>
-            </LazyMotion>
-        </motion.ul>
-    )
-})
+  if (!isReady) {
+    return null;
+  }
 
-StepMarqueeWrapper.displayName = "StepMarqueeWrapper"
+  return (
+    <motion.ul
+      ref={ref}
+      className={cn("flex gap-2 xl:gap-3", className)}
+      variants={contentAppearing}
+      {...props}
+      layout
+    >
+      <LazyMotion features={domAnimation}>
+        <AnimatePresence initial={false} mode="popLayout">
+          {visibleItems.map((item, index) => {
+            if (React.isValidElement(item)) {
+              const MotionTag = m[item.type as keyof typeof m] || m.div;
+              return (
+                <MotionTag
+                  key={item.key}
+                  layout
+                  variants={popLayoutVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  {...item.props}
+                >
+                  {item.props.children}
+                </MotionTag>
+              );
+            }
+            return null;
+          })}
+        </AnimatePresence>
+      </LazyMotion>
+    </motion.ul>
+  );
+});
 
-export { StepMarqueeWrapper }
-export type { StepMarqueeWrapperProps }
+StepMarqueeWrapper.displayName = "StepMarqueeWrapper";
+
+export { StepMarqueeWrapper };
+export type { StepMarqueeWrapperProps };

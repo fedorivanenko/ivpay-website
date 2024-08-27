@@ -13,14 +13,14 @@ import {
 import debounce from "lodash/debounce";
 
 import { m, useScroll, MotionProps } from "framer-motion";
-import { cn } from "@/lib/utils";
 import { useMultipleTransform } from "@/components/motion/useMultipleTransofrm";
+import { cn } from "@/lib/utils";
 
 /** Helper for calculate perspective
  * n - amount of elements
  * i - number of current element
- * X - linear difference. defualt = 0.025
- * power - progressive difference. defautl = 0.015
+ * X - linear difference. default = 0.025
+ * power - progressive difference. default = 0.015
  */
 function calculatePerspectiveScale(
   n: number,
@@ -59,13 +59,15 @@ type HeightData = {
 type ScrollStackedCardType = React.HTMLAttributes<HTMLDivElement> &
   MotionProps & {
     children: React.ReactNode;
-    backgroundColor?: string; //tailwind bg
+    /** Tailwind bg */
+    backgroundColor?: string;
   };
 
+  /** Convert children into set of cards that stacks on scroll */
 const ScrollStackedCard = React.forwardRef<
   HTMLDivElement,
   ScrollStackedCardType
->(({ children, className, backgroundColor, ...props }, forwardedRef) => {
+>(({ children, className, backgroundColor = 'bg-background', ...props }, forwardedRef) => {
   const internalRef = useRef<HTMLDivElement>(null);
 
   useImperativeHandle(forwardedRef, () => {
@@ -100,7 +102,7 @@ const ScrollStackedCard = React.forwardRef<
 
         const elementHeight = childElement.offsetHeight;
         const data = { accumulatedHeight, elementHeight };
-        accumulatedHeight += elementHeight + 100 / childrenRefs.current.length; // Adding spacing
+        accumulatedHeight += elementHeight + 120 / childrenRefs.current.length; // Adding spacing
         return data;
       });
 
@@ -131,7 +133,8 @@ const ScrollStackedCard = React.forwardRef<
     offset: ["start start", "end start"],
   });
 
-  /* OFFSETS */
+  /* Calculate card's OFFSETS */
+  //not sure about useMemo, but what's done that's done
   const offsetsInputRanges = useMemo(() => {
     return heightData.map(({ accumulatedHeight, elementHeight }, index) => {
       const scrollStart = 0;
@@ -154,7 +157,7 @@ const ScrollStackedCard = React.forwardRef<
     offsetsOutputRanges,
   );
 
-  /* OPACITIES */
+  /* Calculate card's OPACITIES */
   const opacitiesInputRanges = useMemo(() => {
     return heightData.map(({ accumulatedHeight, elementHeight }, index) => {
       const scrollStart = accumulatedHeight / containerHeight;
@@ -178,7 +181,7 @@ const ScrollStackedCard = React.forwardRef<
     opacitiesOutputRanges,
   );
 
-  /* SCALES */
+  /* Calculate card's SCALES */
   const scalesInputRanges = useMemo(() => {
     return heightData.map(({ accumulatedHeight, elementHeight }, index) => {
       const scrollStart = (accumulatedHeight - 60) / containerHeight;
@@ -224,7 +227,7 @@ const ScrollStackedCard = React.forwardRef<
                 }}
                 aria-hidden
                 className={cn(
-                  "bg-background) pointer-events-none absolute inset-0 z-10",
+                  "pointer-events-none absolute inset-0 z-10",
                   backgroundColor,
                 )}
               />

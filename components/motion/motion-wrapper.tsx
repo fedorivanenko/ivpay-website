@@ -11,13 +11,6 @@ type MotionWrapperProps = MotionProps & {
 /**
  * Wraps a single child element with Framer Motion capabilities.
  * 
- * Key features:
- * 1. Accepts only one child element
- * 2. Forwards all Framer Motion properties (like animate, initial, transition, etc.) to the child.
- * 3. Preserves the original props of the child component.
- * 4. Uses React.forwardRef to properly handle ref forwarding to the child component.
- * 
- * Usage:
  * <MotionWrapper animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
  *   <YourComponent />
  * </MotionWrapper>

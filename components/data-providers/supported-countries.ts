@@ -1,7 +1,5 @@
 /* https://kapowaz.github.io/circle-flags/gallery */
 
-//TODO: call the fs and to all other things automaticly
-
 export type ISO3166_1_alpha_2_TwoLetterCountryCodes = 
 | "af" | "ax" | "al" | "dz" | "as" | "ad" | "ao" | "ai" | "aq" | "ag" 
 | "ar" | "am" | "aw" | "au" | "at" | "az" | "bs" | "bh" | "bd" | "bb" 

@@ -13,6 +13,7 @@ import USDTicon from "@/resources/currencies/usdt.svg";
 import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
 import { MotionWrapper } from "@/components/motion/motion-wrapper";
 import { cardAppearing } from "@/components/motion/motion_utils";
+import { VideoPlayer } from "../elements/video-palyer";
 
 export default function EasySafeFastBlock() {
   return (
@@ -45,7 +46,7 @@ export default function EasySafeFastBlock() {
                     Start accepting 40+ cryptocurrencies now
                   </Text>
                   <div className="row-span-2 aspect-square rounded-md bg-slate-400 sm:aspect-auto sm:rounded-lg">
-                    video
+                    <VideoPlayer/>
                   </div>
                 </Card>
                 <div className="flex flex-1 flex-col gap-2 sm:flex-row sm:gap-5">

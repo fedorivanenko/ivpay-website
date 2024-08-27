@@ -8,15 +8,19 @@ import Image from "next/image";
 import { MotionWrapper } from "../motion/motion-wrapper";
 import { imageAppearingVariant } from "../motion/motion_utils";
 
+import { HeroImageProps } from "../elements/hero-image";
+import HeroImage from "@/components/elements/hero-image";
+
 export type HeroLayoutType = React.HTMLAttributes<HTMLDivElement> & {
   heading: string;
   action?: React.ReactNode;
-  heroImage: { src: string; alt: string };
+  heroImage: HeroImageProps;
   text: string;
 };
 
 const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(
   ({ heading, action, heroImage, text, ...props }, forwardedRef) => {
+
     return (
       <Container ref={forwardedRef} {...props}>
         <div className="relative my-3 flex aspect-3/4 w-full flex-col items-center justify-between overflow-hidden p-5 sm:aspect-16/9 xl:my-8 xl:p-10">
@@ -35,14 +39,7 @@ const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(
           </Heading>
           <MotionWrapper>
             <div className="absolute bottom-0 -z-0 h-[60%] gradient-mask-b-[rgba(0,0,0,1.0)_60%,rgba(0,0,0,0.2)_85%]">
-              <div className="aspect-square h-full sm:aspect-4/3">
-                <Image
-                  src={heroImage?.src}
-                  alt={heroImage?.alt}
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
+                <HeroImage src={heroImage.src} alt={heroImage.alt} />
             </div>
           </MotionWrapper>
           <div className="z-10 flex w-full justify-between">{action}</div>
