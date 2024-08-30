@@ -10,10 +10,10 @@ import BTCicon from "@/resources/currencies/btc.svg";
 import ETHicon from "@/resources/currencies/eth.svg";
 import EURicon from "@/resources/currencies/eur.svg";
 import USDTicon from "@/resources/currencies/usdt.svg";
-import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
+//import { MotionTriggerWrapper } from ".@/components/motion/motionTriggerWrapper";
 import { MotionWrapper } from "@/components/motion/motion-wrapper";
 import { cardAppearing } from "@/components/motion/motion_utils";
-import { VideoPlayer } from "../elements/video-palyer";
+import { VideoPlayer } from "@/components/elements/video-palyer";
 
 export default function EasySafeFastBlock() {
   return (

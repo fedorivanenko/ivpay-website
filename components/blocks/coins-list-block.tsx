@@ -4,9 +4,9 @@ import { Text } from "@/components/ui/text";
 import { TicTacToeGridLayout } from "../layouts/tic-tac-toe-grid-layout";
 import { Button } from "@/components/ui/button";
 
-import { CoinItem } from "../elements/coin-item";
-import { coinData } from "../data-providers/supported-coins";
-import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
+import { CoinItem } from "@/components/elements/coin-item";
+import { coinData } from "@/components/data-providers/supported-coins";
+import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
 export default function CoinsListBlock() {
   return (

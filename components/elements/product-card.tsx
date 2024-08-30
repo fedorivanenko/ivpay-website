@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import { Heading } from "../ui/heading";
 import { Text } from "../ui/text";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.7.0",
@@ -36,6 +37,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.7",
     "@svgr/webpack": "^8.1.0",
     "@types/lodash": "^4.17.7",
     "@types/node": "^20",

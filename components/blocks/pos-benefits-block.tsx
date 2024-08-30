@@ -3,7 +3,6 @@
 import { BenefitsCard } from "@/components/elements/benefits-card";
 import { Container } from "@/components/layouts/container";
 import { Heading } from "@/components/ui/heading";
-import { ArrowDownIcon } from "@radix-ui/react-icons";
 import { HorizontalScroll } from "@/components/motion/horizontal-scroll";
 import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
@@ -27,27 +26,22 @@ export default function POSBenefitsBlock() {
               <BenefitsCard
                 heading="Crypto Payments"
                 content="Simplify your payment process and improve customer experience with our reliable and efficient solution"
-                icon={<ArrowDownIcon />}
               />
               <BenefitsCard
                 heading="Fast Connection"
                 content="Simplify your "
-                icon={<ArrowDownIcon />}
               />
               <BenefitsCard
                 heading="Incudes Promotion"
                 content="Simplify your "
-                icon={<ArrowDownIcon />}
               />
               <BenefitsCard
                 heading="Use any Printer"
                 content="Simplify your "
-                icon={<ArrowDownIcon />}
               />
               <BenefitsCard
                 heading="Remote Updates"
                 content="Simplify your "
-                icon={<ArrowDownIcon />}
               />
             </div>
           </HorizontalScroll>
