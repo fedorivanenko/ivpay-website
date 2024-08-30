@@ -1,7 +1,6 @@
 import { HeroLayout } from "@/components/layouts/hero-layout";
 import { StackedCardsFan } from "@/components/elements/stacked-cards-fan";
 import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
-
 import { Button } from "@/components/ui/button";
 
 export default function POSHeroBlock() {

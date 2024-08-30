@@ -1,8 +1,8 @@
 import { Container } from "@/components/layouts/container";
 import { Heading } from "@/components/ui/heading";
-import { ProductCard } from "../elements/product-card";
-import { ScrollStackedCard } from "../motion/scroll-stacked-cards";
-import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
+import { ProductCard } from "@/components/elements/product-card";
+import { ScrollStackedCard } from "@/components/motion/scroll-stacked-cards";
+import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
 export default function OurProductsBlock() {
   return (

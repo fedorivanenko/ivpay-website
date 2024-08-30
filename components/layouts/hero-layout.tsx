@@ -5,10 +5,10 @@ import { Heading } from "@/components/ui/heading";
 import { Text } from "@/components/ui/text";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { MotionWrapper } from "../motion/motion-wrapper";
-import { imageAppearingVariant } from "../motion/motion_utils";
+import { MotionWrapper } from "@/components/motion/motion-wrapper";
+import { imageAppearingVariant } from "@/components/motion/motion_utils";
 
-import { HeroImageProps } from "../elements/hero-image";
+import { HeroImageProps } from "@/components/elements/hero-image";
 import HeroImage from "@/components/elements/hero-image";
 
 export type HeroLayoutType = React.HTMLAttributes<HTMLDivElement> & {

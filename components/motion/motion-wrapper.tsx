@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { motion as m, MotionProps } from 'framer-motion'
+import { m, MotionProps } from 'framer-motion'
 import { contentAppearing } from '@/components/motion/motion_utils'
 
 type MotionWrapperProps = MotionProps & {

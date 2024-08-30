@@ -2,9 +2,9 @@
 
 import * as React from 'react';
 
-import { m, motion, HTMLMotionProps, ForwardRefComponent } from 'framer-motion'
-import { AnimatedTextWrapper } from '../motion/animatedTextWrapper';
-import { contentAppearing } from '../motion/motion_utils';
+import { m, HTMLMotionProps, ForwardRefComponent } from 'framer-motion'
+import { AnimatedTextWrapper } from '@/components/motion/animatedTextWrapper';
+import { contentAppearing } from '@/components/motion/motion_utils';
 
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"

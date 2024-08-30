@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { m, motion, HTMLMotionProps } from "framer-motion";
+import { m, HTMLMotionProps } from "framer-motion";
 import { textAppearing, textStaggerChildren } from "./motion_utils";
 
 import { useRef, useImperativeHandle } from "react";
@@ -44,12 +44,13 @@ function processChildren(children: React.ReactNode): ProcessedChildren {
 
 type animatedTextProps = HTMLMotionProps<"span"> & {
   children: React.ReactNode;
+  animated? : boolean
 };
 
 const AnimatedTextWrapper = React.forwardRef<
   HTMLSpanElement,
   animatedTextProps
->(({ children, ...props }, forwardedRef) => {
+>(({ animated = false, children, ...props }, forwardedRef) => {
   const internalRef = useRef<HTMLSpanElement>(null);
 
   const processedChildren = processChildren(children);

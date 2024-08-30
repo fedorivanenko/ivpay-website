@@ -3,13 +3,13 @@
 import * as React from "react"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
-import { m, motion, MotionProps } from 'framer-motion'
+import { m, MotionProps } from 'framer-motion'
 
 import { cn } from "@/lib/utils"
 import { separatorVariantH, separatorVariantV } from "../motion/motion_utils"
 
 // Create a motion version of SeparatorPrimitive.Root
-const MotionSeparatorRoot = motion(SeparatorPrimitive.Root)
+const MotionSeparatorRoot = m(SeparatorPrimitive.Root)
 
 // Combine the props from Radix UI and Framer Motion
 type SeparatorProps = React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root> & MotionProps

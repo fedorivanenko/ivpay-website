@@ -5,7 +5,6 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import {
   m,
-  motion,
   LazyMotion,
   domAnimation,
   HTMLMotionProps,
@@ -68,7 +67,7 @@ const StepMarqueeWrapper = React.forwardRef<
   }
 
   return (
-    <motion.ul
+    <m.ul
       ref={ref}
       className={cn("flex gap-2 xl:gap-3", className)}
       variants={contentAppearing}
@@ -98,7 +97,7 @@ const StepMarqueeWrapper = React.forwardRef<
           })}
         </AnimatePresence>
       </LazyMotion>
-    </motion.ul>
+    </m.ul>
   );
 });
 

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { m, motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const InfinityMarque = React.forwardRef<
   HTMLDivElement,

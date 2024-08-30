@@ -10,9 +10,9 @@ import {
   circOut,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { MotionWrapper } from "../motion/motion-wrapper";
+import { MotionWrapper } from "@/components/motion/motion-wrapper";
 import { useRef, useEffect, useState } from "react";
-import { contentAppearing } from "../motion/motion_utils";
+import { contentAppearing } from "@/components/motion/motion_utils";
 
 type StackedCardsFanType = MotionProps & {
   className?: string;

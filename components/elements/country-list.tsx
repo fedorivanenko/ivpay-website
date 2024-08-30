@@ -7,7 +7,7 @@ import {
 import { Text } from "@/components/ui/text";
 import { MotionWrapper } from "@/components/motion/motion-wrapper";
 import { staggerChildren } from "@/components/motion/motion_utils";
-import { Badge } from "../ui/badge";
+import { Badge } from "@/components/ui/badge";
 
 type CountriesListType = React.HTMLAttributes<HTMLDivElement>;
 

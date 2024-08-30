@@ -2,11 +2,11 @@
 
 import * as React from 'react'
 
-import { m, motion, HTMLMotionProps } from 'framer-motion'
-import { contentAppearing } from '../motion/motion_utils'
+import { m, HTMLMotionProps } from 'framer-motion'
+import { contentAppearing } from '@/components/motion/motion_utils'
 import { cn } from "@/lib/utils"
 import { cva, type VariantProps } from "class-variance-authority"
-import { AnimatedTextWrapper } from '../motion/animatedTextWrapper'
+import { AnimatedTextWrapper } from '@/components/motion/animatedTextWrapper'
 
 type MotionTextProps = HTMLMotionProps<'p'>
 

@@ -1,7 +1,7 @@
 import { Container } from "@/components/layouts/container";
 import { Button } from "@/components/ui/button";
 import { HeroLayout } from "@/components/layouts/hero-layout";
-import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
+import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
 export default function HomeHeroBlock() {
   return (

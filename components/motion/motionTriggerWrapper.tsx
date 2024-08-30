@@ -10,7 +10,7 @@ import {
 } from "react";
 
 import {
-  m, motion,
+  m,
   HTMLMotionProps,
   useInView,
   useAnimationControls,

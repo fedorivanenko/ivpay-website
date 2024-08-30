@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import { animate, m, motion, useInView, useMotionValue } from 'framer-motion';
+import { animate, m, useInView, useMotionValue } from 'framer-motion';
 import { useEffect, useRef, useState, useImperativeHandle } from 'react';
 import { textAppearing } from '../motion/motion_utils';
 import { thousandsSeparator } from '@/components/elements/thousandsSeparator';

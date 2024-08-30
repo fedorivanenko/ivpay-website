@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, ReactNode } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { m, useMotionValue, useSpring } from 'framer-motion';
 
 interface HorizontalScrollProps {
   children: ReactNode;
@@ -34,7 +34,7 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = ({ children }) => {
 
   return (
     <div className="relative w-full" ref={constraintsRef}>
-      <motion.div
+      <m.div
         ref={contentRef}
         drag="x"
         dragElastic={0.2}
@@ -46,7 +46,7 @@ const HorizontalScroll: React.FC<HorizontalScrollProps> = ({ children }) => {
         className="flex cursor-grab active:cursor-grabbing"
       >
         {children}
-      </motion.div>
+      </m.div>
     </div>
   );
 };

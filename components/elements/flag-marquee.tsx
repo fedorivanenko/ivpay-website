@@ -2,9 +2,9 @@ import * as React from "react";
 import {
   StepMarqueeWrapper,
   StepMarqueeWrapperProps,
-} from "../motion/stepMarqueeWrapper";
+} from "@/components/motion/stepMarqueeWrapper";
 
-import { countryData } from "../data-providers/supported-countries";
+import { countryData } from "@/components/data-providers/supported-countries";
 
 //TODO:Optimize it
 

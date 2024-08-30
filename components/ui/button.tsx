@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { m, motion, HTMLMotionProps } from "framer-motion";
+import { m, HTMLMotionProps } from "framer-motion";
 import { contentAppearing } from "../motion/motion_utils";
 
 import { cva, type VariantProps } from "class-variance-authority";

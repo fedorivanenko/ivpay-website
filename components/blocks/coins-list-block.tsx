@@ -8,8 +8,6 @@ import { CoinItem } from "../elements/coin-item";
 import { coinData } from "../data-providers/supported-coins";
 import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
 
-import FeatherIcon from "feather-icons-react";
-
 export default function CoinsListBlock() {
   return (
     <section id="coins-list-block" className="bg-soft-gradient py-20">
@@ -37,10 +35,6 @@ export default function CoinsListBlock() {
             size="lg"
           >
             Become a partner
-            <FeatherIcon
-              icon="arrow-up-right"
-              className="h-4 w-4 lg:h-6 lg:w-6"
-            />
           </Button>
           <TicTacToeGridLayout animated={true} className="my-4 max-w-screen-lg">
             {coinData.map((item, index) => (

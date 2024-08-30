@@ -1,7 +1,7 @@
 import * as React from "react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { Text } from "@/components/ui/text";
 
 type BrandBadgeType = React.HTMLAttributes<HTMLLIElement> & {

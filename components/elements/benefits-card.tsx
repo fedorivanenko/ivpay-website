@@ -2,8 +2,8 @@ import * as React from "react";
 import { Card } from "@/components/ui/card";
 
 import { DivProps } from "@/components/ui/card";
-import { Heading } from "../ui/heading";
-import { Text } from "../ui/text";
+import { Heading } from "@/components/ui/heading";
+import { Text } from "@/components/ui/text";
 
 type BenefitsCard = DivProps & {
   heading: string;

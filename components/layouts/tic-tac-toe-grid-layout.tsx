@@ -4,7 +4,6 @@ import * as React from "react";
 
 import {
   m,
-  motion,
   LazyMotion,
   domAnimation,
   AnimatePresence,
@@ -17,7 +16,7 @@ import {
   defaultDuration,
   cardAppearing,
   contentAppearing,
-} from "../motion/motion_utils";
+} from "@/components/motion/motion_utils";
 
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
