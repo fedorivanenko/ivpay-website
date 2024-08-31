@@ -25,6 +25,7 @@
     "framer-motion": "^11.2.12",
     "lodash": "^4.17.21",
     "next": "14.2.4",
+    "next-compose-plugins": "^2.2.1",
     "plaiceholder": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
@@ -51,6 +52,7 @@
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
+    "source-map-explorer": "^2.5.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
