@@ -4,6 +4,9 @@ import { ProductCard } from "@/components/elements/product-card";
 import { ScrollStackedCard } from "@/components/motion/scroll-stacked-cards";
 import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
+
+//TODO: Make a data-provider for Product.
+//TODO: Conneсt data-provider with a menu object
 export default function OurProductsBlock() {
   return (
     <section id="our-products-block" className="bg-blue-94 py-40">

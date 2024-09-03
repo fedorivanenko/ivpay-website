@@ -1,6 +1,6 @@
 // components/HeroImage.tsx
 import Image from "next/image";
-import { getImageMetadata } from "@/lib/getImagePlaceholder";
+//import { getImageMetadata } from "@/lib/get-image-placeholder";
 
 export type HeroImageProps = {
   src: string;
@@ -8,7 +8,7 @@ export type HeroImageProps = {
 };
 
 export default async function HeroImage({ src, alt }: HeroImageProps) {
-  const { blurDataURL } = await getImageMetadata(src);
+  //const { blurDataURL } = await getImageMetadata(src);
 
   return (
     <div className="relative aspect-square h-full sm:aspect-4/3">
@@ -19,8 +19,8 @@ export default async function HeroImage({ src, alt }: HeroImageProps) {
         fill
         quality={85}
         sizes="50vw"
-        placeholder="blur"
-        blurDataURL={blurDataURL}
+        //placeholder="blur"
+        //blurDataURL={blurDataURL}
         className="object-cover object-top"
       />
     </div>

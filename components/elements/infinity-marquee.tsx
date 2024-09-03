@@ -10,7 +10,7 @@ const InfinityMarque = React.forwardRef<
   return (
     <div
       ref={forwardRef}
-      className="my-auto flex scale-150 flex-col justify-center"
+      className="my-auto flex scale-150 sm:scale-125 xl:scale-150 flex-col justify-center"
       {...props}
     >
       <m.div

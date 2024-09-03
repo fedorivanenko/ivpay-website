@@ -5,6 +5,7 @@ import ETHicon from "@/resources/currencies/eth.svg";
 import EURicon from "@/resources/currencies/eur.svg";
 import USDTicon from "@/resources/currencies/usdt.svg";
 
+//TODO: Create a separate type for codes like in socials-provide.ts
 export const coinData: CoinType[] = [
   {
     code: "eth",

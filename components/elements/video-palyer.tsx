@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dialog";
 
 
-//TODO: DIALOG IS A BAD UI HERE
+//TODO: DIALOG IS A BAD UX HERE
 const VideoPlayer: React.FC = () => {
   return (
     <Dialog>

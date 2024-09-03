@@ -44,13 +44,13 @@ function processChildren(children: React.ReactNode): ProcessedChildren {
 
 type animatedTextProps = HTMLMotionProps<"span"> & {
   children: React.ReactNode;
-  animated? : boolean
+  isAnimated? : boolean
 };
 
 const AnimatedTextWrapper = React.forwardRef<
   HTMLSpanElement,
   animatedTextProps
->(({ animated = false, children, ...props }, forwardedRef) => {
+>(({ isAnimated = true, children, ...props }, forwardedRef) => {
   const internalRef = useRef<HTMLSpanElement>(null);
 
   const processedChildren = processChildren(children);
@@ -73,7 +73,7 @@ const AnimatedTextWrapper = React.forwardRef<
     >
       {processedChildren.children.map((item, index) =>
         React.isValidElement(item) && item.type === "br" ? (
-          <br key={index} />
+          <br key={index} aria-hidden/>
         ) : (
           <m.span
             variants={textAppearing}

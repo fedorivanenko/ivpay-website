@@ -12,10 +12,10 @@ import { HeroImageProps } from "@/components/elements/hero-image";
 import HeroImage from "@/components/elements/hero-image";
 
 export type HeroLayoutType = React.HTMLAttributes<HTMLDivElement> & {
-  heading: string;
+  heading: React.ReactNode;
   action?: React.ReactNode;
   heroImage: HeroImageProps;
-  text: string;
+  text: React.ReactNode;
 };
 
 const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(

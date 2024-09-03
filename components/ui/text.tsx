@@ -19,6 +19,8 @@ const textVariants = cva(
     "tracking-[0.02rem]",
     {variants: {
         size: {
+            '12': 'text-xs leading-snug',
+            '14': 'text-xs sm:text-sm leading-snug',
             '16': 'text-base leading-snug',
             '18': 'text-base lg:text-lg xl:text-lg leading-snug lg:leading-snug xl:leading-snug',
             '24': 'text-base lg:text-xl xl:text-2xl leading-snug lg:leading-snug xl:leading-snug',

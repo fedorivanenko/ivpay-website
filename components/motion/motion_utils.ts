@@ -65,7 +65,7 @@ export const cardAppearing = {
 export const contentAppearing = {
     hiddenToTop: {
         opacity: 0,
-        y: -12,
+        //y: -12,
         transition: {
             duration: defaultDuration,
             ease: easeIn
@@ -73,7 +73,7 @@ export const contentAppearing = {
     },
     hiddenToBottom: {
         opacity: 0,
-        y: 12,
+        //y: 12,
         transition: {
             duration: defaultDuration,
             ease: easeIn
@@ -81,7 +81,7 @@ export const contentAppearing = {
     },
     visibleFromBottom: {
         opacity: 1,
-        y: 0,
+        //y: 0,
         transition: {
             duration: defaultDuration,
             ease: easeOut
@@ -89,7 +89,7 @@ export const contentAppearing = {
     },
     visibleFromTop: {
         opacity: 1,
-        y: 0,
+        //y: 0,
         transition: {
             duration: defaultDuration,
             ease: easeOut
