@@ -37,7 +37,7 @@ export default function EasySafeFastBlock() {
               Easy. Safe. Fast.
             </Heading>
             <div className="z-10 -mt-16 flex w-full flex-col gap-2 bg-blue-shadow-gradient shadow-on-blue-header-sm sm:-mt-24 sm:aspect-square sm:gap-5 sm:shadow-on-blue-header-xl">
-              <Card className="grid flex-1 grid-cols-1 p-5 backdrop-blur-xl sm:aspect-2/1 lg:aspect-auto sm:grid-flow-col sm:grid-cols-2 sm:p-7.5 xl:p-10">
+              <Card className="grid flex-1 grid-cols-1 p-5 backdrop-blur-xl sm:aspect-2/1 sm:grid-flow-col sm:grid-cols-2 sm:p-7.5 lg:aspect-auto xl:p-10">
                 <Heading
                   as="h3"
                   size="48"
@@ -47,11 +47,13 @@ export default function EasySafeFastBlock() {
                 </Heading>
                 <Text
                   size="18"
-                  className="order-last mt-2.5 text-sm sm:order-none sm:mt-auto max-w-[24ch]"
+                  className="order-last mt-2.5 max-w-[24ch] text-sm sm:order-none sm:mt-auto"
                 >
-                  Start accepting <span className="whitespace-nowrap">
-              &nbsp;{Math.floor(coinData.length / 10) * 10}
-            </span>+ cryptocurrencies now
+                  Start accepting{" "}
+                  <span className="whitespace-nowrap">
+                    &nbsp;{Math.floor(coinData.length / 10) * 10}
+                  </span>
+                  + cryptocurrencies now
                 </Text>
                 {/* POP UP VIDEO */}
                 <div className="row-span-2 aspect-square overflow-hidden rounded-md sm:aspect-auto sm:rounded-lg">
@@ -63,10 +65,10 @@ export default function EasySafeFastBlock() {
                   />
                 </div>
               </Card>
-              <div className="flex flex-1 flex-col gap-2 lg:flex-row sm:gap-5">
+              <div className="flex flex-1 flex-col gap-2 sm:gap-5 lg:flex-row">
                 <Card className="flex aspect-square flex-1 flex-col lg:aspect-auto">
                   <div className="flex flex-1 flex-col">
-                    <InfinityMarque className="max-h-[50%] lg:max-h-none my-auto">
+                    <InfinityMarque className="my-auto max-h-[50%] lg:max-h-none">
                       {/*see the data-providers/supported-coins.ts*/}
                       <BTCicon className="aspect-square flex-1 rounded-full" />
                       <ETHicon className="aspect-square flex-1 rounded-full" />
@@ -76,10 +78,11 @@ export default function EasySafeFastBlock() {
                   </div>
                   <div className="p-5 pt-0 sm:p-7.5 sm:pt-0 xl:p-10 xl:pt-0">
                     <Heading as="h3" size="32" className="mb-1.5 sm:mb-2">
-                    Get paid your way
+                      Get paid your way
                     </Heading>
                     <Text size="24" className="max-w-[28ch]">
-                    Pick your preferred currency. Keep it in crypto or instantly convert it to fiat.
+                      Pick your preferred currency. Keep it in crypto or
+                      instantly convert it to fiat.
                     </Text>
                   </div>
                 </Card>
@@ -96,10 +99,11 @@ export default function EasySafeFastBlock() {
                   </div>
                   <div className="p-5 pt-0 sm:p-7.5 xl:p-10">
                     <Heading as="h3" size="32" className="my-1.5 sm:mb-2">
-                    We do all the hard work
+                      We do all the hard work
                     </Heading>
                     <Text size="24" className="max-w-[28ch]">
-                      We'll convert all crypto to the currency of your choice and show you all the necessary info.
+                      We'll convert all crypto to the currency of your choice
+                      and show you all the necessary info.
                     </Text>
                   </div>
                 </Card>
