@@ -58,10 +58,12 @@ export default function EasySafeFastBlock() {
                 {/* POP UP VIDEO */}
                 <div className="row-span-2 aspect-square overflow-hidden rounded-md sm:aspect-auto sm:rounded-lg">
                   <PopUpVideoPlayer
-                    url="https://www.youtube.com/watch?v=-p_F0t7b80M"
+                  //TODO: place correct link
+                    //url="https://www.youtube.com/watch?v=-p_F0t7b80M" //this is the correct one
+                    url="https://www.youtube.com/watch?v=m2JRghbgeYw"
                     title="How do payment work"
                     description="See how IVPAY system process payments"
-                    thumbnail={{ src: "/payment_video_thumb.png" }}
+                    thumbnail={{ src: "/payment-video-thumb.png" }}
                   />
                 </div>
               </Card>

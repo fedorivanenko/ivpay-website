@@ -8,9 +8,11 @@ import { Separator } from "@/components/ui/separator";
 import BrandWall from "@/components/elements/brand-wall";
 import { FlagMarquee } from "@/components/elements/flag-marquee";
 
-export default function ReapTheBenfitsBlock() {
+import { cn } from "@/lib/utils";
+
+const ReapTheBenefitsBlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({className}) => {
   return (
-    <section id="reap-the-benefits-block" className="bg-blue-94 py-20">
+    <section id="reap-the-benefits-block" className={cn("bg-blue-94 py-20", className)}>
       <Container>
         <Card className="py-5 sm:py-7.5 xl:py-12">
           {/* Benefits */}
@@ -127,3 +129,5 @@ export default function ReapTheBenfitsBlock() {
     </section>
   );
 }
+
+export default ReapTheBenefitsBlock
