@@ -22,7 +22,7 @@ const Card = React.forwardRef<HTMLDivElement, DivProps>(
       ref={ref}
       variants={cardAppearing}
       className={cn(
-        "rounded-lg border backdrop-blur box-border border-background/20 sm:rounded-2xl bg-background/60 text-card-foreground overflow-hidden relative z-0 shadow-card-shadow",
+        "rounded-lg border  box-border border-background/20 sm:rounded-2xl bg-background/60 text-card-foreground overflow-hidden relative z-0 shadow-card-shadow",
         className
       )}
       //style={{transform: "translate3d(0, 0, 0)"}} //safari fix to force it use GPU

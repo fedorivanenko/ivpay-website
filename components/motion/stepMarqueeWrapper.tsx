@@ -72,7 +72,7 @@ const StepMarqueeWrapper = React.forwardRef<
       className={cn("flex gap-2 xl:gap-3", className)}
       variants={contentAppearing}
       {...props}
-      layout
+      
     >
       <LazyMotion features={domAnimation}>
         <AnimatePresence initial={false} mode="popLayout">

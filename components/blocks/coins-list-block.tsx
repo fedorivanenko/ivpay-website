@@ -8,9 +8,12 @@ import { CoinItem } from "@/components/elements/coin-item";
 import { coinData } from "@/components/data-providers/supported-coins";
 import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
+import Link from "next/link";
+import { Icon } from "@/components/elements/icon";
+
 export default function CoinsListBlock() {
   return (
-    <section id="coins-list-block" className="bg-soft-gradient py-20">
+    <section id="coins-list-block" className="bg-soft-gradient-reverse py-20">
       <MotionTriggerWrapper>
         <Container className="bg-white-shadow-gradient">
           <Heading
@@ -20,10 +23,12 @@ export default function CoinsListBlock() {
           >
             Accept and withdraw funds in your preferred currency.
           </Heading>
-          <Text
-            size="32"
-            className="col-span-1 mb-2.5 max-w-[26ch] sm:col-span-2 lg:mb-5"
-          >
+          <Text size="32" className="col-span-1 mb-1.5 sm:col-span-2 lg:mb-2.5">
+            Choose your payment options: accept only stablecoins, stick to the
+            major cryptocurrencies, or open up to all available options in our
+            system.
+          </Text>
+          <Text size="32" className="col-span-1 mb-2.5 sm:col-span-2 lg:mb-5">
             We support over
             <span className="whitespace-nowrap">
               &nbsp;{Math.floor(coinData.length / 10) * 10}&nbsp;
@@ -31,10 +36,11 @@ export default function CoinsListBlock() {
             cryptocurrencies and constantly add new ones.
           </Text>
           <Button
-            className="order-last my-4 max-w-min pl-4 sm:absolute sm:right-0 sm:top-0 sm:my-0 sm:mt-2 lg:pl-5"
+            asChild
+            className="order-last my-4 max-w-min px-4 sm:absolute sm:right-0 sm:top-0 sm:my-0 sm:mt-2 lg:pl-5"
             size="lg"
           >
-            Become a partner
+            <Link href="/">Become a partner <Icon icon="ArrowUpRight"/></Link>
           </Button>
           <TicTacToeGridLayout animated={true} className="my-4 max-w-screen-lg">
             {coinData.map((item, index) => (

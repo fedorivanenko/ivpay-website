@@ -118,6 +118,7 @@ const Footer = React.forwardRef<HTMLDivElement, FooterProp>(
               className="mx-auto flex w-full max-w-md flex-col space-y-2 px-2 sm:col-span-2 sm:mx-0 sm:max-w-none sm:px-0 lg:col-span-1"
             >
               <MotionWrapper asDiv className="flex w-full">
+                {/* FORM */}
                 <SubscriptionForm />
               </MotionWrapper>
               <MotionWrapper>

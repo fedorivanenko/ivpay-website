@@ -213,7 +213,7 @@ const ScrollStackedCard = React.forwardRef<
           return (
             <m.div
               key={index}
-              className="sticky top-0 origin-top sm:top-10"
+              className="sticky top-5 origin-top sm:top-10"
               ref={childrenRefs.current[index]}
               style={{
                 transform: `scale(${scales[index]}) translateY(${offsets[index]}px)`,

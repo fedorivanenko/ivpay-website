@@ -6,14 +6,19 @@ import { Heading } from "@/components/ui/heading";
 import { HorizontalScroll } from "@/components/motion/horizontal-scroll";
 import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
+import { products } from "@/components/data-providers/products-provider";
+
 export default function POSBenefitsBlock() {
+  
+  const posProduct = products.find((product) => product.id === "pos");
+
   return (
     <section
       id="pos-benefits-block"
       className="overflow-hidden bg-blue-94 py-20"
     >
       <MotionTriggerWrapper>
-        <Container>
+        <Container className="bg-blue-shadow-gradient">
           <Heading
             as="h2"
             size="64"
@@ -23,26 +28,15 @@ export default function POSBenefitsBlock() {
           </Heading>
           <HorizontalScroll>
             <div className="flex min-w-min gap-5">
-              <BenefitsCard
-                heading="Crypto Payments"
-                content="Simplify your payment process and improve customer experience with our reliable and efficient solution"
-              />
-              <BenefitsCard
-                heading="Fast Connection"
-                content="Simplify your "
-              />
-              <BenefitsCard
-                heading="Incudes Promotion"
-                content="Simplify your "
-              />
-              <BenefitsCard
-                heading="Use any Printer"
-                content="Simplify your "
-              />
-              <BenefitsCard
-                heading="Remote Updates"
-                content="Simplify your "
-              />
+              {posProduct?.benefits &&
+                posProduct.benefits.map((benefit) => (
+                  <BenefitsCard
+                    key={benefit.id}
+                    icon={benefit.icon}
+                    heading={benefit.label}
+                    content={benefit.description}
+                  />
+                ))}
             </div>
           </HorizontalScroll>
         </Container>

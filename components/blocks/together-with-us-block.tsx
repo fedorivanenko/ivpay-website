@@ -13,17 +13,18 @@ const CountriesGlobe = dynamic(
   },
 );
 
-import { CountriesList } from "../elements/country-list";
-import { countryData } from "../data-providers/supported-countries";
-import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
-import { MotionWrapper } from "../motion/motion-wrapper";
+import { CountriesList } from "@/components/elements/country-list";
+import { countryData } from "@/components/data-providers/supported-countries";
+import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
+import { MotionWrapper } from "@/components/motion/motion-wrapper";
+import Link from "next/link";
 
 export default function TogetherWithUsBlock() {
   return (
-    <section id="together-with-us-block" className="py-20">
+    <section id="together-with-us-block" className="py-20 mb-20">
       <MotionTriggerWrapper>
       <Container>
-        <div className="mx-2 mb-2 w-full sm:mx-7.5 sm:mb-5 xl:mx-10">
+        <div className="mx-2 mb-2 w-full sm:mx-7.5 sm:mb-5 xl:mx-10 rounded-t-md">
           <Heading as="h2" size="64" className="mb-2 lg:mb-4">
             Together with Us
           </Heading>
@@ -47,7 +48,9 @@ export default function TogetherWithUsBlock() {
             <Text className="leading-tighten text-center text-3xl capitalize sm:text-4xl xl:text-6xl mb-2">
               Become<br aria-hidden/>a part of<br aria-hidden/>IVPAY
             </Text>
-            <Button size="xl">Get started</Button>
+            <Button size="xl" asChild>
+              <Link href="https://app.ivendpay.com/register">Get started</Link>
+            </Button>
           </div>
         </div>
       </Container>

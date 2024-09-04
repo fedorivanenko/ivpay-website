@@ -16,7 +16,7 @@ const getCountryIcon = (code: string) => {
 const FlagMarquee = React.forwardRef<HTMLUListElement, StepMarqueeWrapperProps>(
   ({ ...props }, ref) => {
     return (
-      <StepMarqueeWrapper ref={ref} length={4} {...props}>
+      <StepMarqueeWrapper ref={ref} length={5} {...props}>
         {countryData.map((country, index) => {
           const IconComponent = getCountryIcon(country.code);
           return IconComponent ? (

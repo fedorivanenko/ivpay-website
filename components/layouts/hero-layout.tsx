@@ -32,7 +32,7 @@ const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(
           <Heading
             as="h1"
             size="72"
-            className="z-10 mx-auto flex h-1/3 max-w-[16ch] flex-col justify-center text-center"
+            className="z-10 mx-auto flex h-1/3 max-w-[20ch] flex-col justify-center text-center"
           >
             {heading}
           </Heading>

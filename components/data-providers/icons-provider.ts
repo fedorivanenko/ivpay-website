@@ -5,6 +5,7 @@ import ArrowUpRight from '@/resources/icons/arrow-up-right.svg'
 import ChevronDown from '@/resources/icons/chevron-down.svg'
 import Menu from '@/resources/icons/menu.svg'
 import Close from '@/resources/icons/close.svg'
+import Play from '@/resources/icons/play.svg'
 
 
 export type IconType = {
@@ -17,4 +18,5 @@ export const IconList = {
     ChevronDown: ChevronDown,
     Menu: Menu,
     Close: Close,
+    Play: Play,
 };

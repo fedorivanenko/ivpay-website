@@ -49,6 +49,7 @@ const config = {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			darkshade: 'hsl(var(--darkshade))',
+			//TODO: change blue-94 -> soft
   			'blue-94': 'hsl(var(--blue-94))',
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',
@@ -94,6 +95,7 @@ const config = {
   		},
   		backgroundImage: {
   			'soft-gradient': 'linear-gradient(to bottom, transparent 0%, hsl(var(--blue-94)) 75%, hsl(var(--blue-94)) 100%)',
+  			'soft-gradient-reverse': 'linear-gradient(to top, transparent 0%, hsl(var(--blue-94)) 75%, hsl(var(--blue-94)) 100%)',
   			'blue-shadow-gradient': 'radial-gradient(closest-side, hsla(235, 100%, 60%, 0.25) 0%, hsla(235, 100%, 60%, 0) 100%)',
   			'white-shadow-gradient': 'radial-gradient(closest-side, hsla(0, 0%, 100%, 0.5) 0%, hsla(0, 0%, 100%, 0.25) 60%, hsla(0, 0%, 100%, 0) 100%)',
   			'hero-gradient': 'linear-gradient(to bottom, hsla(234, 100%, 80%, 0) 0%, hsla(234, 100%, 80%, 0.2) 20%, hsla(235, 100%, 80%, 0.8) 80%, hsla(235, 100%, 75%, 0.8) 100%), radial-gradient(ellipse 100% 100% at bottom left, hsl(var(--accent)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at bottom right, hsl(var(--accent)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at center, hsl(var(--background)) 20%, transparent 100%)',

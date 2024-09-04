@@ -38,16 +38,31 @@ type MenuProps = React.ComponentPropsWithoutRef<
   menuProp?: MenuType;
 };
 
+export type Benefit = {
+  id: string;
+  icon: IconType["icon"];
+  label: string;
+  description: string;
+};
+
+//TODO: Add a Product Type
 export type MenuItemType = {
   id: string;
   label: string;
-  description?: string;
   order: number;
+  description?: string;
+  full_description?: string;
+  cta?: string;
+  img?: {src: string} 
+  benefits?: Benefit[]
 } & LinkType;
 
 export type MenuHeaderType = MenuItemType & { children?: MenuItemType[] };
 
 export type MenuType = MenuHeaderType[];
+
+import { products } from "@/components/data-providers/products-provider";
+import { IconType } from "../data-providers/icons-provider";
 
 //TODO: Move menu structure to data-provider
 export const menu: MenuType = [
@@ -55,25 +70,7 @@ export const menu: MenuType = [
     id: "products",
     label: "Products",
     order: 1,
-    children: [
-      {
-        id: "pos",
-        label: "Terminal POS",
-        url: "/pos",
-        order: 1,
-        description: "Everything you need to start accepting crypto payments",
-      },
-      { id: "app", label: "Mobile App POS", url: "/app", order: 2 },
-      { id: "invoicing", label: "Invoicing", url: "/invoicing", order: 3 },
-      { id: "vending", label: "Vending Machine", url: "/vending", order: 4 },
-      {
-        id: "e-commerce",
-        label: "E-Commerce plugin",
-        url: "/e_commerce",
-        order: 5,
-      },
-      { id: "api", label: "API", url: "/api", order: 6 },
-    ],
+    children: [...products]
   },
   {
     id: "use_cases",
@@ -83,8 +80,8 @@ export const menu: MenuType = [
       { id: "digital", label: "Digital", url: "/", order: 1 },
       { id: "e_commerce", label: "E-Commerce Stores", url: "/", order: 2 },
       { id: "freelancers", label: "Freelancers", url: "/", order: 3 },
-      { id: "restaraunts", label: "Restaraunts", url: "/pos", order: 4 },
-      { id: "retail", label: "Retail stores", url: "/pos", order: 5 },
+      { id: "restaraunts", label: "Restaurants", url: "/", order: 4 },
+      { id: "retail", label: "Retail stores", url: "/", order: 5 },
     ],
   },
   {
@@ -127,7 +124,7 @@ const MenuDesktopItem = React.forwardRef<
       ref={ref}
       {...props}
       className={cn(
-        "relative w-48 rounded-[8px] p-4 pt-2.5 text-sm transition hover:bg-secondary/70",
+        "relative w-54 rounded-[8px] p-4 pt-2.5 text-sm transition hover:bg-accent hover:shadow-lg hover:shadow-accent/40 hover:text-background",
         className,
       )}
     >
@@ -142,7 +139,8 @@ const MenuDesktop = React.forwardRef<
   MenuProps
 >(({ menuProp = menu, className, ...props }, forwardedRef) => {
   return (
-    <NavigationMenu className={className} ref={forwardedRef} {...props}>
+    <NavigationMenu className={cn(" pointer-events-auto p-2",className)} ref={forwardedRef} {...props}>
+      <div aria-hidden className="border border-border bg-background/70 backdrop-blur pointer-events-none absolute inset-0 rounded-sm z-0 shadow-xl shadow-accent/15"/>
       <NavigationMenuList>
         {menuProp
           .slice()
@@ -165,7 +163,7 @@ const MenuDesktop = React.forwardRef<
                               {/* TODO: Fix fonts weights */}
                               <p className="font-bold">{menuItem.label}</p>
                               {menuItem.description &&
-                              <p className="mt-1 text-xs text-foreground/80">
+                              <p className="mt-1 text-xs opacity-90">
                                 {menuItem.description}
                               </p>}
                             </MenuDesktopItem>
@@ -217,7 +215,7 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
   ({ menuProp = menu, className, ...props }, forwardedRef) => {
     return (
       <div
-        className={cn("fixed right-6 top-6 z-50", className)}
+        className={cn("pointer-events-auto", className)}
         ref={forwardedRef}
         {...props}
       >

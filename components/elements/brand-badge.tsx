@@ -1,5 +1,4 @@
 import * as React from "react";
-import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { Text } from "@/components/ui/text";
@@ -16,7 +15,7 @@ const BrandBadge = React.forwardRef<HTMLLIElement, BrandBadgeType>(
         className={cn("flex flex-col", className)}
         {...props}
       >
-        <span className="aspect-square w-24 rounded-lg bg-slate-500" />
+        <span className="aspect-square w-24 rounded-lg bg-secondary" />
         <Text className="mt-2 text-xs uppercase sm:text-sm">{name}</Text>
       </li>
     );

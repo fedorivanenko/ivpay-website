@@ -1,5 +1,7 @@
 import BrandBadge from "@/components/elements/brand-badge";
 
+
+////TODO: move data to data provider
 export default function BrandWall() {
     return(
         <ul className="flex flex-wrap sm:justify-between gap-y-7.5 gap-x-10 sm:gap-x-14 xl:gap-x-24 sm:gap-y-10 my-10 sm:my-20">
