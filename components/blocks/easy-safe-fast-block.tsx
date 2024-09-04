@@ -102,7 +102,7 @@ export default function EasySafeFastBlock() {
                       We do all the hard work
                     </Heading>
                     <Text size="24" className="max-w-[28ch]">
-                      We'll convert all crypto to the currency of your choice
+                      We will convert all crypto to the currency of your choice
                       and show you all the necessary info.
                     </Text>
                   </div>
