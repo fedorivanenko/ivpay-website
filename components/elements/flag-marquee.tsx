@@ -6,8 +6,6 @@ import {
 
 import { countryData } from "@/components/data-providers/supported-countries";
 
-//TODO:Optimize it
-
 const getCountryIcon = (code: string) => {
   const country = countryData.find((c) => c.code === code);
   return country ? country.icon : null;

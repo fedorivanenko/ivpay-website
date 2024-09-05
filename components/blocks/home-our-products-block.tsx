@@ -4,7 +4,7 @@ import { ProductCard } from "@/components/elements/product-card";
 import { ScrollStackedCard } from "@/components/motion/scroll-stacked-cards";
 import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
-import { products } from "@/components/data-providers/products-provider";
+import { productsList } from "@/components/data-providers/products-provider";
 
 export default function OurProductsBlock() {
   return (
@@ -19,7 +19,7 @@ export default function OurProductsBlock() {
             Our powerful tools
           </Heading>
           <ScrollStackedCard backgroundColor="bg-blue-94">
-            {products
+            {productsList
               .slice()
               .sort((a, b) => a.order - b.order)
               .map((product) => {

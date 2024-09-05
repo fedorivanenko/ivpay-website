@@ -1,9 +1,9 @@
 import { Container } from "@/components/layouts/container";
 import { Heading } from "@/components/ui/heading";
-import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
-import { MotionWrapper } from "../motion/motion-wrapper";
-import { cardAppearing } from "../motion/motion_utils";
-import { PopUpVideoPlayer } from "../elements/video-palyer";
+import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
+import { MotionWrapper } from "@/components/motion/motion-wrapper";
+import { cardAppearing } from "@/components/motion/motion_utils";
+import { PopUpVideoPlayer } from "@/components/elements/video-palyer";
 
 export default function MerchantVideoBlock() {
   return (

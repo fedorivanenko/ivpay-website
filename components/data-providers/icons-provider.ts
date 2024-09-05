@@ -6,7 +6,15 @@ import ChevronDown from '@/resources/icons/chevron-down.svg'
 import Menu from '@/resources/icons/menu.svg'
 import Close from '@/resources/icons/close.svg'
 import Play from '@/resources/icons/play.svg'
+import Download from '@/resources/icons/download.svg'
 
+//brands
+import Woo from '@/resources/brands/woo.svg'
+import PrestaShop from "@/resources/brands/prestashop.svg"
+import Shopify from '@/resources/brands/shopify.svg'
+import Opencart from '@/resources/brands/opencart.svg'
+import WorldLine from '@/resources/brands/worldline.svg'
+import Ivenda from '@/resources/brands/ivenda.svg'
 
 export type IconType = {
     icon: keyof typeof IconList;
@@ -19,4 +27,12 @@ export const IconList = {
     Menu: Menu,
     Close: Close,
     Play: Play,
+    Download: Download,
+    //Brands
+    Woo: Woo,
+    PrestaShop: PrestaShop,
+    Shopify: Shopify,
+    Opencart: Opencart,
+    WorldLine: WorldLine,
+    Ivenda: Ivenda,
 };

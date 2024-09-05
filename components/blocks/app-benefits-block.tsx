@@ -8,13 +8,13 @@ import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
 import { productsList } from "@/components/data-providers/products-provider";
 
-export default function POSBenefitsBlock() {
+export default function APPBenefitsBlock() {
   
-  const posProduct = productsList.find((product) => product.id === "pos");
+  const appProduct = productsList.find((product) => product.id === "app");
 
   return (
     <section
-      id="pos-benefits-block"
+      id="app-benefits-block"
       className="overflow-hidden bg-blue-94 py-20"
     >
       <MotionTriggerWrapper>
@@ -24,12 +24,12 @@ export default function POSBenefitsBlock() {
             size="64"
             className="ml-auto mr-3 max-w-[12ch] text-right mb-5 sm:mr-6 sm:max-w-[18ch]"
           >
-            Everything in One
+            transform it into a real pos
           </Heading>
           <HorizontalScroll>
             <div className="flex min-w-min gap-5">
-              {posProduct?.benefits &&
-                posProduct.benefits.map((benefit) => (
+              {appProduct?.benefits &&
+                appProduct.benefits.map((benefit) => (
                   <BenefitsCard
                     key={benefit.id}
                     icon={benefit.icon}

@@ -1,7 +1,16 @@
 import { MenuItemType } from "@/components/elements/menu";
+import { error } from "console";
+
+
+export function getProduct(products: MenuItemType[], id: typeof productsList[number]['id']) {
+    const product = products.find((product) => product.id === id);
+
+    if (product === undefined) throw Error(id +'no such product');
+    return product
+}
 
 //TODO: sort out Types here
-export const products: MenuItemType[] = [
+export const productsList: MenuItemType[] = [
     {
         id: "pos",
         label: "Crypto Payment Terminal",
@@ -40,7 +49,15 @@ export const products: MenuItemType[] = [
         description: "Enable any smartphone to accept crypto payments",
         full_description: "Download a simple and user-friendly app to accept payments in more than 40 cryptocurrencies.",
         cta: "explore mobile APP",
-        img: { src: "/product-app.png" }
+        img: { src: "/product-app.png" },
+        benefits: [
+            {
+                id: 'NFC',
+                icon: 'Close',
+                label: 'NFC contactless payments',
+                description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
+            },
+        ]
     },
     {
         id: "e-commerce",
@@ -71,6 +88,14 @@ export const products: MenuItemType[] = [
         description: "Integrate crypto payments where you need it.",
         full_description: "REST API integration will cover every need of your business.",
         cta: "Explore API",
-        img: { src: "/product-api.png" }
+        img: { src: "/product-api.png" },
+        benefits: [
+            {
+                id: 'NFC',
+                icon: 'Close',
+                label: 'NFC contactless payments',
+                description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
+            },
+        ]
     },
 ]

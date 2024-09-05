@@ -47,6 +47,10 @@ const InlineLinkVariants = cva("group relative", {
   },
 });
 
+/**
+ * @param url string;
+ * @param disable boolean;
+ */
 const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
   (
     { url = "", disable = true, children, className, ...props },

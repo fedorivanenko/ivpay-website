@@ -21,6 +21,9 @@ import {
   DrawerContent,
   DrawerTrigger,
 } from "../ui/drawer";
+
+import useDrawer from 'vaul'
+
 import { Icon } from "./icon";
 import { Button, buttonVariants } from "@/components/ui/button";
 
@@ -61,7 +64,7 @@ export type MenuHeaderType = MenuItemType & { children?: MenuItemType[] };
 
 export type MenuType = MenuHeaderType[];
 
-import { products } from "@/components/data-providers/products-provider";
+import { productsList } from "@/components/data-providers/products-provider";
 import { IconType } from "../data-providers/icons-provider";
 
 //TODO: Move menu structure to data-provider
@@ -70,7 +73,7 @@ export const menu: MenuType = [
     id: "products",
     label: "Products",
     order: 1,
-    children: [...products]
+    children: [...productsList]
   },
   {
     id: "use_cases",
@@ -213,6 +216,7 @@ MenuMobileItem.displayName = "MenuMobileItem";
 
 const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
   ({ menuProp = menu, className, ...props }, forwardedRef) => {
+  
     return (
       <div
         className={cn("pointer-events-auto", className)}
@@ -230,51 +234,60 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
               <DrawerClose
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "icon" }),
-                  "mt-2 mr-2 ml-auto",
+                  "ml-auto mr-2 mt-2",
                 )}
               >
                 <Icon icon="Close" />
               </DrawerClose>
               <ScrollArea className="flex-1">
-              <Accordion type="single" collapsible defaultValue={menuProp.find((menuHeader) => menuHeader.order === 1)?.id}>
-                {menuProp
-                  .slice()
-                  .sort((a, b) => a.order - b.order)
-                  .map((menuHeader) => (
-                    <AccordionItem value={menuHeader.id} key={menuHeader.id}>
-                      <AccordionTrigger>{menuHeader.label}</AccordionTrigger>
-                      <AccordionContent>
-                        {menuHeader.children && !menuHeader.url ? (
-                          /* TODO: Make menu.tsx easy to read */
-                          /** Menu Items */
-                          <ul className="flex flex-col space-y-1">
-                            {menuHeader.children
-                              .slice()
-                              .sort((a, b) => a.order - b.order)
-                              .map((menuItem) => (
-                                /* TODO: FIX @Next/Link and CustomLink  */
-                                <Link
-                                  key={menuItem.id}
-                                  href={menuItem.url ? menuItem.url : "/"}
-                                >
-                                  <MenuMobileItem>
-                                  <p>{menuItem.label}</p>
-                              {menuItem.description &&
-                              <p className="mt-1 text-xs text-foreground/70 max-w-[20ch]">
-                                {menuItem.description}
-                              </p>}
-                                  </MenuMobileItem>
-                                </Link>
-                              ))}
-                          </ul>
-                        ) : null}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-              </Accordion>
+                <Accordion
+                  type="single"
+                  collapsible
+                  defaultValue={
+                    menuProp.find((menuHeader) => menuHeader.order === 1)?.id
+                  }
+                >
+                  {menuProp
+                    .slice()
+                    .sort((a, b) => a.order - b.order)
+                    .map((menuHeader) => (
+                      <AccordionItem value={menuHeader.id} key={menuHeader.id}>
+                        <AccordionTrigger>{menuHeader.label}</AccordionTrigger>
+                        <AccordionContent>
+                          {menuHeader.children && !menuHeader.url ? (
+                            /* TODO: Make menu.tsx easy to read */
+                            /** Menu Items */
+                            <ul className="flex flex-col space-y-1">
+                              {menuHeader.children
+                                .slice()
+                                .sort((a, b) => a.order - b.order)
+                                .map((menuItem) => (
+                                  /* TODO: FIX @Next/Link and CustomLink  */
+                                  <DrawerClose asChild>
+                                    <Link
+                                      key={menuItem.id}
+                                      href={menuItem.url ? menuItem.url : "/"}
+                                    >
+                                      <MenuMobileItem>
+                                        <p>{menuItem.label}</p>
+                                        {menuItem.description && (
+                                          <p className="mt-1 max-w-[20ch] text-xs text-foreground/70">
+                                            {menuItem.description}
+                                          </p>
+                                        )}
+                                      </MenuMobileItem>
+                                    </Link>
+                                  </DrawerClose>
+                                ))}
+                            </ul>
+                          ) : null}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                </Accordion>
               </ScrollArea>
               {/** LOGIN / LOGOUT */}
-              <div className="mx-auto flex w-full flex-col space-y-4 pb-12 p-8 mt-auto">
+              <div className="mx-auto mt-auto flex w-full flex-col space-y-4 p-8 pb-12">
                 <Link
                   href="/"
                   className="w-full"
