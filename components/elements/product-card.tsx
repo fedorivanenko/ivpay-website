@@ -50,7 +50,7 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
             </Link>
           </Button>
         </div>
-        <div className="relative order-first h-[54%] sm:order-last sm:aspect-square sm:h-full sm:max-w-[50%]">
+        <div className="relative order-first h-[50%] sm:order-last sm:aspect-square sm:h-full sm:max-w-[50%]">
           <div className="relative mx-auto mb-auto h-full overflow-hidden rounded-md border border-background/80 bg-secondary/80 sm:rounded-xl lg:mb-0 lg:aspect-square lg:h-auto lg:w-full">
             <Badge className="smb:mb-5 absolute left-2.5 top-2.5 z-10 mb-2.5 max-w-min whitespace-nowrap">
               {badge}
