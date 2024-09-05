@@ -3,14 +3,16 @@
 import * as React from "react";
 import { m } from "framer-motion";
 
+import { cn } from "@/lib/utils";
+
 const InfinityMarque = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ children, ...props }, forwardRef) => {
+>(({ children, className, ...props }, forwardRef) => {
   return (
     <div
       ref={forwardRef}
-      className="my-auto flex scale-150 sm:scale-125 xl:scale-150 flex-col justify-center"
+      className={cn("my-auto flex scale-150 sm:scale-125 xl:scale-150 flex-col justify-center", className)}
       {...props}
     >
       <m.div

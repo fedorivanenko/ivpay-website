@@ -36,7 +36,7 @@ export default function EasySafeFastBlock() {
             >
               Easy. Safe. Fast.
             </Heading>
-            <div className="z-10 -mt-16 flex w-full flex-col gap-2 bg-blue-shadow-gradient shadow-on-blue-header-sm sm:-mt-24 sm:aspect-square sm:gap-5 sm:shadow-on-blue-header-xl">
+            <div className="z-10 -mt-16 flex w-full flex-col gap-5 bg-blue-shadow-gradient shadow-on-blue-header-sm sm:-mt-24 sm:aspect-square sm:shadow-on-blue-header-xl">
               <Card className="grid flex-1 grid-cols-1 p-5 backdrop-blur-xl sm:aspect-2/1 sm:grid-flow-col sm:grid-cols-2 sm:p-7.5 lg:aspect-auto xl:p-10">
                 <Heading
                   as="h3"
@@ -55,7 +55,7 @@ export default function EasySafeFastBlock() {
                   </span>
                   + cryptocurrencies now
                 </Text>
-                {/* POP UP VIDEO */}
+
                 <div className="row-span-2 aspect-square overflow-hidden rounded-md sm:aspect-auto sm:rounded-lg">
                   <PopUpVideoPlayer
                   //TODO: place correct link
@@ -67,10 +67,10 @@ export default function EasySafeFastBlock() {
                   />
                 </div>
               </Card>
-              <div className="flex flex-1 flex-col gap-2 sm:gap-5 lg:flex-row">
+              <div className="flex flex-1 flex-col gap-5 lg:flex-row">
                 <Card className="flex aspect-square flex-1 flex-col lg:aspect-auto">
                   <div className="flex flex-1 flex-col">
-                    <InfinityMarque className="my-auto max-h-[50%] lg:max-h-none">
+                    <InfinityMarque>
                       {/*see the data-providers/supported-coins.ts*/}
                       <BTCicon className="aspect-square flex-1 rounded-full" />
                       <ETHicon className="aspect-square flex-1 rounded-full" />
