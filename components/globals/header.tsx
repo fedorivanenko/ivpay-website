@@ -30,7 +30,7 @@ const Header = React.forwardRef<
       ref={forwardRef}
       {...props}
       className={cn(
-        "pointer-events-none top-0 z-50 pt-6 sticky lg:py-2 mb-0 lg:mb-5",
+        "pointer-events-none top-0 z-50 sticky py-2 mb-0 lg:mb-5",
         className,
       )}
     >   
