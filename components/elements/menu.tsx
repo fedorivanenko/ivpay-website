@@ -260,7 +260,7 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
                                   <MenuMobileItem>
                                   <p>{menuItem.label}</p>
                               {menuItem.description &&
-                              <p className="mt-1 text-xs text-foreground/80 max-w-[24ch]">
+                              <p className="mt-1 text-xs text-foreground/70 max-w-[20ch]">
                                 {menuItem.description}
                               </p>}
                                   </MenuMobileItem>
