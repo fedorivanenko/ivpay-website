@@ -34,10 +34,10 @@ const Header = React.forwardRef<
         className,
       )}
     >   
-      <Container className="flex-row items-center justify-between px-6 lg:px-4">
+      <Container className="flex-row items-center justify-between">
         {isMobile !== null && (
-          <Link href="/" className="lg:w-60 pointer-events-auto h-6">
-            <Logo />
+          <Link href="/" className="lg:w-60 pointer-events-auto">
+            <Logo className="h-6"/>
           </Link>
         )}
         {isMobile === true ? (

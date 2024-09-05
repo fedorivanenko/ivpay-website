@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { MotionWrapper } from "../motion/motion-wrapper";
 
 const buttonVariants = cva(
-  "group inline-flex items-center text-sm justify-center gap-1.5 whitespace-nowrap rounded-sm uppercase ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "group inline-flex items-center text-sm justify-center gap-1.5 whitespace-nowrap rounded-sm capitalize ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -21,8 +21,8 @@ const buttonVariants = cva(
       size: {
         default: "px-4 py-2",
         sm: "px-3 py-0 h-7 rounded-[0.5rem] text-xs shadow-lg",
-        lg: "px-3 py-2 xl:px-4 rounded-sm lg:rounded-sm text-xs lg:text-base xl:text-lg min-w-32 lg:min-w-40 xl:min-w-48",
-        xl: "px-6 py-4 rounded-md lg:rounded-lg text-base lg:text-lg xl:text-xl min-w-40 sm:min-w-48 xl:min-w-64",
+        lg: "px-4 py-2 rounded-sm lg:rounded-sm text-base lg:text-lg xl:text-xl min-w-32 lg:min-w-40 xl:min-w-48",
+        xl: "px-6 py-4 rounded-md lg:rounded-lg text-lg lg:text-xl xl:text-2xl min-w-40 sm:min-w-48 xl:min-w-64",
         icon: "h-10 w-10 rounded-sm",
       },
     },

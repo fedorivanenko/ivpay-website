@@ -77,6 +77,7 @@ export const menu: MenuType = [
     label: "Use Cases",
     order: 2,
     children: [
+      //TODO: add description
       { id: "digital", label: "Digital", url: "/", order: 1 },
       { id: "e_commerce", label: "E-Commerce Stores", url: "/", order: 2 },
       { id: "freelancers", label: "Freelancers", url: "/", order: 3 },
@@ -160,8 +161,7 @@ const MenuDesktop = React.forwardRef<
                         .map((menuItem: MenuItemType) => (
                           <Link href={menuItem.url || "/"} key={menuItem.id}>
                             <MenuDesktopItem>
-                              {/* TODO: Fix fonts weights */}
-                              <p className="font-bold">{menuItem.label}</p>
+                              <p>{menuItem.label}</p>
                               {menuItem.description &&
                               <p className="mt-1 text-xs opacity-90">
                                 {menuItem.description}
@@ -258,7 +258,7 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
                                   href={menuItem.url ? menuItem.url : "/"}
                                 >
                                   <MenuMobileItem>
-                                  <p className="font-bold">{menuItem.label}</p>
+                                  <p>{menuItem.label}</p>
                               {menuItem.description &&
                               <p className="mt-1 text-xs text-foreground/80 max-w-[24ch]">
                                 {menuItem.description}

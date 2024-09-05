@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { Icon } from "./icon";
 
 type ProductCardProps = MotionProps & {
   badge: string;
@@ -26,41 +27,41 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
     return (
       <Card
         className={cn(
-          "relative mb-20 flex aspect-3/4 flex-col sm:aspect-2/1 sm:flex-row xl:aspect-11/10",
+          "relative mb-32 flex aspect-3/4 flex-col p-5 sm:aspect-[1.66] sm:flex-row sm:p-7.5 lg:aspect-2/1 lg:p-12 xl:aspect-11/10",
           className,
         )}
         ref={ref}
         {...props}
       >
-        <div className="flex flex-1 flex-col justify-between p-5 pb-7.5 lg:pb-10 sm:p-7.5 lg:p-10">
-          <div>
-            <Badge className="absolute top-5 mb-3 sm:relative sm:top-auto sm:mb-6 z-10">
+        <div className="mr-auto mt-4 flex max-w-screen-sm flex-1 flex-col sm:mt-0">
+          <Heading as="h3" size="48" className="mb-2.5 max-w-[20ch] lg:mb-5">
+            {heading}
+          </Heading>
+          <Text size="24">{content}</Text>
+          <Button
+            size="lg"
+            variant="default"
+            className="mb-2 mt-auto whitespace-nowrap sm:mb-0 sm:max-w-min"
+            asChild
+          >
+            <Link href={link}>
+              {cta}
+              <Icon icon="ArrowUpRight" />
+            </Link>
+          </Button>
+        </div>
+        <div className="relative order-first h-[54%] sm:order-last sm:aspect-square sm:h-full sm:max-w-[50%]">
+          <div className="relative mx-auto mb-auto h-full overflow-hidden rounded-md border border-background/80 bg-secondary/80 sm:rounded-xl lg:mb-0 lg:aspect-square lg:h-auto lg:w-full">
+            <Badge className="smb:mb-5 absolute left-2.5 top-2.5 z-10 mb-2.5 max-w-min whitespace-nowrap">
               {badge}
             </Badge>
-            <Heading
-              as="h3"
-              size="48"
-              className="mb-2.5 sm:mb-4 max-w-[20ch] xl:max-w-[14ch]"
-            >
-              {heading}
-            </Heading>
-            <Text size="28">{content}</Text>
-          </div>
-          <div>
-            <Button size="lg" variant="default" asChild>
-              <Link href={link}>{cta}</Link>
-            </Button>
-          </div>
-        </div>
-        <div className="order-first h-[60%] pt-15 sm:pt-10 gradient-mask-b-[rgba(0,0,0,1.0)_50%,rgba(0,0,0,0.0)_100%] sm:order-last sm:aspect-square sm:h-full sm:max-w-[50%]">
-          <div className="relative mx-auto aspect-square h-full">
             <Image
               src={img.src}
               alt={badge}
               fill
               quality={75}
               sizes="50vw"
-              className="object-cover object-top"
+              className="mt-8 object-contain object-top gradient-mask-b-[rgba(0,0,0,1.0)_50%,rgba(0,0,0,0.0)_100%] sm:object-cover"
             />
           </div>
         </div>

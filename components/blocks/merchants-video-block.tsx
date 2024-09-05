@@ -9,24 +9,28 @@ export default function MerchantVideoBlock() {
   return (
     <section id="merchant-video-block" className="bg-blue-94 py-20 sm:py-40">
       <MotionTriggerWrapper>
-      <Container className="bg-blue-shadow-gradient">
-        <MotionWrapper variants={cardAppearing}>
-        <div className=" overflow-hidden flex flex-1 flex-col rounded-lg border border-background/70 box-border bg-blue-gradient sm:rounded-2xl max-w-[60rem] mx-auto shadow-card-shadow">
-          <Heading as="h2" size="64" className="py-4 px-5 text-background sm:py-8 sm:px-10 max-w-[18ch]">
-          40+ Merchants use IVPAY every day
-          </Heading>
-          <div className="w-full aspect-video rounded-t-lg sm:rounded-t-2xl overflow-hidden shadow-on-blue-header-sm sm:shadow-on-blue-header-xl">
-            <PopUpVideoPlayer
-            //TODO: place correct link
-              url="https://youtu.be/Jsf6DCEnb3s?si=aRZ-lsLdvSfPs5Ey"
-              title="How to use IVPAY"
-              description="See how meracnts use IVPAY"
-              thumbnail={{src:"/merchan-video-thumb.png"}}
-            />
-          </div>
-        </div>
-        </MotionWrapper>
-      </Container>
+        <Container className="bg-blue-shadow-gradient">
+          <MotionWrapper variants={cardAppearing}>
+            <div className="mx-auto box-border flex max-w-[60rem] flex-1 flex-col overflow-hidden rounded-lg border border-background/70 bg-blue-gradient shadow-card-shadow sm:rounded-2xl">
+              <Heading
+                as="h2"
+                size="64"
+                className="max-w-[18ch] px-5 py-4 text-background sm:px-10 sm:py-8"
+              >
+                40+ Merchants use IVPAY every day
+              </Heading>
+              <div className="aspect-video w-full overflow-hidden rounded-t-lg shadow-on-blue-header-sm sm:rounded-t-2xl sm:shadow-on-blue-header-xl">
+                <PopUpVideoPlayer
+                  //TODO: place correct link
+                  url="https://youtu.be/Jsf6DCEnb3s?si=aRZ-lsLdvSfPs5Ey"
+                  title="How to use IVPAY"
+                  description="See how meracnts use IVPAY"
+                  thumbnail={{ src: "/merchan-video-thumb.png" }}
+                />
+              </div>
+            </div>
+          </MotionWrapper>
+        </Container>
       </MotionTriggerWrapper>
     </section>
   );

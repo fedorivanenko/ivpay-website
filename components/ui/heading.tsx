@@ -15,8 +15,8 @@ const headingVariants = cva(
         size: {
             '72': 'text-4xl lg:text-6xl xl:text-7xl leading-none lg:leading-none xl:leading-none',
             '64': 'text-3xl lg:text-6xl xl:text-6xl leading-none lg:leading-none xl:leading-none',
-            '48': 'text-2xl lg:text-4xl xl:text-5xl leading-none lg:leading-none xl:leading-none',
-            '32': 'text-xl sm:text-2xl xl:text-3xl leading-none sm:leading-none xl:leading-none',
+            '48': 'text-2xl lg:text-4xl xl:text-5xl leading-snug lg:leading-none xl:leading-none',
+            '32': 'text-xl sm:text-2xl xl:text-3xl leading-snug sm:leading-none xl:leading-none',
         }
     },
     defaultVariants: {size: "72"}

@@ -65,7 +65,7 @@ const FooterMenu = React.forwardRef<HTMLUListElement, FooterMenuType>(
                       {menuHeader.label}
                     </Link>
                   ) : (
-                    <p className="font-bold uppercase">{menuHeader.label}</p>
+                    <p className="uppercase">{menuHeader.label}</p>
                   )}
                   {menuHeader.children && !menuHeader.url ? (
                     /** Menu Items */

@@ -16,7 +16,7 @@ const ReapTheBenefitsBlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({clas
       <Container>
         <Card className="py-5 sm:py-7.5 xl:py-12">
           {/* Benefits */}
-          <div className="px-5 sm:px-7.5 xl:px-12">
+          <div className="px-7.5 xl:px-12">
             <div>
               <Heading
                 as="h2"
@@ -69,14 +69,14 @@ const ReapTheBenefitsBlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({clas
           </div>
           <Separator className="my-10 sm:my-20" />
           {/* Companies */}
-          <div className="px-5 sm:px-7.5 xl:px-12">
+          <div className="px-7.5 xl:px-12">
             <div className="relative mb-10 flex flex-col justify-between sm:mb-10 sm:flex-row">
               <Heading as="h2" size="64" className="mb-2 max-w-[12ch] sm:mb-0">
                 crypto payments become part of our world
               </Heading>
               <Text
                 size="28"
-                className="max-w-[24ch] capitalize sm:max-w-[20ch] sm:text-right"
+                className="max-w-[28ch] capitalize sm:max-w-[20ch] sm:text-right"
               >
                 Along with individual consumers, companies are adopting crypto
                 as well.
@@ -87,7 +87,7 @@ const ReapTheBenefitsBlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({clas
           </div>
           <Separator className="my-10 sm:my-20" />
           {/* Crypto Growth */}
-          <div className="mb-12 flex flex-col space-y-7.5 px-5 sm:px-10 lg:mb-20 lg:space-y-12 xl:px-12">
+          <div className="mb-12 flex flex-col space-y-7.5 px-7.5 lg:mb-20 lg:space-y-12 xl:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-3">
               <Text className="mb-2 whitespace-nowrap text-7xl lg:mb-0 lg:translate-y-2 lg:text-[6rem]">
                 <Counter to={580} />%

@@ -22,7 +22,7 @@ export default function POSBenefitsBlock() {
           <Heading
             as="h2"
             size="64"
-            className="mb-2 ml-auto mr-3 max-w-[12ch] text-right sm:mb-5 sm:mr-6 sm:max-w-[18ch]"
+            className="ml-auto mr-3 max-w-[12ch] text-right mb-5 sm:mr-6 sm:max-w-[18ch]"
           >
             Everything in One
           </Heading>

@@ -8,7 +8,7 @@ type IconItem = React.SVGProps<SVGSVGElement> & IconType
 /** Custom icon placer. Needed because react-feather-icon and radix-ui-icon blow up bundle size as fkg frog  */
 const Icon = React.forwardRef<React.SVGProps<SVGSVGElement>, IconItem>(({icon, className, ...props}, forwardedRef) => {
     const IconComponent = IconList[icon];
-    return <IconComponent ref={forwardedRef} {...props} className={cn("h-4 w-4 lg:h-5 lg:w-5 inline-block", className)}/>
+    return <IconComponent ref={forwardedRef} {...props} className={cn("h-full aspect-square inline-block", className)}/>
 })
 Icon.displayName = 'Icon'
 
