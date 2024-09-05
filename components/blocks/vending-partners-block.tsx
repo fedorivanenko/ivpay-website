@@ -2,11 +2,11 @@ import { Container } from "@/components/layouts/container";
 import { Heading } from "@/components/ui/heading";
 import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 import { Card } from "@/components/ui/card";
+import Image from "next/image";
 
 //see the icons-provider.ts
 import WorldLine from "@/resources/brands/worldline.svg";
 import Ivenda from "@/resources/brands/ivenda.svg";
-import Image from "next/image";
 
 export default function VendingPartnersBlock() {
   return (

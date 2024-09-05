@@ -1,3 +1,4 @@
+import CTABlock from "@/components/blocks/cta-block";
 import ReapTheBenefitsBlock from "@/components/blocks/reap-the-benefits-block";
 import VendingHeroBlock from "@/components/blocks/vending-hero-block";
 import VendingPartnersBlock from "@/components/blocks/vending-partners-block";
@@ -9,7 +10,8 @@ export default function VendingPage() {
       <VendingHeroBlock />
       <VendingPartnersBlock/>
       <VendingVideoBlock />
-      <ReapTheBenefitsBlock className="bg-soft-gradient-reverse" />
+      <ReapTheBenefitsBlock/>
+      <CTABlock/>
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import APPBenefitsBlock from "@/components/blocks/app-benefits-block";
 import AppHeroBlock from "@/components/blocks/app-hero-block";
+import CTABlock from "@/components/blocks/cta-block";
 import MerchantVideoBlock from "@/components/blocks/merchants-video-block";
 import ReapTheBenefitsBlock from "@/components/blocks/reap-the-benefits-block";
 
@@ -9,6 +10,7 @@ export default function AppPage(){
         <AppHeroBlock/>
         <APPBenefitsBlock/>
         <MerchantVideoBlock/>
-        <ReapTheBenefitsBlock className="bg-soft-gradient-reverse"/>
+        <ReapTheBenefitsBlock/>
+        <CTABlock/>
     </main>)
 }

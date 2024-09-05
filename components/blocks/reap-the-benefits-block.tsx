@@ -9,10 +9,12 @@ import BrandWall from "@/components/elements/brand-wall";
 import { FlagMarquee } from "@/components/elements/flag-marquee";
 
 import { cn } from "@/lib/utils";
+import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 
 const ReapTheBenefitsBlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({className}) => {
   return (
     <section id="reap-the-benefits-block" className={cn("bg-blue-94 py-20", className)}>
+      <MotionTriggerWrapper>
       <Container>
         <Card className="py-5 sm:py-7.5 xl:py-12">
           {/* Benefits */}
@@ -126,6 +128,7 @@ const ReapTheBenefitsBlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({clas
           </div>
         </Card>
       </Container>
+      </MotionTriggerWrapper>
     </section>
   );
 }

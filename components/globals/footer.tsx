@@ -97,8 +97,8 @@ const Footer = React.forwardRef<HTMLDivElement, FooterProp>(
     return (
       <footer ref={forwardedRef} {...props} className={cn("w-full", className)}>
         {/**
-         */}
         <MotionTriggerWrapper>
+         */}
           <Separator decorative orientation="horizontal" />
           <Container className="mx-0 mb-0 grid max-w-none gap-5 px-0 py-7.5 sm:mx-auto sm:grid-cols-3 sm:px-2 lg:mb-20">
             {/** Footer Menu */}
@@ -142,8 +142,8 @@ const Footer = React.forwardRef<HTMLDivElement, FooterProp>(
             </Container>
           </MotionWrapper>
           {/**
-           */}
         </MotionTriggerWrapper>
+           */}
       </footer>
     );
   },

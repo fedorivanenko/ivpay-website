@@ -1,3 +1,4 @@
+import CTABlock from "@/components/blocks/cta-block";
 import ECommerceBenefitsBlock from "@/components/blocks/e-commerce-benefits";
 import ECommerceHeroBlock from "@/components/blocks/e-commerce-hero-block";
 import MerchantVideoBlock from "@/components/blocks/merchants-video-block";
@@ -9,6 +10,7 @@ export default function ECommercePage(){
         <ECommerceHeroBlock/>
         <ECommerceBenefitsBlock/>
         <MerchantVideoBlock/>
-        <ReapTheBenefitsBlock className="bg-soft-gradient-reverse"/>
+        <ReapTheBenefitsBlock/>
+        <CTABlock/>
     </main>)
 }
