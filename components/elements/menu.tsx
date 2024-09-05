@@ -263,9 +263,8 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
                                 .sort((a, b) => a.order - b.order)
                                 .map((menuItem) => (
                                   /* TODO: FIX @Next/Link and CustomLink  */
-                                  <DrawerClose asChild>
+                                  <DrawerClose asChild key={menuItem.id}>
                                     <Link
-                                      key={menuItem.id}
                                       href={menuItem.url ? menuItem.url : "/"}
                                     >
                                       <MenuMobileItem>
