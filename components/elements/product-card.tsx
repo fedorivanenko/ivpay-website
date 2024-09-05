@@ -34,7 +34,7 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
         {...props}
       >
         <div className="mr-auto mt-4 flex max-w-screen-sm flex-1 flex-col sm:mt-0">
-          <Heading as="h3" size="48" className="mb-2.5 max-w-[20ch] lg:mb-5">
+          <Heading as="h3" size="48" className="mb-2 max-w-[20ch] lg:mb-5">
             {heading}
           </Heading>
           <Text size="24">{content}</Text>
