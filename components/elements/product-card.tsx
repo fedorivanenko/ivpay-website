@@ -27,7 +27,7 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
     return (
       <Card
         className={cn(
-          "relative mb-32 flex aspect-3/4 flex-col p-5 sm:aspect-[1.66] sm:flex-row sm:p-7.5 lg:aspect-2/1 lg:p-12 xl:aspect-11/10",
+          "relative mb-32 flex aspect-2/3 flex-col p-5 sm:aspect-[1.66] sm:flex-row sm:p-7.5 lg:aspect-2/1 lg:p-12 xl:aspect-11/10",
           className,
         )}
         ref={ref}

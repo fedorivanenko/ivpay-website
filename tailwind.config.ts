@@ -138,6 +138,7 @@ const config = {
   			'grow-underline': 'growUnderline 0.3s ease forwards',
   		},
   		aspectRatio: {
+  			'2/3': '0.66',
   			'3/4': '0.75',
   			'4/3': '1.33',
   			'8/5': '1.6',

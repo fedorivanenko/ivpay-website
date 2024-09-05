@@ -22,7 +22,7 @@ const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(
   ({ heading, action, heroImage, text, ...props }, forwardedRef) => {
     return (
       <Container ref={forwardedRef} {...props}>
-        <div className="relative my-3 flex aspect-3/4 w-full flex-col items-center justify-between overflow-hidden p-5 sm:aspect-16/9 xl:my-8 xl:p-10">
+        <div className="relative my-3 flex aspect-2/3 w-full flex-col items-center justify-between overflow-hidden p-5 sm:aspect-16/9 xl:my-8 xl:p-10">
           <MotionWrapper variants={imageAppearingVariant}>
             <div
               aria-hidden

@@ -17,7 +17,7 @@ export default async function HeroImage({ src, alt }: HeroImageProps) {
         alt={alt}
         priority
         fill
-        quality={85}
+        quality={75}
         sizes="50vw"
         //placeholder="blur"
         //blurDataURL={blurDataURL}
