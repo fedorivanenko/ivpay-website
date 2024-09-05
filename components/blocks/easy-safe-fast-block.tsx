@@ -12,7 +12,7 @@ import ETHicon from "@/resources/currencies/eth.svg";
 import EURicon from "@/resources/currencies/eur.svg";
 import USDTicon from "@/resources/currencies/usdt.svg";
 
-//import { MotionTriggerWrapper } from ".@/components/motion/motionTriggerWrapper";
+import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 import { MotionWrapper } from "@/components/motion/motion-wrapper";
 import { cardAppearing } from "@/components/motion/motion_utils";
 import { PopUpVideoPlayer } from "@/components/elements/video-palyer";
@@ -23,9 +23,9 @@ export default function EasySafeFastBlock() {
   return (
     <section id="easy-safe-fast-block" className="bg-blue-94 py-20">
       {/**
-       <MotionTriggerWrapper>
        */}
       <Container>
+       <MotionTriggerWrapper>
         <MotionWrapper variants={cardAppearing}>
           <div className="flex flex-1 flex-col">
             <Heading
@@ -113,9 +113,9 @@ export default function EasySafeFastBlock() {
             </div>
           </div>
         </MotionWrapper>
+      </MotionTriggerWrapper>
       </Container>
       {/*
-        </MotionTriggerWrapper>
          */}
     </section>
   );
