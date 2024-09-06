@@ -238,8 +238,8 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
           </DrawerTrigger>
           <DrawerContent className="">
             <div className="flex h-full flex-col rounded-sm bg-background">
-              <div className="flex items-center">
-                <DrawerClose className="h-6 m-4" asChild>
+              <div className="flex">
+                <DrawerClose className="h-6 ml-5 mt-5" asChild>
                   <Link href='/'>
                   <Logo/>
                   </Link>
@@ -247,7 +247,7 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
               <DrawerClose
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "icon" }),
-                  "ml-auto mr-2",
+                  "ml-auto mr-2 mt-2",
                 )}
               >
                 <Icon icon="Close" />
