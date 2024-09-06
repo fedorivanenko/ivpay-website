@@ -16,6 +16,10 @@ import Opencart from '@/resources/brands/opencart.svg'
 import WorldLine from '@/resources/brands/worldline.svg'
 import Ivenda from '@/resources/brands/ivenda.svg'
 
+import Binance from '@/resources/brands/binance.svg'
+import OKX from '@/resources/brands/OKX.svg'
+import GateIo from '@/resources/brands/gateio.svg'
+
 export type IconType = {
     icon: keyof typeof IconList;
 }
@@ -35,4 +39,7 @@ export const IconList = {
     Opencart: Opencart,
     WorldLine: WorldLine,
     Ivenda: Ivenda,
+    Binance: Binance,
+    OKX: OKX,
+    GateIo: GateIo,
 };

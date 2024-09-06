@@ -93,7 +93,7 @@ export const menu: MenuType = [
     label: "Company",
     order: 3,
     children: [
-      { id: "about", label: "About us", url: "/", order: 1 },
+      { id: "about", label: "About us", url: "/about", order: 1 },
       { id: "investors", label: "Investors", url: "/", order: 2 },
       { id: "press", label: "Press", url: "/", order: 3 },
       { id: "privacy", label: "Privacy policy", url: "/", order: 4 },
@@ -144,7 +144,7 @@ const MenuDesktop = React.forwardRef<
 >(({ menuProp = menu, className, ...props }, forwardedRef) => {
   return (
     <NavigationMenu className={cn(" pointer-events-auto p-2",className)} ref={forwardedRef} {...props}>
-      <div aria-hidden className="border border-border bg-background/70 backdrop-blur pointer-events-none absolute inset-0 rounded-sm z-0 shadow-xl shadow-accent/15"/>
+      <div aria-hidden className="border border-border bg-background/90 backdrop-blur pointer-events-none absolute inset-0 rounded-sm z-0 shadow-xl shadow-accent/15"/>
       <NavigationMenuList>
         {menuProp
           .slice()

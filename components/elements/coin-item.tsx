@@ -19,12 +19,13 @@ const CoinItem = React.forwardRef<HTMLDivElement, CoinType>(
     return (
       <div
         ref={forwardedRef}
-        className="flex aspect-square w-full flex-col overflow-hidden rounded-md border border-background/50 bg-background/90 p-2.5 shadow-card-shadow sm:rounded-lg sm:p-5 sm:pb-4 lg:aspect-8/5"
+        //className="flex aspect-square w-full flex-col overflow-hidden rounded-md border border-background/50 bg-background/90 p-2.5 shadow-card-shadow sm:rounded-lg sm:p-5 sm:pb-4 lg:aspect-8/5"
+        className="flex aspect-square w-full flex-col overflow-hidden p-2.5 sm:p-5 sm:pb-4 lg:aspect-8/5"
         {...props}
       >
         <div className="relative aspect-3/4 sm:aspect-square w-8 sm:w-10 sm:-translate-x-1 sm:-translate-y-1 xl:w-12">
           {IconComponent ? (
-            <IconComponent />
+            <IconComponent/>
           ) : (
             <div className="aspect-square h-full rounded-full bg-secondary" />
           )}

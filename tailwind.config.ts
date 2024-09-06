@@ -1,7 +1,9 @@
 import type { Config } from "tailwindcss";
 
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require('tailwindcss/plugin')
 
+/** @type {import('tailwindcss').Config} */
 const config = {
   darkMode: ["class"],
   content: [
@@ -95,10 +97,12 @@ const config = {
   		},
   		backgroundImage: {
   			'soft-gradient': 'linear-gradient(to bottom, transparent 0%, hsl(var(--blue-94)) 75%, hsl(var(--blue-94)) 100%)',
+			'text-gradient': 'linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(var(--blue-94)) 80%)',
   			'soft-gradient-reverse': 'linear-gradient(to top, transparent 0%, hsl(var(--blue-94)) 75%, hsl(var(--blue-94)) 100%)',
   			'blue-shadow-gradient': 'radial-gradient(closest-side, hsla(235, 100%, 60%, 0.25) 0%, hsla(235, 100%, 60%, 0) 100%)',
   			'white-shadow-gradient': 'radial-gradient(closest-side, hsla(0, 0%, 100%, 0.5) 0%, hsla(0, 0%, 100%, 0.25) 60%, hsla(0, 0%, 100%, 0) 100%)',
   			'hero-gradient': 'linear-gradient(to bottom, hsla(234, 100%, 80%, 0) 0%, hsla(234, 100%, 80%, 0.2) 20%, hsla(235, 100%, 80%, 0.8) 80%, hsla(235, 100%, 75%, 0.8) 100%), radial-gradient(ellipse 100% 100% at bottom left, hsl(var(--accent)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at bottom right, hsl(var(--accent)) 10%, transparent 50%), radial-gradient(ellipse 100% 100% at center, hsl(var(--background)) 20%, transparent 100%)',
+			'darkshade-gradient' : 'radial-gradient(closest-side, hsla(235, 100%, 60%, 0.2) 0%, hsla(235, 100%, 60%, 0) 80%), linear-gradient(to bottom, hsl(var(--darkshade)) 0%, hsl(var(--accent)) 100%)',
   			'blue-gradient': 'radial-gradient(ellipse 90% 180% at top left, hsl(var(--accent)) 10%, transparent 100%), radial-gradient(ellipse 90% 180% at bottom right, hsl(var(--accent)) 10%, transparent 100%), linear-gradient(to bottom, hsla(235, 100%, 60%, 0.4) 0%, transparent 60px)'
   		},
   		boxShadow: {
@@ -145,13 +149,28 @@ const config = {
   			'16/9': '1.77',
   			'2/1': '2',
   			'11/10': '2.5'
-  		}
+  		},
+		  textShadow: {
+			sm: '0 1px 2px var(--tw-shadow-color)',
+			DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+			lg: '0 8px 16px var(--tw-shadow-color)',
+		  },
   	}
-  },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("tailwind-gradient-mask-image"),
-  ],
+	},
+	plugins: [
+		require("tailwindcss-animate"),
+		require("tailwind-gradient-mask-image"),
+		plugin(function ({ matchUtilities, theme }: { matchUtilities: any; theme: any }) {
+			matchUtilities(
+				{
+					'text-shadow': (value: string) => ({
+						textShadow: value,
+					}),
+				},
+				{ values: theme('textShadow') }
+			);
+		})
+	],
 } satisfies Config;
 
 export default config;

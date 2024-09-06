@@ -1,7 +1,11 @@
 'use client'
 
 import React from 'react';
-import { LazyMotion, domAnimation } from 'framer-motion';
+import { 
+  LazyMotion, 
+  //domAnimation, 
+  domMax 
+} from "framer-motion";
 
 function LazyMotionWrapper({
     children,
@@ -9,7 +13,7 @@ function LazyMotionWrapper({
     children: React.ReactNode;
   }>) {
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={domMax}>
         {children}
     </LazyMotion>
   );
