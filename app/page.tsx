@@ -10,9 +10,9 @@ import TogetherWithUsBlock from "@/components/blocks/home-together-with-us-block
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <EasySafeFastBlock/>
       <HomeHeroBlock/>
       <OurProductsBlock/>
+      <EasySafeFastBlock/>
       <ReapTheBenfitsBlock/>
       <CoinsListBlock/>
       <TogetherWithUsBlock/>

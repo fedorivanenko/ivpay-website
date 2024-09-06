@@ -66,6 +66,8 @@ export type MenuType = MenuHeaderType[];
 
 import { productsList } from "@/components/data-providers/products-provider";
 import { IconType } from "@/components/data-providers/icons-provider";
+import { Separator } from "../ui/separator";
+import { Logo } from "./logo";
 
 //TODO: Move menu structure to data-provider
 export const menu: MenuType = [
@@ -207,7 +209,7 @@ const MenuMobileItem = React.forwardRef<
   return (
     <li
       className={cn(
-        "relative w-full rounded-[8px] py-2 px-4 text-sm transition hover:bg-secondary/70",
+        "relative w-full rounded-[8px] py-2 pb-2.5 px-4 text-sm hover:bg-accent group hover:shadow-lg hover:shadow-accent/40",
         className,
       )}
       ref={ref}
@@ -236,15 +238,22 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
           </DrawerTrigger>
           <DrawerContent className="">
             <div className="flex h-full flex-col rounded-sm bg-background">
+              <div className="flex items-center">
+                <DrawerClose className="h-6 m-4" asChild>
+                  <Link href='/'>
+                  <Logo/>
+                  </Link>
+                </DrawerClose>
               <DrawerClose
                 className={cn(
                   buttonVariants({ variant: "ghost", size: "icon" }),
-                  "ml-auto mr-2 mt-2",
+                  "ml-auto mr-2",
                 )}
               >
                 <Icon icon="Close" />
               </DrawerClose>
-              <ScrollArea className="flex-1">
+                </div>
+              <ScrollArea className="flex-1">    
                 <Accordion
                   type="single"
                   collapsible
@@ -273,9 +282,11 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
                                       href={menuItem.url ? menuItem.url : "/"}
                                     >
                                       <MenuMobileItem>
-                                        <p>{menuItem.label}</p>
+                                        <p className="group-hover:text-background">
+                                          {menuItem.label}
+                                        </p>
                                         {menuItem.description && (
-                                          <p className="mt-1 max-w-[20ch] text-xs text-foreground/70">
+                                          <p className="mt-1 max-w-[20ch] text-xs text-foreground/70 group-hover:text-background/80">
                                             {menuItem.description}
                                           </p>
                                         )}

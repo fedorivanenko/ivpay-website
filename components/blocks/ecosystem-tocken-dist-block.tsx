@@ -1,9 +1,9 @@
 import { Container } from "../layouts/container";
 import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
-import { ScrollArea, ScrollBar } from "../ui/scroll-area";
-import { Heading } from "../ui/heading";
-import { thousandsSeparator } from "../elements/thousandsSeparator";
-import { MotionWrapper } from "../motion/motion-wrapper";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Heading } from "@/components/ui/heading";
+import { thousandsSeparator } from "@/components/elements/thousandsSeparator";
+import { MotionWrapper } from "@/components/motion/motion-wrapper";
 
 
 export type DistributionItemType = {
@@ -26,17 +26,100 @@ export type DistributionListType = {
 
 export const DistributionList: DistributionListType = {
   items: [
-    { title: "Private 1", percent: 7.5, amount: 75000000, price: 0.02, raise:1500000, ics:75000, vesting: "5% on TGE followed by 3 month cliff, then in equal installments every month for 9 months" }, 
-    { title: "Private 2", percent: 6.8, amount: 68000000, price: 0.025, raise: 1700000, ics:170000, vesting: "10% on TGE followed by 1 month cliff, then in equal installments every month for 9 months" },
-    { title: "Influence Round", percent: 4.0, amount: 40000000, price: 0.025, raise: 1000000, ics:150000, vesting: "15% on TGE followed by 1 month cliff, then in equal installments every month for 9 months" },
-    { title: "Public sale", percent: 5.0, amount: 50000000, price: 0.03, raise: 1500000, ics:450000, vesting: "30% on TGE, then in equal installments every day for 2 months" },
-    { title: "Liquidity CEX/DEX", percent: 2.5, amount: 25000000, price: undefined, raise: 0, ics:undefined, vesting: "—" },
-    { title: "Team", percent: 15, amount: 150000000, price: undefined, raise: 0, ics:undefined, vesting: "Cliff 14 months 100% at 24 month" },
-    { title: "Advisors", percent: 2, amount: 20000000, price: undefined, raise: 0, ics:undefined, vesting: "Cliff 12 months 100% at 12 month" },
-    { title: "Listing", percent: 1.2, amount: 12000000, price: undefined, raise: 0, ics:undefined, vesting: "Cliff 1 months 100% at 3 month" },
-    { title: "Marketing", percent: 20, amount: 200000000, price: undefined, raise: 0, ics:undefined, vesting: "Cliff 1 months 100% at 12 month" },
-    { title: "Ecosystem Fund", percent: 36, amount: 360000000, price: undefined, raise: 0, ics:undefined, vesting: "Cliff 1 months 100% at 48 month" },
-],
+    {
+      title: "Private 1",
+      percent: 7.5,
+      amount: 75000000,
+      price: 0.02,
+      raise: 1500000,
+      ics: 75000,
+      vesting:
+        "5% on TGE followed by 3 month cliff, then in equal installments every month for 9 months",
+    },
+    {
+      title: "Private 2",
+      percent: 6.8,
+      amount: 68000000,
+      price: 0.025,
+      raise: 1700000,
+      ics: 170000,
+      vesting:
+        "10% on TGE followed by 1 month cliff, then in equal installments every month for 9 months",
+    },
+    {
+      title: "Influence Round",
+      percent: 4.0,
+      amount: 40000000,
+      price: 0.025,
+      raise: 1000000,
+      ics: 150000,
+      vesting:
+        "15% on TGE followed by 1 month cliff, then in equal installments every month for 9 months",
+    },
+    {
+      title: "Public sale",
+      percent: 5.0,
+      amount: 50000000,
+      price: 0.03,
+      raise: 1500000,
+      ics: 450000,
+      vesting: "30% on TGE, then in equal installments every day for 2 months",
+    },
+    {
+      title: "Liquidity CEX/DEX",
+      percent: 2.5,
+      amount: 25000000,
+      price: undefined,
+      raise: 0,
+      ics: undefined,
+      vesting: "—",
+    },
+    {
+      title: "Team",
+      percent: 15,
+      amount: 150000000,
+      price: undefined,
+      raise: 0,
+      ics: undefined,
+      vesting: "Cliff 14 months 100% at 24 month",
+    },
+    {
+      title: "Advisors",
+      percent: 2,
+      amount: 20000000,
+      price: undefined,
+      raise: 0,
+      ics: undefined,
+      vesting: "Cliff 12 months 100% at 12 month",
+    },
+    {
+      title: "Listing",
+      percent: 1.2,
+      amount: 12000000,
+      price: undefined,
+      raise: 0,
+      ics: undefined,
+      vesting: "Cliff 1 months 100% at 3 month",
+    },
+    {
+      title: "Marketing",
+      percent: 20,
+      amount: 200000000,
+      price: undefined,
+      raise: 0,
+      ics: undefined,
+      vesting: "Cliff 1 months 100% at 12 month",
+    },
+    {
+      title: "Ecosystem Fund",
+      percent: 36,
+      amount: 360000000,
+      price: undefined,
+      raise: 0,
+      ics: undefined,
+      vesting: "Cliff 1 months 100% at 48 month",
+    },
+  ],
   get total() {
     return this.items.reduce((sum, item) => sum + item.percent, 0);
   },
@@ -47,17 +130,18 @@ export const DistributionList: DistributionListType = {
     return this.items.reduce((sum, item) => sum + item.raise, 0);
   },
   get initailCap() {
-    return this.items.reduce((sum, item) => sum + (item.ics? item.ics : 0), 0);
+    return this.items.reduce((sum, item) => sum + (item.ics ? item.ics : 0), 0);
   },
 };
+
 
 export default function EcosystemTockenDistributionBlock(){
 
     return (
       <section id="tockenomics-block" className="py-20">
         {/*
-         <MotionTriggerWrapper>
          */}
+         <MotionTriggerWrapper>
         <Container className="overflow-auto">
           <Heading as="h2" size="64" className="mb-2 lg:mb-0">
             Tocken Distribution
@@ -108,8 +192,8 @@ export default function EcosystemTockenDistributionBlock(){
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
         </Container>
+        </MotionTriggerWrapper>
         {/*
-            </MotionTriggerWrapper>
              */}
       </section>
     );
