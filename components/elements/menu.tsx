@@ -75,7 +75,7 @@ export const menu: MenuType = [
     id: "products",
     label: "Products",
     order: 1,
-    children: [...productsList]
+    children: [...productsList],
   },
   {
     id: "use_cases",
@@ -95,11 +95,12 @@ export const menu: MenuType = [
     label: "Company",
     order: 3,
     children: [
-      { id: "about", 
-        label: "About us", 
-        description: "See our mission and our team", 
-        url: "/about", 
-        order: 1 
+      {
+        id: "about",
+        label: "About us",
+        description: "See our mission and our team",
+        url: "/about",
+        order: 1,
       },
       { id: "ecosystem", label: "Ecosystem", url: "/ecosystem", order: 2 },
       { id: "press", label: "Press", url: "/", order: 3 },
@@ -124,6 +125,7 @@ export const menu: MenuType = [
       { id: "contact", label: "Contact us", url: "/", order: 5 },
     ],
   },
+  { id: "pricing", label: "Pricing", order: 5, url: "/" },
 ];
 
 const MenuDesktopItem = React.forwardRef<
@@ -239,44 +241,48 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
           <DrawerContent className="">
             <div className="flex h-full flex-col rounded-sm bg-background">
               <div className="flex">
-                <DrawerClose className="h-6 ml-5 mt-5" asChild>
-                  <Link href='/'>
-                  <Logo/>
+                <DrawerClose className="ml-5 mt-5 h-6" asChild>
+                  <Link href="/">
+                    <Logo />
                   </Link>
                 </DrawerClose>
-              <DrawerClose
-                className={cn(
-                  buttonVariants({ variant: "ghost", size: "icon" }),
-                  "ml-auto mr-2 mt-2",
-                )}
-              >
-                <Icon icon="Close" />
-              </DrawerClose>
-                </div>
-              <ScrollArea className="flex-1">    
+                <DrawerClose
+                  className={cn(
+                    buttonVariants({ variant: "ghost", size: "icon" }),
+                    "ml-auto mr-2 mt-2",
+                  )}
+                >
+                  <Icon icon="Close" />
+                </DrawerClose>
+              </div>
+              <ScrollArea className="flex-1">
+                {/*TODO: add nav and ul */}
                 <Accordion
                   type="single"
                   collapsible
-                  defaultValue={
-                    menuProp.find((menuHeader) => menuHeader.order === 1)?.id
-                  }
+//                  defaultValue={  menuProp.find((menuHeader) => menuHeader.order === 1)?.id}
                 >
                   {menuProp
                     .slice()
                     .sort((a, b) => a.order - b.order)
-                    .map((menuHeader) => (
-                      <AccordionItem value={menuHeader.id} key={menuHeader.id}>
-                        <AccordionTrigger>{menuHeader.label}</AccordionTrigger>
-                        <AccordionContent>
-                          {menuHeader.children && !menuHeader.url ? (
-                            /* TODO: Make menu.tsx easy to read */
-                            /** Menu Items */
-                            <ul className="flex flex-col space-y-1">
+                    .map((menuHeader) =>
+                      menuHeader.children && !menuHeader.url ? (
+                        <AccordionItem
+                          value={menuHeader.id}
+                          key={menuHeader.id}
+                          className="px-0"
+                        >
+                          <AccordionTrigger className="px-4 hover:bg-accent hover:shadow-lg hover:shadow-accent/40 hover:text-background">
+                            {menuHeader.label}
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            {/* TODO: Make menu.tsx easy to read */}
+                            {/* Menu Items */}
+                            <ul className="flex flex-col space-y-1 px-4">
                               {menuHeader.children
                                 .slice()
                                 .sort((a, b) => a.order - b.order)
                                 .map((menuItem) => (
-                                  /* TODO: FIX @Next/Link and CustomLink  */
                                   <DrawerClose asChild key={menuItem.id}>
                                     <Link
                                       href={menuItem.url ? menuItem.url : "/"}
@@ -295,10 +301,29 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
                                   </DrawerClose>
                                 ))}
                             </ul>
-                          ) : null}
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ) : (
+                        <>
+                        <DrawerClose asChild key={menuHeader.id}>
+                        <Link
+                          href={menuHeader.url ? menuHeader.url : "/"}
+                        ><li className="relative w-full p-4 list-none hover:bg-accent group hover:shadow-lg hover:shadow-accent/40">
+                            <p className="group-hover:text-background">
+                              {menuHeader.label}
+                            </p>
+                            {menuHeader.description && (
+                              <p className="mt-1 max-w-[20ch] text-xs text-foreground/70 group-hover:text-background/80">
+                                {menuHeader.description}
+                              </p>
+                            )}
+                            </li>
+                        </Link>
+                      </DrawerClose>
+                      <Separator decorative orientation="horizontal"/>
+                      </>
+                      ),
+                    )}
                 </Accordion>
               </ScrollArea>
               {/** LOGIN / LOGOUT */}
@@ -306,19 +331,17 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
                 <Link
                   href="/"
                   className="w-full"
-                  /**!!!! THIS IS NEXTJS NOT CUSTOM LINK */
                 >
                   <Button className="w-full" variant="white" size="lg">
-                    Log In
+                    Log In<Icon icon='LogIn'/>
                   </Button>
                 </Link>
                 <Link
                   href="/"
                   className="w-full"
-                  /**!!!! THIS IS NEXTJS NOT CUSTOM LINK */
                 >
                   <Button className="w-full" size="lg">
-                    Sign Up
+                    Sign Up<Icon icon="ArrowUpRight"/>
                   </Button>
                 </Link>
               </div>
