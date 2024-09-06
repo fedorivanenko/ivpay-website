@@ -5,11 +5,13 @@ import * as React from 'react'
 import { animate, m, useInView, useMotionValue } from 'framer-motion';
 import { useEffect, useRef, useState, useImperativeHandle } from 'react';
 import { textAppearing } from '../motion/motion_utils';
-import { thousandsSeparator } from '@/components/elements/thousandsSeparator';
+import { thousandsSeparator, ThousandsSeparatorProps } from '@/components/elements/thousandsSeparator';
 
 type CounterProps = {
   to: number;
   duration?: number;
+  decimal?: ThousandsSeparatorProps['decimal']
+  separator?: ThousandsSeparatorProps['separator']
 }
 
 export const customRound = (num: number) => {
@@ -24,7 +26,7 @@ export const customRound = (num: number) => {
   }
 };
 
-const Counter = React.forwardRef<HTMLElement, CounterProps>(({ to, duration = 1.25 }, forwardedRef) => {
+const Counter = React.forwardRef<HTMLElement, CounterProps>(({ to, decimal, separator, duration = 1.25 }, forwardedRef) => {
 
   const internalRef = useRef<HTMLSpanElement>(null);
   const isInView = useInView(internalRef);
@@ -64,7 +66,7 @@ const Counter = React.forwardRef<HTMLElement, CounterProps>(({ to, duration = 1.
       className='inline-block whitespace-pre-wrap origin-bottom-left'
       aria-label={to.toString()}
     >
-      {thousandsSeparator({number:roundedCount})}
+      {thousandsSeparator({number:roundedCount, decimal: decimal, separator:separator})}
     </m.span>
   );
 })

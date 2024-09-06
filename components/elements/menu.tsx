@@ -65,7 +65,7 @@ export type MenuHeaderType = MenuItemType & { children?: MenuItemType[] };
 export type MenuType = MenuHeaderType[];
 
 import { productsList } from "@/components/data-providers/products-provider";
-import { IconType } from "../data-providers/icons-provider";
+import { IconType } from "@/components/data-providers/icons-provider";
 
 //TODO: Move menu structure to data-provider
 export const menu: MenuType = [
@@ -93,8 +93,13 @@ export const menu: MenuType = [
     label: "Company",
     order: 3,
     children: [
-      { id: "about", label: "About us", url: "/about", order: 1 },
-      { id: "investors", label: "Investors", url: "/", order: 2 },
+      { id: "about", 
+        label: "About us", 
+        description: "See our mission and our team", 
+        url: "/about", 
+        order: 1 
+      },
+      { id: "ecosystem", label: "Ecosystem", url: "/ecosystem", order: 2 },
       { id: "press", label: "Press", url: "/", order: 3 },
       { id: "privacy", label: "Privacy policy", url: "/", order: 4 },
       { id: "terms", label: "Terms of use", url: "/", order: 5 },

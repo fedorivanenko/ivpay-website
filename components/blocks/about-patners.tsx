@@ -15,8 +15,8 @@ export default function AboutPartnersBlock() {
   return (
     <section id="about-partners-block" className="py-20">
       {/**
-      <MotionTriggerWrapper>
        */}
+       <MotionTriggerWrapper>
         <Container>
         <Heading
             as="h2"
@@ -72,8 +72,8 @@ export default function AboutPartnersBlock() {
             </MotionWrapper>
           </div>
         </Container>
+        </MotionTriggerWrapper>
       {/**
-      </MotionTriggerWrapper>
        */}
     </section>
   );

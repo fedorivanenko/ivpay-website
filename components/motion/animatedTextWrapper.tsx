@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { cn } from "@/lib/utils";
 
 import { m, HTMLMotionProps } from "framer-motion";
 import { textAppearing, textStaggerChildren } from "./motion_utils";
@@ -73,7 +74,18 @@ const AnimatedTextWrapper = React.forwardRef<
     >
       {processedChildren.children.map((item, index) =>
         React.isValidElement(item) && item.type === "br" ? (
-          <br key={index} aria-hidden/>
+          <br key={index} aria-hidden />
+        ) : React.isValidElement(item) && item.type === "span" ? (
+          <m.span
+            variants={textAppearing}
+            key={index}
+            className={cn(
+              "inline-block origin-bottom-left whitespace-pre-wrap",
+              (item.props as { className?: string }).className,
+            )}
+          >
+            {(item.props as { children?: React.ReactNode }).children}
+          </m.span>
         ) : (
           <m.span
             variants={textAppearing}

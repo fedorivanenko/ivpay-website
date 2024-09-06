@@ -1,7 +1,7 @@
 import React from 'react';
 
-type ThousandsSeparatorProps = {
-  number: string | number;
+export type ThousandsSeparatorProps = {
+  number: string | number ;
   decimal?: 'comma' | 'dot';
   separator?: 'comma' | 'dot' | 'space';
 }
