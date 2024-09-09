@@ -32,7 +32,7 @@ export default function PricingHeroBlock() {
                 </MotionWrapper>
               </div>
               <h1 className="bg-text-gradient z-10 bg-clip-text pt-4 text-center text-[6rem] uppercase leading-none text-transparent sm:text-[9rem] lg:text-[12rem] xl:text-[16rem]">
-                Pricign
+                Pricing
               </h1>
               <MotionWrapper>
               <div className="rounded-md border border-border/50 m-5 lg:m-10 bg-background/20 py-5 px-5 lg:px-10 backdrop-blur-md text-background xl:rounded-lg shadow-xl shadow-darkshade/10 z-20">
