@@ -43,7 +43,7 @@ export default function AboutHeroBlock() {
                 size="72"
                 className="z-20 normal-case bg-gradient-to-b from-black/30 from-70% to-transparent p-16 xl:p-24 text-center text-background lg:p-20"
               >
-                We&apos;re on a mission to make instant crypto transactions easy
+                We&apos;re on a mission to make instant crypto easy
                 and accessible for everyone
               </Heading>
               <Button
