@@ -19,7 +19,7 @@ import { MotionWrapper } from '../motion/motion-wrapper';
 //TODO: replace with table
 export default function PricingListBlock() {
 
-const gridParams =" grid-rows-" + (Object.keys(pricingList.pricingItems[0]).length-1);
+//const gridParams =" grid-rows-" + (Object.keys(pricingList.pricingItems[0]).length-1);
 
   return (
     <section id="POS-hero-block" className="py-20">
@@ -31,7 +31,7 @@ const gridParams =" grid-rows-" + (Object.keys(pricingList.pricingItems[0]).leng
           Pricing Plans
         </Heading>
         <MotionWrapper>
-        <div className={"grid grid-flow-col divide-y divide-border border-collapse max-w-screen-lg w-full mx-auto" + gridParams }>
+        <div className={"grid grid-flow-col divide-y divide-border border-collapse max-w-screen-lg w-full mx-auto grid-rows-9"}>
           {/* Descriptions */}
           <div />
           {Object.values(pricingList.descriptions).map(
