@@ -7,8 +7,9 @@ const plugin = require('tailwindcss/plugin')
 const config = {
   darkMode: ["class"],
   content: [
+	"*.tsx",
     "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx,jsx}",
+    "./components/**/*.{ts,tsx,jsx,md,mdx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],

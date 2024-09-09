@@ -1,4 +1,4 @@
-import CTABlock from "@/components/blocks/cta-block";
+import { CTABlock } from "@/components/blocks/cta-block";
 import MerchantVideoBlock from "@/components/blocks/merchants-video-block";
 import POSBenefitsBlock from "@/components/blocks/pos-benefits-block";
 import POSHeroBlock from "@/components/blocks/pos-hero-block";

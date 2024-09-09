@@ -25,7 +25,7 @@ const textVariants = cva(
             '18': 'text-base lg:text-lg xl:text-lg leading-normal',
             '24': 'text-base lg:text-xl xl:text-2xl leading-normal',
             '28': 'text-base lg:text-2xl xl:text-2.5xl leading-normal',
-            '32': 'text-base lg:text-2xl xl:text-3xl leading-normal',
+            '32': 'text-lg lg:text-2xl xl:text-3xl leading-normal',
         }
     },
     defaultVariants: {size: "16"}

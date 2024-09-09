@@ -8,11 +8,13 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/elements/icon";
 import { MotionWrapper } from "../motion/motion-wrapper";
 
-export default function CTABlock() {
+import { cn } from "@/lib/utils";
+
+const CTABlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({className}) => {
   return (
     <section
       id="POS-hero-block"
-      className="bg-soft-gradient-reverse pb-0 pt-20"
+      className={cn("bg-soft-gradient-reverse pb-0 pt-20", className)}
     >
       <MotionTriggerWrapper>
         <Container>
@@ -42,3 +44,5 @@ export default function CTABlock() {
     </section>
   );
 }
+
+export { CTABlock }

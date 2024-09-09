@@ -30,9 +30,11 @@ type FooterType = {
   socials: SocialNamesType;
 };
 
-const footer = {
+import { contact } from "@/components/data-providers/contacts-provider";
+
+export const footer = {
   footerMenu: menu,
-  address: "Av. Duque de Loulé 12, 1050-093 Lisbon",
+  address: contact.address,
   socials: socialNames,
 };
 
@@ -56,12 +58,13 @@ const FooterMenu = React.forwardRef<HTMLUListElement, FooterMenuType>(
           {footerMenuProp
             .slice()
             .sort((a, b) => a.order - b.order)
-            .map((menuHeader) => (
+            .map((menuHeader) => 
+              menuHeader.only !== 'menuOnly' && (
               /** Menu Header */
               <MotionWrapper key={menuHeader.id}>
                 <li className="text-sm">
                   {menuHeader.url ? (
-                    <Link url={menuHeader.url} disable={menuHeader.disable}>
+                    <Link url={menuHeader.url} disable={menuHeader.disable} className="max-w-min overflow-hidden">
                       {menuHeader.label}
                     </Link>
                   ) : (
@@ -73,9 +76,10 @@ const FooterMenu = React.forwardRef<HTMLUListElement, FooterMenuType>(
                       {menuHeader.children
                         .slice()
                         .sort((a, b) => a.order - b.order)
-                        .map((menuItem) => (
+                        .map((menuItem) => 
+                          menuItem.only !== 'menuOnly' && (
                           <li key={menuItem.id}>
-                            <Link url={menuItem.url} disable={menuItem.disable}>
+                            <Link url={menuItem.url} disable={menuItem.disable} className="max-w-min overflow-hidden">
                               {menuItem.label}
                             </Link>
                           </li>
@@ -84,7 +88,8 @@ const FooterMenu = React.forwardRef<HTMLUListElement, FooterMenuType>(
                   ) : null}
                 </li>
               </MotionWrapper>
-            ))}
+            )
+            )}
         </ul>
       </MotionWrapper>
     );

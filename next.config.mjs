@@ -1,6 +1,6 @@
+import createMDX from '@next/mdx'
 import withPlaiceholder from "@plaiceholder/next";
 import withBundleAnalyzer from '@next/bundle-analyzer';
-//import nextTranslate from "next-translate";
 import nextComposePlugins from "next-compose-plugins";
 
 const { withPlugins } = nextComposePlugins;
@@ -13,6 +13,7 @@ const bundleAnalyzer = withBundleAnalyzer({
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   webpack: (config, { isServer }) => {
     // Optimize Three.js
     config.resolve.alias = {
@@ -53,11 +54,15 @@ const nextConfig = {
   },
 };
 
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+})
+
 export default withPlugins(
   [
     withPlaiceholder,
     bundleAnalyzer,
-    //nextTranslate,
+    withMDX,
   ],
   nextConfig
 );

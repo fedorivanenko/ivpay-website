@@ -34,7 +34,7 @@ const MotionWrapper = React.forwardRef<unknown, MotionWrapperProps>(
     if (!asDiv) {
       React.Children.only(children);
       if (React.isValidElement(children)) {
-        const MotionComponent = m(children.type);
+        const MotionComponent = React.useMemo(() => m(children.type), [children.type]);
         return (
           <MotionComponent
             variants={variants}

@@ -1,4 +1,4 @@
-import CTABlock from "@/components/blocks/cta-block";
+import {CTABlock} from "@/components/blocks/cta-block";
 import ReapTheBenefitsBlock from "@/components/blocks/reap-the-benefits-block";
 import VendingHeroBlock from "@/components/blocks/vending-hero-block";
 import VendingPartnersBlock from "@/components/blocks/vending-partners-block";

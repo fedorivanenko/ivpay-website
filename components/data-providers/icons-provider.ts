@@ -1,5 +1,5 @@
 //https://feathericons.com/
-
+// !!! stroke:2px -> stroke:1.6px
 import LogIn from "@/resources/icons/log-in.svg"
 import ArrowUpRight from '@/resources/icons/arrow-up-right.svg'
 import ChevronDown from '@/resources/icons/chevron-down.svg'
@@ -7,6 +7,8 @@ import Menu from '@/resources/icons/menu.svg'
 import Close from '@/resources/icons/close.svg'
 import Play from '@/resources/icons/play.svg'
 import Download from '@/resources/icons/download.svg'
+import XCicrcle from '@/resources/icons/x-circle.svg'
+import CheckCircle from '@/resources/icons/check-circle.svg'
 
 //brands
 import Woo from '@/resources/brands/woo.svg'
@@ -32,6 +34,8 @@ export const IconList = {
     Close: Close,
     Play: Play,
     Download: Download,
+    XCicrcle: XCicrcle,
+    CheckCircle: CheckCircle,
     //Brands
     Woo: Woo,
     PrestaShop: PrestaShop,

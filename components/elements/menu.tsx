@@ -2,7 +2,6 @@ import * as React from "react";
 import { LinkType } from "@/components/ui/link";
 import { cn } from "@/lib/utils";
 
-/**!!!! THIS IS NEXTJS NOT CUSTOM LINK */
 import Link from "next/link";
 
 import {
@@ -20,11 +19,9 @@ import {
   DrawerClose,
   DrawerContent,
   DrawerTrigger,
-} from "../ui/drawer";
+} from "@/components/ui/drawer";
 
-import useDrawer from 'vaul'
-
-import { Icon } from "./icon";
+import { Icon } from "@/components/elements/icon";
 import { Button, buttonVariants } from "@/components/ui/button";
 
 import {
@@ -57,7 +54,8 @@ export type MenuItemType = {
   full_description?: string;
   cta?: string;
   img?: {src: string} 
-  benefits?: Benefit[]
+  benefits?: Benefit[],
+  only?: "footerOnly" | "menuOnly"
 } & LinkType;
 
 export type MenuHeaderType = MenuItemType & { children?: MenuItemType[] };
@@ -103,9 +101,9 @@ export const menu: MenuType = [
         order: 1,
       },
       { id: "ecosystem", label: "Ecosystem", url: "/ecosystem", order: 2 },
-      { id: "press", label: "Press", url: "/", order: 3 },
-      { id: "privacy", label: "Privacy policy", url: "/", order: 4 },
-      { id: "terms", label: "Terms of use", url: "/", order: 5 },
+      //{ id: "press", label: "Press", url: "/", order: 3 },
+      { id: "privacy", label: "Privacy policy", url: "/privacy", order: 4 },
+      { id: "terms", label: "Terms of use", url: "/terms", order: 5 },
     ],
   },
   {
@@ -120,12 +118,12 @@ export const menu: MenuType = [
         order: 1,
       },
       { id: "developers", label: "Developers", url: "/", order: 2 },
-      { id: "faq", label: "FAQ", url: "/", order: 3 },
-      { id: "support", label: "Support", url: "/", order: 4 },
-      { id: "contact", label: "Contact us", url: "/", order: 5 },
+      //{ id: "faq", label: "FAQ", url: "/", order: 3 },
+      { id: "support", label: "Support", url: "/contact", order: 4 },
+      { id: "contact", label: "Contact us", url: "/contact", order: 5 },
     ],
   },
-  { id: "pricing", label: "Pricing", order: 5, url: "/" },
+  { id: "pricing", label: "Pricing", order: 5, url: "/pricing", only: 'menuOnly' },
 ];
 
 const MenuDesktopItem = React.forwardRef<
@@ -158,7 +156,8 @@ const MenuDesktop = React.forwardRef<
         {menuProp
           .slice()
           .sort((a, b) => a.order - b.order)
-          .map((menuHeader: MenuHeaderType) => (
+          .map((menuHeader: MenuHeaderType) => 
+            menuHeader.only !== "footerOnly" && (
             <NavigationMenuItem key={menuHeader.id}>
               {menuHeader.children ? (
                 <>
@@ -170,7 +169,8 @@ const MenuDesktop = React.forwardRef<
                       {menuHeader.children
                         .slice()
                         .sort((a, b) => a.order - b.order)
-                        .map((menuItem: MenuItemType) => (
+                        .map((menuItem: MenuItemType) => 
+                          menuItem.only !== "footerOnly" && (
                           <Link href={menuItem.url || "/"} key={menuItem.id}>
                             <MenuDesktopItem>
                               <p>{menuItem.label}</p>
@@ -260,29 +260,30 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
                 <Accordion
                   type="single"
                   collapsible
-//                  defaultValue={  menuProp.find((menuHeader) => menuHeader.order === 1)?.id}
+                  // defaultValue={  menuProp.find((menuHeader) => menuHeader.order === 1)?.id}
                 >
                   {menuProp
                     .slice()
                     .sort((a, b) => a.order - b.order)
                     .map((menuHeader) =>
+                      menuHeader.only !== "footerOnly" && (
                       menuHeader.children && !menuHeader.url ? (
                         <AccordionItem
                           value={menuHeader.id}
                           key={menuHeader.id}
                           className="px-0"
                         >
-                          <AccordionTrigger className="px-4 hover:bg-accent hover:shadow-lg hover:shadow-accent/40 hover:text-background">
+                          <AccordionTrigger className="px-4 hover:bg-accent hover:text-background hover:shadow-lg hover:shadow-accent/40">
                             {menuHeader.label}
                           </AccordionTrigger>
                           <AccordionContent>
-                            {/* TODO: Make menu.tsx easy to read */}
                             {/* Menu Items */}
                             <ul className="flex flex-col space-y-1 px-4">
                               {menuHeader.children
                                 .slice()
                                 .sort((a, b) => a.order - b.order)
-                                .map((menuItem) => (
+                                .map((menuItem) => 
+                                  menuItem.only !== "footerOnly" && (
                                   <DrawerClose asChild key={menuItem.id}>
                                     <Link
                                       href={menuItem.url ? menuItem.url : "/"}
@@ -304,44 +305,39 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
                           </AccordionContent>
                         </AccordionItem>
                       ) : (
-                        <>
-                        <DrawerClose asChild key={menuHeader.id}>
-                        <Link
-                          href={menuHeader.url ? menuHeader.url : "/"}
-                        ><li className="relative w-full p-4 list-none hover:bg-accent group hover:shadow-lg hover:shadow-accent/40">
-                            <p className="group-hover:text-background">
-                              {menuHeader.label}
-                            </p>
-                            {menuHeader.description && (
-                              <p className="mt-1 max-w-[20ch] text-xs text-foreground/70 group-hover:text-background/80">
-                                {menuHeader.description}
-                              </p>
-                            )}
-                            </li>
-                        </Link>
-                      </DrawerClose>
-                      <Separator decorative orientation="horizontal"/>
-                      </>
-                      ),
+                        <React.Fragment key={menuHeader.id}>
+                          <DrawerClose asChild>
+                            <Link href={menuHeader.url ? menuHeader.url : "/"}>
+                              <li className="group relative w-full list-none p-4 hover:bg-accent hover:shadow-lg hover:shadow-accent/40">
+                                <p className="group-hover:text-background">
+                                  {menuHeader.label}
+                                </p>
+                                {menuHeader.description && (
+                                  <p className="mt-1 max-w-[20ch] text-xs text-foreground/70 group-hover:text-background/80">
+                                    {menuHeader.description}
+                                  </p>
+                                )}
+                              </li>
+                            </Link>
+                          </DrawerClose>
+                          <Separator decorative orientation="horizontal" />
+                        </React.Fragment>
+                      ))
                     )}
                 </Accordion>
               </ScrollArea>
               {/** LOGIN / LOGOUT */}
               <div className="mx-auto mt-auto flex w-full flex-col space-y-4 p-8 pb-12">
-                <Link
-                  href="/"
-                  className="w-full"
-                >
+                <Link href="/" className="w-full">
                   <Button className="w-full" variant="white" size="lg">
-                    Log In<Icon icon='LogIn'/>
+                    Log In
+                    <Icon icon="LogIn" />
                   </Button>
                 </Link>
-                <Link
-                  href="/"
-                  className="w-full"
-                >
+                <Link href="/" className="w-full">
                   <Button className="w-full" size="lg">
-                    Sign Up<Icon icon="ArrowUpRight"/>
+                    Sign Up
+                    <Icon icon="ArrowUpRight" />
                   </Button>
                 </Link>
               </div>
