@@ -49,19 +49,13 @@ export default function EasySafeFastBlock() {
                   size="18"
                   className="order-last mt-2.5 max-w-[24ch] text-sm sm:order-none sm:mt-auto"
                 >
-                  Start accepting{" "}
-                  <span className="whitespace-nowrap">
-                    &nbsp;{Math.floor(coinData.length / 10) * 10}
-                  </span>
-                  + cryptocurrencies now
+                  Watch this video find out how our payment experience is simple and fast 
                 </Text>
 
                 <div className="row-span-2 aspect-square overflow-hidden rounded-md sm:aspect-auto sm:rounded-lg">
                   <PopUpVideoPlayer
-                  //TODO: place correct link
-                    //url="https://www.youtube.com/watch?v=-p_F0t7b80M" //this is the correct one
-                    url="https://www.youtube.com/watch?v=m2JRghbgeYw"
-                    title="How do payment work"
+                    url="https://www.youtube.com/watch?v=hLLwKuP2huw"
+                    title="How do payments work"
                     description="See how IVPAY system process payments"
                     thumbnail={{ src: "/payment-video-thumb.png" }}
                   />
@@ -92,7 +86,7 @@ export default function EasySafeFastBlock() {
                   <div className="relative order-first flex-1 sm:order-last">
                     <Image
                       src="/e-commerce-cover.png"
-                      alt="IvPay POS Machine"
+                      alt="IVPAY Ecommerce integrations"
                       fill
                       quality={75}
                       sizes="50vw"
@@ -101,11 +95,10 @@ export default function EasySafeFastBlock() {
                   </div>
                   <div className="p-5 pt-0 sm:p-7.5 xl:p-10">
                     <Heading as="h3" size="32" className="my-1.5 sm:mb-2">
-                      We do all the hard work
+                      You control your money
                     </Heading>
                     <Text size="24" className="max-w-[28ch]">
-                      We will convert all crypto to the currency of your choice
-                      and show you all the necessary info.
+                      Withdraw your crypto or fiat periodically or whenever you prefer
                     </Text>
                   </div>
                 </Card>
