@@ -11,7 +11,7 @@ import XCicrcle from '@/resources/icons/x-circle.svg'
 import CheckCircle from '@/resources/icons/check-circle.svg'
 import Wifi from '@/resources/icons/wifi.svg'
 import Contactless from '@/resources/icons/contactless.svg'
-
+import FastForward from '@/resources/icons/fastforward.svg'
 
 //brands
 import Woo from '@/resources/brands/woo.svg'
@@ -41,6 +41,7 @@ export const IconList = {
     CheckCircle: CheckCircle,
     Wifi: Wifi,
     Contactless: Contactless,
+    FastForward: FastForward,
     //Brands
     Woo: Woo,
     PrestaShop: PrestaShop,
