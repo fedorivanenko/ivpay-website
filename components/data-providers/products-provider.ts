@@ -48,7 +48,7 @@ export const productsList: MenuItemType[] = [
             },
             {
                 id: 'wallet',
-                icon: 'Percent',
+                icon: 'Smartphone',
                 label: 'Any crypto wallet',
                 description: 'Your customer can use any crypto wallet they have. We have an easy payment flow.'
             },

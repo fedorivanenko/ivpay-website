@@ -1,18 +1,20 @@
 //https://feathericons.com/
 // !!! stroke:2px -> stroke:1.6px
-import LogIn from "@/resources/icons/log-in.svg"
 import ArrowUpRight from '@/resources/icons/arrow-up-right.svg'
-import ChevronDown from '@/resources/icons/chevron-down.svg'
-import Menu from '@/resources/icons/menu.svg'
-import Close from '@/resources/icons/close.svg'
-import Play from '@/resources/icons/play.svg'
-import Download from '@/resources/icons/download.svg'
-import XCicrcle from '@/resources/icons/x-circle.svg'
 import CheckCircle from '@/resources/icons/check-circle.svg'
-import Wifi from '@/resources/icons/wifi.svg'
+import ChevronDown from '@/resources/icons/chevron-down.svg'
+import Close from '@/resources/icons/close.svg'
 import Contactless from '@/resources/icons/contactless.svg'
+import Download from '@/resources/icons/download.svg'
 import FastForward from '@/resources/icons/fastforward.svg'
+import LogIn from "@/resources/icons/log-in.svg"
+import Menu from '@/resources/icons/menu.svg'
 import Percent from '@/resources/icons/percent.svg'
+import Play from '@/resources/icons/play.svg'
+import Smartphone from '@/resources/icons/smartphone.svg'
+import Wifi from '@/resources/icons/wifi.svg'
+import XCicrcle from '@/resources/icons/x-circle.svg'
+
 
 //brands
 import Woo from '@/resources/brands/woo.svg'
@@ -38,10 +40,11 @@ export const IconList = {
     Contactless: Contactless,
     Download: Download,
     FastForward: FastForward,
-    Menu: Menu,
     LogIn: LogIn,
+    Menu: Menu,
     Percent: Percent,
     Play: Play,
+    Smartphone: Smartphone,
     Wifi: Wifi,
     XCicrcle: XCicrcle,
     //Brands
