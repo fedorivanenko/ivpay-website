@@ -9,7 +9,7 @@ import { Header } from "@/components/globals/header";
 import { Footer } from "@/components/globals/footer";
 
 export const metadata: Metadata = {
-  title: "Ivpay | A simple way to start accepting crypto in your business",
+  title: "IVPAY | A simple way to start accepting crypto in your business",
   description: "A simple way to start accepting crypto in your business",
 };
 
