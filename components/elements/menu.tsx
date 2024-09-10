@@ -81,7 +81,7 @@ export const menu: MenuType = [
     order: 2,
     children: [
       //TODO: add description
-      { id: "digital", label: "Digital", url: "/", order: 1 },
+      { id: "digital", label: "Digital Nomads", url: "/", order: 1 },
       { id: "e_commerce", label: "E-Commerce Stores", url: "/", order: 2 },
       { id: "freelancers", label: "Freelancers", url: "/", order: 3 },
       { id: "restaraunts", label: "Restaurants", url: "/", order: 4 },
@@ -114,12 +114,12 @@ export const menu: MenuType = [
       {
         id: "demo",
         label: "Schedule a demo",
-        url: "https://calendly.com",
+        url: "https://calendly.com/fredpay",
         order: 1,
       },
-      { id: "developers", label: "Developers", url: "/", order: 2 },
-      //{ id: "faq", label: "FAQ", url: "/", order: 3 },
-      { id: "support", label: "Support", url: "/contact", order: 4 },
+      { id: "developers", label: "Developers", url: "https://ivendpay.stoplight.io/docs/ivendpay-api/55671bfa13c1a-ivend-pay-api", order: 2 },
+      { id: "faq", label: "FAQ", url: "https://help.ivendpay.com/en/collections/2-getting-started", order: 3 },
+      { id: "support", label: "Support", url: "https://help.ivendpay.com/", order: 4 },
       { id: "contact", label: "Contact us", url: "/contact", order: 5 },
     ],
   },
