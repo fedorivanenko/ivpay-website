@@ -31,7 +31,7 @@ import { Text } from "../ui/text";
 import { MotionWrapper } from "../motion/motion-wrapper";
 import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
 
-import { contact } from "../data-providers/contacts-provider";
+import { contact } from "../data-providers/company-data-provider";
 import { Link } from "../ui/link";
 
 const contactFormSchema = z.object({

@@ -118,7 +118,7 @@ export const menu: MenuType = [
         order: 1,
       },
       { id: "developers", label: "Developers", url: "https://ivendpay.stoplight.io/docs/ivendpay-api/55671bfa13c1a-ivend-pay-api", order: 2 },
-      { id: "faq", label: "FAQ", url: "https://help.ivendpay.com/en/collections/2-getting-started", order: 3 },
+      { id: "faq", label: "FAQ", description: undefined, url: "https://help.ivendpay.com/en/collections/2-getting-started", order: 3 },
       { id: "support", label: "Support", url: "https://help.ivendpay.com/", order: 4 },
       { id: "contact", label: "Contact us", url: "/contact", order: 5 },
     ],

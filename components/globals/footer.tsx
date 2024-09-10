@@ -30,7 +30,7 @@ type FooterType = {
   socials: SocialNamesType;
 };
 
-import { contact } from "@/components/data-providers/contacts-provider";
+import { contact } from "@/components/data-providers/company-data-provider";
 
 export const footer = {
   footerMenu: menu,
