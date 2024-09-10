@@ -43,7 +43,7 @@ export default function AboutHeroBlock() {
                 size="72"
                 className="z-20 normal-case bg-gradient-to-b from-black/30 from-70% to-transparent p-16 xl:p-24 text-center text-background lg:p-20"
               >
-                We&apos;re on a mission to make instant crypto easy
+                We&apos;re on a mission to make crypto payments easy
                 and accessible for everyone
               </Heading>
               <Button
@@ -52,7 +52,7 @@ export default function AboutHeroBlock() {
                 variant='white'
                 className="z-20 mb-10 border border-border/20 shadow-accent/60 sm:mb-5 lg:mb-10"
               >
-                <Link href="/">
+                <Link href="https://app.ivendpay.com/register">
                   Try it now
                   <Icon icon="ArrowUpRight" />
                 </Link>
