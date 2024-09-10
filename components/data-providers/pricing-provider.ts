@@ -9,7 +9,7 @@ export type PricingItemType = {
     invoicing: boolean
     api: boolean
     liveSupport: boolean
-    terminalPOS: number | false //EUR per month. //TODO: consider array for different currencies 
+    terminalPOS: string 
     link: string
 }
 
@@ -33,33 +33,20 @@ export const pricingList: PricingListType = {
         invoicing: "Invoicing",
         api: "API",
         liveSupport: "Live Support",
-        terminalPOS: "Terminal POS",
+        terminalPOS: "Crypto Payment Terminal",
     },
     pricingItems: [
         {
             id: 'basic',
-            title: 'Basic',
+            title: '',
+            withdrawFee: 1,
             monthlyFee: 0,
-            withdrawFee: 0,
             exchangeFee: 0,
             invoicing: true,
             api: true,
             liveSupport: true,
-            terminalPOS: false,
+            terminalPOS: '0€ (free lease after a 200€ deposit)',
             link:'/contact'
-        },
-        {
-            id: 'basic',
-            title: 'POS',
-            monthlyFee: 0,
-            withdrawFee: 0,
-            exchangeFee: 0,
-            invoicing: true,
-            api: true,
-            liveSupport: true,
-            terminalPOS: 5,
-            link: '/contact'
-
         },
     ]
 } as const
