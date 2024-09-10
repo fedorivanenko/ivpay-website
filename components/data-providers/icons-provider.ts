@@ -12,6 +12,7 @@ import CheckCircle from '@/resources/icons/check-circle.svg'
 import Wifi from '@/resources/icons/wifi.svg'
 import Contactless from '@/resources/icons/contactless.svg'
 import FastForward from '@/resources/icons/fastforward.svg'
+import Percent from '@/resources/icons/percent.svg'
 
 //brands
 import Woo from '@/resources/brands/woo.svg'
@@ -30,18 +31,19 @@ export type IconType = {
 }
 
 export const IconList = {
-    LogIn: LogIn,
     ArrowUpRight: ArrowUpRight,
-    ChevronDown: ChevronDown,
-    Menu: Menu,
-    Close: Close,
-    Play: Play,
-    Download: Download,
-    XCicrcle: XCicrcle,
     CheckCircle: CheckCircle,
-    Wifi: Wifi,
+    ChevronDown: ChevronDown,
+    Close: Close,
     Contactless: Contactless,
+    Download: Download,
     FastForward: FastForward,
+    Menu: Menu,
+    LogIn: LogIn,
+    Percent: Percent,
+    Play: Play,
+    Wifi: Wifi,
+    XCicrcle: XCicrcle,
     //Brands
     Woo: Woo,
     PrestaShop: PrestaShop,
