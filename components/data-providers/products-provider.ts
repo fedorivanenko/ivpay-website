@@ -65,10 +65,28 @@ export const productsList: MenuItemType[] = [
         img: { src: "/product-app.png" },
         benefits: [
             {
-                id: 'NFC',
-                icon: 'Close',
-                label: 'NFC contactless payments',
-                description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
+                id: 'wallet',
+                icon: 'Smartphone',
+                label: 'Any crypto wallet',
+                description: 'Your customer can use any crypto wallet they have. We have an easy payment flow.'
+            },
+            {
+                id: 'fast',
+                icon: 'FastForward',
+                label: 'Fast payment detection',
+                description: 'Our system get most of the crypto currencies payments detected in seconds. Sometimes faster than a Credit Card.'
+            },
+            {
+                id: 'wifi',
+                icon: 'Wifi',
+                label: 'Only Wifi',
+                description: 'You just need a good Wifi connection. But you can add your SIM card for data if needed.'
+            },
+            {
+                id: 'fee',
+                icon: 'Percent',
+                label: '1% fee',
+                description: 'Regardless of the device you use, our fee is still 1% fee for every payment.'
             },
         ]
     },
