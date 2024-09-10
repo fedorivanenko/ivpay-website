@@ -46,7 +46,7 @@ export default function TogetherWithUsBlock() {
         </MotionWrapper>
           <div className="absolute bottom-0 flex w-full flex-col items-center gap-2 sm:gap-4">
             <Text className="leading-tighten text-center text-3xl capitalize sm:text-4xl xl:text-6xl mb-5">
-              Become<br aria-hidden/>a part of<br aria-hidden/>IVPAY
+              Become<br aria-hidden/>part of<br aria-hidden/>IVPAY
             </Text>
             <Button size="xl" asChild>
               <Link href="https://app.ivendpay.com/register">Get started</Link>
