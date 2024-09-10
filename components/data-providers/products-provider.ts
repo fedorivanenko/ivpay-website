@@ -91,16 +91,6 @@ export const productsList: MenuItemType[] = [
         ]
     },
     {
-        id: "e-commerce",
-        label: "E-commerce integration",
-        url: "/e_commerce",
-        order: 3,
-        description: "Accept crypto currencies in your e-commerce store",
-        full_description: "Integrate cryptocurrency payment options seamlessly into your online business with just a few clicks.",
-        cta: "explore e-commerce",
-        img: { src: "/product-ecommerce.png" }
-    },
-    {
         id: "vending",
         label: "Vending Machine",
         url: "/vending",
@@ -111,6 +101,16 @@ export const productsList: MenuItemType[] = [
         img: { src: "/product-vending.png" }
     },
     //{ id: "invoicing", label: "Invoicing", url: "/invoicing", order: 5 },
+   {
+        id: "e-commerce",
+        label: "E-commerce integration",
+        url: "/e_commerce",
+        order: 3,
+        description: "Accept crypto currencies in your e-commerce store",
+        full_description: "Integrate cryptocurrency payment options seamlessly into your online business with just a few clicks.",
+        cta: "explore e-commerce",
+        img: { src: "/product-ecommerce.png" }
+    },
     {
         id: "api",
         label: "API",
