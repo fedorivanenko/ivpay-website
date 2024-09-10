@@ -10,6 +10,7 @@ import Download from '@/resources/icons/download.svg'
 import XCicrcle from '@/resources/icons/x-circle.svg'
 import CheckCircle from '@/resources/icons/check-circle.svg'
 import Wifi from '@/resources/icons/wifi.svg'
+import Contactless from '@/resources/icons/contactless.svg'
 
 
 //brands
@@ -39,6 +40,7 @@ export const IconList = {
     XCicrcle: XCicrcle,
     CheckCircle: CheckCircle,
     Wifi: Wifi,
+    Contactless: Contactless,
     //Brands
     Woo: Woo,
     PrestaShop: PrestaShop,

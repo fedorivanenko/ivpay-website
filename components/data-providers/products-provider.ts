@@ -24,7 +24,7 @@ export const productsList: MenuItemType[] = [
             // icons can be searched here -> https://feathericons.com/
             {
                 id: 'NFC',
-                icon: 'Close',
+                icon: 'Contactless',
                 label: 'NFC payments',
                 description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
             },
