@@ -29,6 +29,12 @@ export const productsList: MenuItemType[] = [
                 description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
             },
             {
+                id: 'wifi',
+                icon: 'Wifi',
+                label: 'Only Wifi',
+                description: 'You just need a good Wifi connection. But you can add your SIM card for data if needed.'
+            },
+            {
                 id: 'fast',
                 icon: 'Close',
                 label: 'Fast payment detection',
@@ -40,12 +46,7 @@ export const productsList: MenuItemType[] = [
                 label: '1% fee',
                 description: 'We charge at maximum a 1% fee for our service for every payment.'
             },
-            {
-                id: 'wifi',
-                icon: 'Close',
-                label: '1% fee',
-                description: 'We charge at maximum a 1% fee for our service for every payment.'
-            },
+
         ]
     },
     {

@@ -9,6 +9,8 @@ import Play from '@/resources/icons/play.svg'
 import Download from '@/resources/icons/download.svg'
 import XCicrcle from '@/resources/icons/x-circle.svg'
 import CheckCircle from '@/resources/icons/check-circle.svg'
+import Wifi from '@/resources/icons/wifi.svg'
+
 
 //brands
 import Woo from '@/resources/brands/woo.svg'
@@ -36,6 +38,7 @@ export const IconList = {
     Download: Download,
     XCicrcle: XCicrcle,
     CheckCircle: CheckCircle,
+    Wifi: Wifi,
     //Brands
     Woo: Woo,
     PrestaShop: PrestaShop,
