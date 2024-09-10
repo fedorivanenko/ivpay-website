@@ -21,6 +21,7 @@ export const productsList: MenuItemType[] = [
         cta: "Explore payment terminal",
         img: { src: "/product-pos.png" },
         benefits: [
+            // icons can be searched here -> https://feathericons.com/
             {
                 id: 'NFC',
                 icon: 'Close',
@@ -40,7 +41,7 @@ export const productsList: MenuItemType[] = [
                 description: 'We charge at maximum a 1% fee for our service for every payment.'
             },
             {
-                id: 'fee',
+                id: 'wifi',
                 icon: 'Close',
                 label: '1% fee',
                 description: 'We charge at maximum a 1% fee for our service for every payment.'
