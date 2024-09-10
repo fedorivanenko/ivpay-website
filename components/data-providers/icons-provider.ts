@@ -15,18 +15,16 @@ import Smartphone from '@/resources/icons/smartphone.svg'
 import Wifi from '@/resources/icons/wifi.svg'
 import XCicrcle from '@/resources/icons/x-circle.svg'
 
-
 //brands
-import Woo from '@/resources/brands/woo.svg'
+import Binance from '@/resources/brands/binance.svg'
+import GateIo from '@/resources/brands/gateio.svg'
+import Ivenda from '@/resources/brands/ivenda.svg'
+import OKX from '@/resources/brands/OKX.svg'
+import Opencart from '@/resources/brands/opencart.svg'
 import PrestaShop from "@/resources/brands/prestashop.svg"
 import Shopify from '@/resources/brands/shopify.svg'
-import Opencart from '@/resources/brands/opencart.svg'
+import Woo from '@/resources/brands/woo.svg'
 import WorldLine from '@/resources/brands/worldline.svg'
-import Ivenda from '@/resources/brands/ivenda.svg'
-
-import Binance from '@/resources/brands/binance.svg'
-import OKX from '@/resources/brands/OKX.svg'
-import GateIo from '@/resources/brands/gateio.svg'
 
 export type IconType = {
     icon: keyof typeof IconList;
@@ -48,13 +46,13 @@ export const IconList = {
     Wifi: Wifi,
     XCicrcle: XCicrcle,
     //Brands
-    Woo: Woo,
+    Binance: Binance,
+    GateIo: GateIo,
+    Ivenda: Ivenda,
+    OKX: OKX,
+    Opencart: Opencart,
     PrestaShop: PrestaShop,
     Shopify: Shopify,
-    Opencart: Opencart,
+    Woo: Woo,
     WorldLine: WorldLine,
-    Ivenda: Ivenda,
-    Binance: Binance,
-    OKX: OKX,
-    GateIo: GateIo,
 };
