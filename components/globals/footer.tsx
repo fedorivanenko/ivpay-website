@@ -142,7 +142,7 @@ const Footer = React.forwardRef<HTMLDivElement, FooterProp>(
             <Container className="relative flex flex-row justify-between py-2.5 text-xs">
               <Logo className="h-4 w-auto"/>
               <p className="text-xs uppercase text-muted-foreground">
-                All rights reserved. ivendpay © 2024
+                All rights reserved. IVPAY © 2024
               </p>
             </Container>
           </MotionWrapper>

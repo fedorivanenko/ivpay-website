@@ -15,7 +15,7 @@ export default function HomeHeroBlock() {
         <HeroLayout
           heading={
             <>
-              The all-in-one solution
+              All the solutions
               <br />
               to accept digital currencies
               <br />
@@ -40,8 +40,8 @@ export default function HomeHeroBlock() {
           }
           text={
             <>
-              Our process makes it simple and hassle-free to start
-              accept digital currencies. Say goodbye to complex setups and
+              Our ecosystem makes it simple and hassle-free to start
+              accepting digital currencies. Say goodbye to complex setups and
               hello to the world of crypto with ease.
             </>
           }

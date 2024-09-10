@@ -16,15 +16,15 @@ export const productsList: MenuItemType[] = [
         label: "Crypto Payment Terminal",
         url: "/pos",
         order: 1,
-        description: "Get paid in crypto in your physical store",
-        full_description: "Our Crypto Payment Terminal machine makes crypto payments accessible for any business",
+        description: "Fastest crypto payments at your physical store",
+        full_description: "Our Crypto Payment Terminal device makes crypto payments accessible for any business",
         cta: "Explore payment terminal",
         img: { src: "/product-pos.png" },
         benefits: [
             {
                 id: 'NFC',
                 icon: 'Close',
-                label: 'NFC contactless payments',
+                label: 'NFC payments',
                 description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
             },
             {
@@ -32,6 +32,12 @@ export const productsList: MenuItemType[] = [
                 icon: 'Close',
                 label: 'Fast payment detection',
                 description: 'Our system get most of the crypto currencies payments detected in seconds. Sometimes faster than a Credit Card.'
+            },
+            {
+                id: 'fee',
+                icon: 'Close',
+                label: '1% fee',
+                description: 'We charge at maximum a 1% fee for our service for every payment.'
             },
             {
                 id: 'fee',
@@ -76,7 +82,7 @@ export const productsList: MenuItemType[] = [
         order: 4,
         description: "Increase sales with smart vending machine.",
         full_description: "More than 100 million people want to use crypto assets for daily expenses and purchases, but there was no universal solution for this.",
-        cta: "explore options",
+        cta: "explore vending machine",
         img: { src: "/product-vending.png" }
     },
     //{ id: "invoicing", label: "Invoicing", url: "/invoicing", order: 5 },

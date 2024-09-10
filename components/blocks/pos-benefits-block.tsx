@@ -24,7 +24,7 @@ export default function POSBenefitsBlock() {
             size="64"
             className="ml-auto mr-3 max-w-[12ch] text-right mb-5 sm:mr-6 sm:max-w-[18ch]"
           >
-            Everything in One
+            All the benefits
           </Heading>
           <HorizontalScroll>
             <div className="flex min-w-min gap-5">

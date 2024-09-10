@@ -25,7 +25,7 @@ const ReapTheBenefitsBlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({clas
                 size="64"
                 className="mb-2 max-w-[12ch] sm:mb-5 sm:max-w-[14ch]"
               >
-                reap the benefits of crypto payments.
+                Recap the benefits of crypto payments.
               </Heading>
               <Text size="32" className="max-w-[40ch]">
                 The advantages of accepting crypto are undeniable. More
