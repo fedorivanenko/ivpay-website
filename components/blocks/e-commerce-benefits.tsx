@@ -22,7 +22,7 @@ export default function ECommerceBenefitsBlock() {
             size="64"
             className="mb-5 ml-auto mr-3 max-w-[12ch] text-right sm:mr-6 sm:max-w-none"
           >
-            Configured for your online store
+            Ready for your online store
           </Heading>
           <Card>
             <div className="flex items-center p-5 sm:p-7.5 xl:p-10 gap-4">
@@ -40,7 +40,7 @@ export default function ECommerceBenefitsBlock() {
                   variant={"default"}
                   className="ml-auto max-w-min whitespace-nowrap"
                 >
-                  <Link href="/">
+                  <Link href="https://wordpress.org/plugins/ivendpay-payments/">
                     Download <Icon icon="Download" />
                   </Link>
                 </Button>
@@ -51,10 +51,10 @@ export default function ECommerceBenefitsBlock() {
                 aria-hidden
                 className="box-border text-2xl flex aspect-square w-9 items-center justify-center rounded-sm sm:rounded-md border border-background/50 bg-accent p-2 text-background shadow-xl shadow-accent/30 sm:w-12"
               >
-                <Icon icon="PrestaShop" />
+                <Icon icon="OpenCart" />
               </div>
               <Heading as="h2" size="32">
-                Prestashop
+                OpenCart
               </Heading>
               <Button
                   asChild
@@ -62,7 +62,7 @@ export default function ECommerceBenefitsBlock() {
                   
                   className="ml-auto max-w-min whitespace-nowrap"
                 >
-                  <Link href="/">
+                  <Link href="https://www.opencart.com/index.php?route=marketplace/extension&filter_search=ivendpay">
                     Download <Icon icon="Download" />
                   </Link>
                 </Button>
@@ -73,10 +73,10 @@ export default function ECommerceBenefitsBlock() {
                 aria-hidden
                 className="box-border text-2xl  flex aspect-square w-9 items-center justify-center rounded-sm sm:rounded-md border border-background/50 bg-accent p-2 text-background shadow-xl shadow-accent/30 sm:w-12"
               >
-                <Icon icon="Opencart" />
+                <Icon icon="PrestaShop" />
               </div>
               <Heading as="h2" size="32">
-                OpenCart
+                PrestaShop
               </Heading>
               <Button
                   variant={"disabled"}
