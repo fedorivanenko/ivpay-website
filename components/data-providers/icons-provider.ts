@@ -6,7 +6,7 @@ import ChevronDown from '@/resources/icons/chevron-down.svg'
 import Close from '@/resources/icons/close.svg'
 import Contactless from '@/resources/icons/contactless.svg'
 import Download from '@/resources/icons/download.svg'
-import FastForward from '@/resources/icons/fastforward.svg'
+import FastForward from '@/resources/icons/fast-forward.svg'
 import LogIn from "@/resources/icons/log-in.svg"
 import Menu from '@/resources/icons/menu.svg'
 import Percent from '@/resources/icons/percent.svg'
