@@ -100,7 +100,7 @@ export const menu: MenuType = [
         url: "/about",
         order: 1,
       },
-      { id: "ecosystem", label: "Ecosystem", url: "/ecosystem", order: 2 },
+      { id: "ecosystem", label: "Investors", url: "/investors", order: 2 },
       //{ id: "press", label: "Press", url: "/", order: 3 },
       { id: "privacy", label: "Privacy policy", url: "/privacy", order: 4 },
       { id: "terms", label: "Terms of use", url: "/terms", order: 5 },
