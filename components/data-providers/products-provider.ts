@@ -92,7 +92,7 @@ export const productsList: MenuItemType[] = [
     },
     {
         id: "e-commerce",
-        label: "E-Commerce plugin",
+        label: "E-commerce integration",
         url: "/e_commerce",
         order: 3,
         description: "Accept crypto currencies in your e-commerce store",
