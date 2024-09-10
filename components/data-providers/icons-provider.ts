@@ -20,7 +20,7 @@ import Binance from '@/resources/brands/binance.svg'
 import GateIo from '@/resources/brands/gateio.svg'
 import Ivenda from '@/resources/brands/ivenda.svg'
 import OKX from '@/resources/brands/OKX.svg'
-import Opencart from '@/resources/brands/opencart.svg'
+import OpenCart from '@/resources/brands/opencart.svg'
 import PrestaShop from "@/resources/brands/prestashop.svg"
 import Shopify from '@/resources/brands/shopify.svg'
 import Woo from '@/resources/brands/woo.svg'
@@ -50,7 +50,7 @@ export const IconList = {
     GateIo: GateIo,
     Ivenda: Ivenda,
     OKX: OKX,
-    Opencart: Opencart,
+    OpenCart: OpenCart,
     PrestaShop: PrestaShop,
     Shopify: Shopify,
     Woo: Woo,
