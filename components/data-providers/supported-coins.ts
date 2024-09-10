@@ -14,7 +14,7 @@ export const coinData: CoinType[] = [
   },
   {
     code: "eth",
-    displayCode: "Etherium",
+    displayCode: "Ethereum",
     icon: ETHicon,
   },
   {

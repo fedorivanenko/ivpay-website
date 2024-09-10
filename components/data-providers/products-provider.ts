@@ -21,29 +21,36 @@ export const productsList: MenuItemType[] = [
         cta: "Explore payment terminal",
         img: { src: "/product-pos.png" },
         benefits: [
+            // icons can be searched here -> https://feathericons.com/
             {
                 id: 'NFC',
-                icon: 'Close',
+                icon: 'Contactless',
                 label: 'NFC payments',
                 description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
             },
             {
                 id: 'fast',
-                icon: 'Close',
+                icon: 'FastForward',
                 label: 'Fast payment detection',
                 description: 'Our system get most of the crypto currencies payments detected in seconds. Sometimes faster than a Credit Card.'
             },
             {
-                id: 'fee',
-                icon: 'Close',
-                label: '1% fee',
-                description: 'We charge at maximum a 1% fee for our service for every payment.'
+                id: 'wifi',
+                icon: 'Wifi',
+                label: 'Only Wifi',
+                description: 'You just need a good Wifi connection. But you can add your SIM card for data if needed.'
             },
             {
                 id: 'fee',
-                icon: 'Close',
+                icon: 'Percent',
                 label: '1% fee',
-                description: 'We charge at maximum a 1% fee for our service for every payment.'
+                description: 'Regardless of the device you use, our fee is still 1% fee for every payment.'
+            },
+            {
+                id: 'wallet',
+                icon: 'Smartphone',
+                label: 'Any crypto wallet',
+                description: 'Your customer can use any crypto wallet they have. We have an easy payment flow.'
             },
         ]
     },
@@ -58,22 +65,30 @@ export const productsList: MenuItemType[] = [
         img: { src: "/product-app.png" },
         benefits: [
             {
-                id: 'NFC',
-                icon: 'Close',
-                label: 'NFC contactless payments',
-                description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
+                id: 'wallet',
+                icon: 'Smartphone',
+                label: 'Any crypto wallet',
+                description: 'Your customer can use any crypto wallet they have. We have an easy payment flow.'
+            },
+            {
+                id: 'fast',
+                icon: 'FastForward',
+                label: 'Fast payment detection',
+                description: 'Our system get most of the crypto currencies payments detected in seconds. Sometimes faster than a Credit Card.'
+            },
+            {
+                id: 'wifi',
+                icon: 'Wifi',
+                label: 'Only Wifi',
+                description: 'You just need a good Wifi connection. But you can add your SIM card for data if needed.'
+            },
+            {
+                id: 'fee',
+                icon: 'Percent',
+                label: '1% fee',
+                description: 'Regardless of the device you use, our fee is still 1% fee for every payment.'
             },
         ]
-    },
-    {
-        id: "e-commerce",
-        label: "E-Commerce plugin",
-        url: "/e_commerce",
-        order: 3,
-        description: "Accept crypto currencies in your e-commerce store",
-        full_description: "Integrate cryptocurrency payment options seamlessly into your online business with just a few clicks.",
-        cta: "explore e-commerce",
-        img: { src: "/product-ecommerce.png" }
     },
     {
         id: "vending",
@@ -86,6 +101,16 @@ export const productsList: MenuItemType[] = [
         img: { src: "/product-vending.png" }
     },
     //{ id: "invoicing", label: "Invoicing", url: "/invoicing", order: 5 },
+   {
+        id: "e-commerce",
+        label: "E-commerce integration",
+        url: "/e_commerce",
+        order: 3,
+        description: "Accept crypto currencies in your e-commerce store",
+        full_description: "Integrate cryptocurrency payment options seamlessly into your online business with just a few clicks.",
+        cta: "explore e-commerce",
+        img: { src: "/product-ecommerce.png" }
+    },
     {
         id: "api",
         label: "API",
