@@ -106,7 +106,7 @@ export const productsList: MenuItemType[] = [
         label: "E-commerce integration",
         url: "/e_commerce",
         order: 3,
-        description: "Accept crypto currencies in your e-commerce store",
+        description: "Start accepting cryptocurrencies in your online store today.",
         full_description: "Integrate cryptocurrency payment options seamlessly into your online business with just a few clicks.",
         cta: "explore e-commerce",
         img: { src: "/product-ecommerce.png" }
