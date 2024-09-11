@@ -26,31 +26,31 @@ export const productsList: MenuItemType[] = [
                 id: 'NFC',
                 icon: 'Contactless',
                 label: 'NFC payments',
-                description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
+                description: 'The first payment terminal on the market that accepts cryptocurrencies via NFC contactless technology.'
             },
             {
                 id: 'fast',
                 icon: 'FastForward',
-                label: 'Fast payment detection',
-                description: 'Our system get most of the crypto currencies payments detected in seconds. Sometimes faster than a Credit Card.'
+                label: 'Fast detection',
+                description: 'Our system processes most cryptocurrency payments in seconds — as fast as a credit card, and sometimes even quicker.'
             },
             {
                 id: 'wifi',
                 icon: 'Wifi',
-                label: 'Only Wifi',
-                description: 'You just need a good Wifi connection. But you can add your SIM card for data if needed.'
+                label: 'Only Wifi needed',
+                description: 'All you need is a reliable WiFi connection, but you’re free to use a SIM card. Totally up to you!'
             },
             {
                 id: 'fee',
                 icon: 'Percent',
                 label: '1% fee',
-                description: 'Regardless of the device you use, our fee is still 1% fee for every payment.'
+                description: 'No matter which device you use, it’s always just a 1% fee per payment'
             },
             {
                 id: 'wallet',
                 icon: 'Smartphone',
                 label: 'Any crypto wallet',
-                description: 'Your customer can use any crypto wallet they have. We have an easy payment flow.'
+                description: 'Your customers can pay with any crypto wallet they prefer. We’ve made the payment process quick and simple.'
             },
         ]
     },
@@ -68,25 +68,25 @@ export const productsList: MenuItemType[] = [
                 id: 'wallet',
                 icon: 'Smartphone',
                 label: 'Any crypto wallet',
-                description: 'Your customer can use any crypto wallet they have. We have an easy payment flow.'
+                description: 'Your customers can pay with any crypto wallet they prefer. We’ve made the payment process quick and simple.'
             },
             {
                 id: 'fast',
                 icon: 'FastForward',
-                label: 'Fast payment detection',
-                description: 'Our system get most of the crypto currencies payments detected in seconds. Sometimes faster than a Credit Card.'
+                label: 'Fast detection',
+                description: 'Our system processes most cryptocurrency payments in seconds — sometimes even faster than a credit card.'
             },
             {
                 id: 'wifi',
                 icon: 'Wifi',
-                label: 'Only Wifi',
-                description: 'You just need a good Wifi connection. But you can add your SIM card for data if needed.'
+                label: 'Only Wifi needed',
+                description: 'All you need is a reliable WiFi connection, but you’re free to use a SIM card for data if you prefer.'
             },
             {
                 id: 'fee',
                 icon: 'Percent',
                 label: '1% fee',
-                description: 'Regardless of the device you use, our fee is still 1% fee for every payment.'
+                description: 'No matter which device you use, it’s always just a 1% fee per payment.'
             },
         ]
     },
@@ -96,7 +96,7 @@ export const productsList: MenuItemType[] = [
         url: "/vending",
         order: 4,
         description: "Increase sales with smart vending machine.",
-        full_description: "More than 100 million people want to use crypto assets for daily expenses and purchases, but there was no universal solution for this.",
+        full_description: "Over 100 million people want to use crypto for everyday purchases, but a universal solution is still missing. We're excited to introduce our solution for vending machines.",
         cta: "explore vending machine",
         img: { src: "/product-vending.png" }
     },
@@ -106,7 +106,7 @@ export const productsList: MenuItemType[] = [
         label: "E-commerce integration",
         url: "/e_commerce",
         order: 3,
-        description: "Accept crypto currencies in your e-commerce store",
+        description: "Start accepting cryptocurrencies in your online store today.",
         full_description: "Integrate cryptocurrency payment options seamlessly into your online business with just a few clicks.",
         cta: "explore e-commerce",
         img: { src: "/product-ecommerce.png" }

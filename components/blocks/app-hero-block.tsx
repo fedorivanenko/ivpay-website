@@ -60,7 +60,7 @@ export default function AppHeroBlock() {
               </div>
             </>
           }
-          text="Our Payment Terminal is a device that enables NFC and QRcode crypto payment compatible with all crypto wallets, you don't even need to understand it."
+          text="Turn your smartphone into a payment terminal — with our app, you're your own bank, ready to accept crypto anytime, anywhere."
         />
       </MotionTriggerWrapper>
     </section>

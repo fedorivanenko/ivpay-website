@@ -11,6 +11,7 @@ import LogIn from "@/resources/icons/log-in.svg"
 import Menu from '@/resources/icons/menu.svg'
 import Percent from '@/resources/icons/percent.svg'
 import Play from '@/resources/icons/play.svg'
+import Plus from '@/resources/icons/plus.svg'
 import Smartphone from '@/resources/icons/smartphone.svg'
 import Wifi from '@/resources/icons/wifi.svg'
 import XCicrcle from '@/resources/icons/x-circle.svg'
@@ -42,6 +43,7 @@ export const IconList = {
     Menu: Menu,
     Percent: Percent,
     Play: Play,
+    Plus: Plus,
     Smartphone: Smartphone,
     Wifi: Wifi,
     XCicrcle: XCicrcle,

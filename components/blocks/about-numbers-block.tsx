@@ -38,6 +38,24 @@ export default function AboutNumbersBlock() {
             <MotionWrapper variants={cardAppearing}>
               <div className="flex w-full flex-row items-center justify-between py-4 lg:flex-col lg:items-start">
                 <Text className="text-4xl">
+                  <Counter to={10000} />+
+                </Text>
+                <Text size="18">Happy buyers</Text>
+              </div>
+            </MotionWrapper>
+            <Separator
+              decorative
+              orientation="vertical"
+              className="hidden lg:block"
+            />
+            <Separator
+              decorative
+              orientation="horizontal"
+              className="block lg:hidden"
+            />
+            <MotionWrapper variants={cardAppearing}>
+              <div className="flex w-full flex-row items-center justify-between py-4 lg:flex-col lg:items-start">
+                <Text className="text-4xl">
                   <Counter to={countryData.length} />
                 </Text>
                 <Text size="18">Countries</Text>
@@ -56,27 +74,9 @@ export default function AboutNumbersBlock() {
             <MotionWrapper variants={cardAppearing}>
               <div className="flex w-full flex-row items-center justify-between py-4 lg:flex-col lg:items-start">
                 <Text className="text-4xl">
-                  <Counter to={1000000} />+
+                  <Counter to={100} />+
                 </Text>
-                <Text size="18">Transactions</Text>
-              </div>
-            </MotionWrapper>
-            <Separator
-              decorative
-              orientation="vertical"
-              className="hidden lg:block"
-            />
-            <Separator
-              decorative
-              orientation="horizontal"
-              className="block lg:hidden"
-            />
-            <MotionWrapper variants={cardAppearing}>
-              <div className="flex w-full flex-row items-center justify-between py-4 lg:flex-col lg:items-start">
-                <Text className="text-4xl">
-                  <Counter to={250} />+
-                </Text>
-                <Text size="18">POS Machines</Text>
+                <Text size="18">Payment Terminals</Text>
               </div>
             </MotionWrapper>
           </div>

@@ -19,10 +19,11 @@ export default function POSHeroBlock() {
         <HeroLayout
           heading={
             <>
-              Get more customers
+              Attract More Customers 
               <br />
-              at your store with our
-              <br /> Payment Terminal
+              with Our Crypto
+              <br />
+              Payment Terminal
             </>
           }
           heroImage={{ src: "/product-pos.png", alt: "IVPAY POS machine" }}
@@ -47,7 +48,7 @@ export default function POSHeroBlock() {
               </Button>
             </>
           }
-          text="Our Payment Terminal is a device that enables NFC and QRcode crypto payment compatible with all crypto wallets, you don't even need to understand it."
+          text="Our Payment Terminal supports NFC and QR payments, compatible with all crypto wallets existing. No technical knowledge needed."
         />
       </MotionTriggerWrapper>
     </section>

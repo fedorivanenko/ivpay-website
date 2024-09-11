@@ -15,11 +15,9 @@ export default function HomeHeroBlock() {
         <HeroLayout
           heading={
             <>
-              All the solutions
+              Digital Currency Solutions 
               <br />
-              to accept digital currencies
-              <br />
-              in your business.
+              for Every Business Need
             </>
           }
           heroImage={{ src: "/hero-pos.png", alt: "Two IVPAY POS machine" }}
@@ -40,9 +38,7 @@ export default function HomeHeroBlock() {
           }
           text={
             <>
-              Our ecosystem makes it simple and hassle-free to start
-              accepting digital currencies. Say goodbye to complex setups and
-              hello to the world of crypto with ease.
+              Our terminals are just the start. We provide a complete toolkit for integrating digital currencies, including payment gateways, analytics, and custom solutions, making crypto payments easy for businesses of all sizes.
             </>
           }
         />

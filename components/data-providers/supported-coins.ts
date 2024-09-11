@@ -9,21 +9,25 @@ import USDTicon from "@/resources/currencies/usdt.svg";
 export const coinData: CoinType[] = [
   {
     code: "btc",
-    displayName: "Bitcoin",
+    displayName: "Bitcoin (BTC)",
+    displayCode: "BTC - Bitcoin Network",
     icon: BTCicon,
   },
   {
     code: "eth",
-    displayCode: "Ethereum",
+    displayName: "Ethereum (ETH)",
+    displayCode: "ETH - Ethereum Network",
     icon: ETHicon,
   },
   {
     code: "eur",
-    displayName: "Euro",
+    displayName: "Euro (EUR)",
+    displayCode: "SEPA Bank transfers",
     icon: EURicon,
   },
   {
     code: "usdt",
+    displayName: "Tether (USDT)",
     displayCode: "ERC-20, TRC-20, BEP-20, Polygon, OKC",
     icon: USDTicon,
   }
