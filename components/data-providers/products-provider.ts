@@ -26,31 +26,31 @@ export const productsList: MenuItemType[] = [
                 id: 'NFC',
                 icon: 'Contactless',
                 label: 'NFC payments',
-                description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
+                description: 'The first payment terminal on the market that accepts cryptocurrencies via NFC contactless technology.'
             },
             {
                 id: 'fast',
                 icon: 'FastForward',
-                label: 'Fast payment detection',
-                description: 'Our system get most of the crypto currencies payments detected in seconds. Sometimes faster than a Credit Card.'
+                label: 'Fast detection',
+                description: 'Our system processes most cryptocurrency payments in seconds — as fast as a credit card, and sometimes even quicker.'
             },
             {
                 id: 'wifi',
                 icon: 'Wifi',
-                label: 'Only Wifi',
-                description: 'You just need a good Wifi connection. But you can add your SIM card for data if needed.'
+                label: 'Only Wifi needed',
+                description: 'All you need is a reliable WiFi connection, but you’re free to use a SIM card. Totally up to you!'
             },
             {
                 id: 'fee',
                 icon: 'Percent',
                 label: '1% fee',
-                description: 'Regardless of the device you use, our fee is still 1% fee for every payment.'
+                description: 'No matter which device you use, it’s always just a 1% fee per payment'
             },
             {
                 id: 'wallet',
                 icon: 'Smartphone',
                 label: 'Any crypto wallet',
-                description: 'Your customer can use any crypto wallet they have. We have an easy payment flow.'
+                description: 'Your customers can pay with any crypto wallet they prefer. We’ve made the payment process quick and simple.'
             },
         ]
     },
