@@ -56,9 +56,9 @@ export default function AboutNumbersBlock() {
             <MotionWrapper variants={cardAppearing}>
               <div className="flex w-full flex-row items-center justify-between py-4 lg:flex-col lg:items-start">
                 <Text className="text-4xl">
-                  <Counter to={1000000} />+
+                  <Counter to={10000} />+
                 </Text>
-                <Text size="18">Transactions</Text>
+                <Text size="18">Happy buyers</Text>
               </div>
             </MotionWrapper>
             <Separator
