@@ -10,13 +10,13 @@ export const coinData: CoinType[] = [
   {
     code: "btc",
     displayName: "Bitcoin (BTC)",
-    displayCode: "BTC - Bitcoin Network",
+    displayCode: "Bitcoin network",
     icon: BTCicon,
   },
   {
     code: "eth",
     displayName: "Ethereum (ETH)",
-    displayCode: "ETH - Ethereum Network",
+    displayCode: "Ethereum network",
     icon: ETHicon,
   },
   {
@@ -28,7 +28,7 @@ export const coinData: CoinType[] = [
   {
     code: "usdt",
     displayName: "Tether (USDT)",
-    displayCode: "ERC-20, TRC-20, BEP-20, Polygon, OKC",
+    displayCode: "Ethereum, BSC, Polygon and Arbitrum networks",
     icon: USDTicon,
   }
 ] as const;
