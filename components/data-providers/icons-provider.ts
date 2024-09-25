@@ -27,6 +27,19 @@ import Shopify from '@/resources/brands/shopify.svg'
 import Woo from '@/resources/brands/woo.svg'
 import WorldLine from '@/resources/brands/worldline.svg'
 
+import Amazon from '@/resources/brands/amazon-logo.svg'
+import AT_T from '@/resources/brands/at-en-t-logo.svg'
+import McDonalds from '@/resources/brands/mcdonalds-logo.svg'
+import Microsoft from '@/resources/brands/microsoft-logo.svg'
+import Namecheap from '@/resources/brands/namecheap-logo.svg'
+import Overstock from '@/resources/brands/overstock-logo.svg'
+import PizzaHut from '@/resources/brands/pizzahut-logo.svg'
+import SLBenfica from '@/resources/brands/sl-benfica-logo.svg'
+import Starbucks from '@/resources/brands/starbucks-logo.svg'
+import Twitch from '@/resources/brands/twitch-logo.svg'
+import Virgin from '@/resources/brands/virgin-logo.svg'
+import Wikipedia from '@/resources/brands/wikipedia-logo.svg'
+
 export type IconType = {
     icon: keyof typeof IconList;
 }
@@ -57,4 +70,16 @@ export const IconList = {
     Shopify: Shopify,
     Woo: Woo,
     WorldLine: WorldLine,
+    Amazon: Amazon,
+    AT_T: AT_T,
+    McDonalds: McDonalds,
+    Microsoft: Microsoft,
+    Namecheap: Namecheap,
+    Overstock: Overstock,
+    PizzaHut: PizzaHut,
+    SLBenfica: SLBenfica,
+    Starbucks: Starbucks,
+    Twitch: Twitch,
+    Virgin: Virgin,
+    Wikipedia: Wikipedia,
 };
