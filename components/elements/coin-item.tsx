@@ -13,29 +13,30 @@ const getCoinIcon = (code: string) => {
 };
 
 const CoinItem = React.forwardRef<HTMLDivElement, CoinType>(
-  ({ code, displayCode, displayName, ...props }, forwardedRef) => {
+  ({ code, networkName, displayName, ...props }, forwardedRef) => {
     const IconComponent = getCoinIcon(code);
 
     return (
       <div
         ref={forwardedRef}
         //className="flex aspect-square w-full flex-col overflow-hidden rounded-md border border-background/50 bg-background/90 p-2.5 shadow-card-shadow sm:rounded-lg sm:p-5 sm:pb-4 lg:aspect-8/5"
-        className="flex aspect-square w-full flex-col overflow-hidden p-2.5 sm:p-5 sm:pb-4 lg:aspect-8/5"
+        className="flex aspect-square w-full flex-col justify-between overflow-hidden p-2.5 sm:p-5 sm:pb-4 lg:aspect-8/5 lg:mb-2"
         {...props}
       >
-        <div className="relative aspect-3/4 sm:aspect-square w-8 sm:w-10 sm:-translate-x-1 sm:-translate-y-1 xl:w-12">
+        <div className="relative aspect-3/4 w-8 sm:aspect-square sm:w-10 sm:-translate-x-1 sm:-translate-y-1 xl:w-12">
           {IconComponent ? (
-            <IconComponent/>
+            <IconComponent />
           ) : (
             <div className="aspect-square h-full rounded-full bg-secondary" />
           )}
         </div>
-        <Text className="mt-auto text-xs uppercase leading-none sm:text-base sm:leading-none">
-          {displayName && displayName !== "" ? displayName : code}
-        </Text>
-        <Text className="mt-1 hidden max-w-[24ch] text-[0.625rem] uppercase leading-tight lg:block">
-          {displayCode && displayCode !== "" ? displayCode : code}
-        </Text>
+        <div className="flex flex-col space-y-0.5">
+          <div className="mt-auto flex flex-col lg:flex-row lg:space-x-1 uppercase max-w-min">
+            {displayName && displayName !== "" ? <Text className="text-xs sm:text-base">{displayName}</Text> : null}
+            <Text className="text-xs items-center translate-y-[0.05em]">{code}</Text>
+          </div>
+          {networkName && networkName !== "" ? <Text className="hidden max-w-[24ch] text-[0.625rem] uppercase leading-tight lg:block">{networkName}</Text>:null}
+        </div>
       </div>
     );
   },

@@ -29,11 +29,12 @@ export default function CoinsListBlock() {
             system.
           </Text>
           <Text size="32" className="col-span-1 mb-2.5 sm:col-span-2 lg:mb-5">
-            We support over
+            We support over 40 cryptocurrencies and constantly add new ones.
+            {/*
             <span className="whitespace-nowrap">
               &nbsp;{Math.floor(coinData.length / 10) * 10}&nbsp;
             </span>
-            cryptocurrencies and constantly add new ones.
+            */}
           </Text>
           <Button
             asChild
@@ -47,7 +48,7 @@ export default function CoinsListBlock() {
               <CoinItem
                 key={index}
                 code={item.code}
-                displayCode={item.displayCode}
+                networkName={item.networkName}
                 displayName={item.displayName}
               />
             ))}
