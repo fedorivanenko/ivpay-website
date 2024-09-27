@@ -42,7 +42,7 @@ export default function VendingHeroBlock() {
               </StackedCardsFan>
               <Button asChild size="lg" variant="default">
                 <Link href="https://app.ivendpay.com/register">
-                  Get started <Icon icon="ArrowUpRight" />
+                  Waitlist <Icon icon="ArrowUpRight" />
                 </Link>
               </Button>
             </>
