@@ -4,7 +4,7 @@ import { MotionTriggerWrapper } from "@/components/motion/motionTriggerWrapper";
 import { Separator } from "@/components/ui/separator";
 import { Heading } from "@/components/ui/heading";
 
-import { cardAppearing } from "@/components/motion/motion_utils";
+import { cardAppearing, contentAppearing } from "@/components/motion/motion_utils";
 
 import * as React from 'react'
 import { IconType } from "../data-providers/icons-provider";
@@ -26,7 +26,7 @@ type PartnerType = {
 
 const PartnerLogo = React.forwardRef<HTMLDivElement, MotionWrapperProps & PartnerType>(({name, icon, className, ...props}, ref)=>{
   return(
-    <MotionWrapper variants={cardAppearing} {...props} ref={ref}>
+    <MotionWrapper variants={contentAppearing} {...props} ref={ref}>
     <div className="flex w-full flex-col items-center justify-center py-4 h-40">
       <span className="sr-only">{name}</span>
       <div className="h-16">
