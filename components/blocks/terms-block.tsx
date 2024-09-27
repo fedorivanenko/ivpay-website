@@ -12,8 +12,8 @@ export default function TermsBlock() {
   return (
     <section id="terms-block" className="py-12">
       {/*
-       */}
       <MotionTriggerWrapper>
+        */}
         <Container className="grid grid-cols-1 sm:grid-cols-3">
         <div className="col-span-2 mr-12 sm:mr-0">
             <Terms />
@@ -30,8 +30,8 @@ export default function TermsBlock() {
             </div>
           </div>
         </Container>
+        {/*
       </MotionTriggerWrapper>
-      {/*
        */}
     </section>
   );

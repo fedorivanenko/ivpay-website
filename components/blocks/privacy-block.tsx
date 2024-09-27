@@ -14,8 +14,8 @@ export default function PrivacyBlock() {
   return (
     <section id="privacy-block" className="py-20">
       {/*
-       */}
       <MotionTriggerWrapper>
+       */}
         <Container className="grid grid-cols-1 sm:grid-cols-3">
           <div className="col-span-2 mr-12 sm:mr-0">
             <Privacy />
@@ -32,8 +32,8 @@ export default function PrivacyBlock() {
             </div>
           </div>
         </Container>
-      </MotionTriggerWrapper>
       {/*
+      </MotionTriggerWrapper>
        */}
     </section>
   );
