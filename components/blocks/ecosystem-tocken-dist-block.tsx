@@ -149,6 +149,7 @@ export default function EcosystemTockenDistributionBlock(){
           <ScrollArea>
             <MotionWrapper>
             <table className="text-sm mt-5 whitespace-nowrap border-collapse divide-y divide-border">
+            <thead className="border-collapse divide-y divide-border">
                 <tr className="text-accent divide-x divide-border text-left">
                     <th scope="col"className="px-5 py-5">Distribution</th>
                     <th scope="col"className="px-5 py-5">%</th>
@@ -158,6 +159,8 @@ export default function EcosystemTockenDistributionBlock(){
                     <th scope="col"className="px-5 py-5">Vesting</th>
                     <th scope="col"className="px-5 py-5">ICS</th>
                 </tr>
+              </thead>
+              <tbody className="border-collapse divide-y divide-border">
               {DistributionList.items.map((item:DistributionItemType) => (
                 <tr key={item.title} className="divide-x divide-border">
                     <td className="px-5 py-5">{item.title}</td>
@@ -187,6 +190,7 @@ export default function EcosystemTockenDistributionBlock(){
                 <td/>
                 <td className="px-5 py-5">$ {thousandsSeparator({number:DistributionList.initailCap})}</td>
               </tr>
+              </tbody>
             </table>
             </MotionWrapper>
             <ScrollBar orientation="horizontal" />
