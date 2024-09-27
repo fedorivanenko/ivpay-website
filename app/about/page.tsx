@@ -8,7 +8,9 @@ export default function AboutPage() {
         <main className="flex flex-col min-h-screen">
             <AboutHeroBlock/>
             <AboutNumbersBlock/>
+            {/*
             <AboutTeamBlock/>
+             */}
             <AboutPartnersBlock/>
         </main>
       );
