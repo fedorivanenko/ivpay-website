@@ -27,6 +27,7 @@ import Shopify from '@/resources/brands/shopify.svg'
 import Woo from '@/resources/brands/woo.svg'
 import WorldLine from '@/resources/brands/worldline.svg'
 
+//big brand adoptions
 import Amazon from '@/resources/brands/amazon-logo.svg'
 import AT_T from '@/resources/brands/at-en-t-logo.svg'
 import McDonalds from '@/resources/brands/mcdonalds-logo.svg'
@@ -39,6 +40,16 @@ import Starbucks from '@/resources/brands/starbucks-logo.svg'
 import Twitch from '@/resources/brands/twitch-logo.svg'
 import Virgin from '@/resources/brands/virgin-logo.svg'
 import Wikipedia from '@/resources/brands/wikipedia-logo.svg'
+
+//partners
+//import Binance from '@/resources/brands/binance.svg'
+//import OKX from '@/resources/brands/OKX.svg'
+//import GateIo from '@/resources/brands/gateio.svg'
+import TrustWallet from '@/resources/brands/trust-wallet.svg'
+import FintechHouse from '@/resources/brands/fintech-house.svg'
+import OneInch from '@/resources/brands/1inch-logo.svg'
+import Dash from '@/resources/brands/dash-logo.svg'
+import TONfullLogo from '@/resources/brands/ton-full-logo.svg'
 
 export type IconType = {
     icon: keyof typeof IconList;
@@ -82,4 +93,10 @@ export const IconList = {
     Twitch: Twitch,
     Virgin: Virgin,
     Wikipedia: Wikipedia,
+    //Partners
+    TrustWallet: TrustWallet,
+    FintechHouse: FintechHouse,
+    OneInch: OneInch,
+    Dash: Dash,
+    TONfullLogo: TONfullLogo,
 };
