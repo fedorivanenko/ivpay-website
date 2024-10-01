@@ -15,6 +15,14 @@ import Plus from '@/resources/icons/plus.svg'
 import Smartphone from '@/resources/icons/smartphone.svg'
 import Wifi from '@/resources/icons/wifi.svg'
 import XCicrcle from '@/resources/icons/x-circle.svg'
+import Settings from '@/resources/icons/settings.svg'
+import Cloud from '@/resources/icons/cloud.svg'
+import Globe from '@/resources/icons/globe.svg'
+import BarChart from '@/resources/icons/bar-chart.svg'
+import CreditCard from '@/resources/icons/credit-card.svg'
+import File from '@/resources/icons/file.svg'
+import ThumbsUp from '@/resources/icons/thumbs-up.svg'
+import Zap from '@/resources/icons/zap.svg'
 
 //brands
 import Binance from '@/resources/brands/binance.svg'
@@ -71,6 +79,15 @@ export const IconList = {
     Smartphone: Smartphone,
     Wifi: Wifi,
     XCicrcle: XCicrcle,
+    Settings: Settings,
+    Cloud: Cloud,
+    Globe: Globe,
+    BarChart: BarChart,
+    CreditCard: CreditCard,
+    File: File,
+    ThumbsUp: ThumbsUp,
+    Zap: Zap,
+
     //Brands
     Binance: Binance,
     GateIo: GateIo,

@@ -5,7 +5,7 @@ import { error } from "console";
 export function getProduct(products: MenuItemType[], id: typeof productsList[number]['id']) {
     const product = products.find((product) => product.id === id);
 
-    if (product === undefined) throw Error(id +'no such product');
+    if (product === undefined) throw Error(id + 'no such product');
     return product
 }
 
@@ -100,8 +100,49 @@ export const productsList: MenuItemType[] = [
         cta: "explore vending machine",
         img: { src: "/product-vending.png" }
     },
-    //{ id: "invoicing", label: "Invoicing", url: "/invoicing", order: 5 },
-   {
+    {
+        id: "invoicing",
+        label: "Invoicing",
+        url: "/invoicing",
+        order: 5,
+        description: "Simplify payments with invoicing creation",
+        full_description: "create, send, and manage invoices efficiently, making it easier to track payments and improve your financial operations. Say goodbye to manual processes and hello to automated efficiency!",
+        cta: "Explore invoicing",
+        img: { src: "/product-vending.png" },
+        benefits: [
+            {
+                id: 'instant',
+                icon: 'Zap',
+                label: 'Instant Invoicing',
+                description: 'Generate and send invoices in real-time, enabling quicker billing and immediate payment requests.'
+            },
+            {
+                id: 'dashboard',
+                icon: 'BarChart',
+                label: 'Intuitive Dashboard',
+                description: 'Navigate easily through a user-friendly interface designed for quick access to all invoicing functions.'
+            },
+            {
+                id: 'pdf',
+                icon: 'File',
+                label: 'Automatic PDF Invoice Generation',
+                description: 'Effortlessly create professional PDF invoices that can be emailed or shared with customers instantly.'
+            },
+            {
+                id: 'speed',
+                icon: 'CreditCard',
+                label: 'Increased Payment Speed',
+                description: 'Streamlined processes facilitate faster customer payments, improving cash flow and reducing wait times.'
+            },
+            {
+                id: 'cost',
+                icon: 'ThumbsUp',
+                label: 'Reduced Operating Costs',
+                description: 'Minimize administrative expenses by automating invoicing tasks, allowing your team to focus on core business activities.'
+            },
+        ]
+    },
+    {
         id: "e-commerce",
         label: "E-commerce integration",
         url: "/e_commerce",
@@ -122,10 +163,28 @@ export const productsList: MenuItemType[] = [
         img: { src: "/product-api.png" },
         benefits: [
             {
-                id: 'NFC',
-                icon: 'Close',
-                label: 'NFC contactless payments',
-                description: 'The first Payment Terminal on the market that accepts crypto currencies via NFC contactless.'
+                id: 'mobile',
+                icon: 'Smartphone',
+                label: 'Mobile App Integration',
+                description: 'Streamline bill creation, payments, and real-time updates for a smooth, secure payment experience in mobile apps.'
+            },
+            {
+                id: 'flow',
+                icon: 'Settings',
+                label: 'Custom Flow',
+                description: 'Automate billing, manage transactions, and integrate systems to create efficient, tailored payment workflows.'
+            },
+            {
+                id: 'saas',
+                icon: 'Cloud',
+                label: 'SaaS Platform Enhancement',
+                description: 'Integrate secure, scalable payment solutions and enable real-time bill management within SaaS platforms.'
+            },
+            {
+                id: 'website',
+                icon: 'Globe',
+                label: 'Custom Website Optimization',
+                description: 'Enhance websites with secure payment processing, real-time billing, and flexible external service integration for robust payment solutions.'
             },
         ]
     },
