@@ -20,7 +20,7 @@ export default function ECommerceBenefitsBlock() {
           <Heading
             as="h2"
             size="64"
-            className="mb-5 ml-auto mr-3 max-w-[12ch] text-right sm:mr-6 sm:max-w-none"
+            className="mb-5 ml-auto mr-3 max-w-[12ch] text-right sm:mr-6 sm:max-w-none lg:mb-8"
           >
             Ready for your online store
           </Heading>
