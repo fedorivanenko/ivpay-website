@@ -75,6 +75,8 @@ export const menu: MenuType = [
     order: 1,
     children: [...productsList],
   },
+  /** 
+   * 
   {
     id: "use_cases",
     label: "Use Cases",
@@ -88,6 +90,7 @@ export const menu: MenuType = [
       { id: "retail", label: "Retail stores", url: "/", order: 5 },
     ],
   },
+  */
   {
     id: "company",
     label: "Company",
