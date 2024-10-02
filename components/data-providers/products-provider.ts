@@ -111,7 +111,7 @@ export const productsList: MenuItemType[] = [
         description: "Simplify payments with invoicing creation",
         full_description: "create, send, and manage invoices efficiently, making it easier to track payments and improve your financial operations. Say goodbye to manual processes and hello to automated efficiency!",
         cta: "Explore invoicing",
-        img: { src: "/product-vending.png" },
+        img: { src: "/product-invoicing.png" },
         benefits: [
             {
                 id: 'instant',
@@ -154,7 +154,7 @@ export const productsList: MenuItemType[] = [
         full_description: "Integrate cryptocurrency payment options seamlessly into your online business with just a few clicks.",
         SEOdescription: "IVPAY's e-commerce solution allows you to seamlessly integrate cryptocurrency payment options into your online business. Enjoy the benefits of accepting crypto payments with our trusted and reliable solution used by over 500 clients worldwide. Boost your sales and improve transaction efficiency with IVPAY.",
         cta: "explore e-commerce",
-        img: { src: "/product-ecommerce.png" }
+        img: { src: "/product-e-commerce.png" }
     },
     {
         id: "api",
