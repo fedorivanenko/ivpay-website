@@ -7,7 +7,7 @@ import ReapTheBenefitsBlock from "@/components/blocks/reap-the-benefits-block";
 import { Metadata } from "next";
 import { getProduct, productsList } from "@/components/data-providers/products-provider";
 
-const product = getProduct(productsList, "e_commerce");
+const product = getProduct(productsList, "e-commerce");
 
 export const metadata: Metadata = {
   title: "IVPAY | " + product.label,
