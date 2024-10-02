@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ivpay.io'),
   title: "IVPAY | Welcome to Your Gateway to Crypto Payments",
   description: "IVPAY is an easy, safe, and fast way to accept crypto payments for retail, e-commerce, and vending machines. Our platform supports multiple cryptocurrencies, providing diverse payment options for your business. Discover over 100+ locations that accept cryptocurrency payments and start reaping the benefits of the crypto world today",
+  openGraph: {
+    title: "IVPAY | Welcome to Your Gateway to Crypto Payments",
+    description:
+    "IVPAY is an easy, safe, and fast way to accept crypto payments for retail, e-commerce, and vending machines. Our platform supports multiple cryptocurrencies, providing diverse payment options for your business. Discover over 100+ locations that accept cryptocurrency payments and start reaping the benefits of the crypto world today",
+    type: "website",
+    url: "https://ivpay.io/",
+    siteName: "IVPAY"
+  },
 };
 
 const nohemi = localFont({
