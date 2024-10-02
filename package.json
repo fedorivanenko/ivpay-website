@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "analyze": "ANALYZE=true next build"
@@ -33,7 +34,7 @@
     "feather-icons-react": "^0.7.0",
     "framer-motion": "^11.2.12",
     "lodash": "^4.17.21",
-    "next": "14.2.4",
+    "next": "^14.2.14",
     "next-compose-plugins": "^2.2.1",
     "next-sitemap": "^4.2.3",
     "plaiceholder": "^3.0.0",
