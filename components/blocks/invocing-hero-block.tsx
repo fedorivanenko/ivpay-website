@@ -8,7 +8,7 @@ import { Icon } from "@/components/elements/icon";
 import Link from "next/link";
 
 export default function InvocingHeroBlock() {
-  const posProduct = productsList.find((product) => product.id === "invocing");
+  const posProduct = productsList.find((product) => product.id === "invoicing");
 
   return (
     <section
@@ -22,7 +22,7 @@ export default function InvocingHeroBlock() {
               Generate and send invoices in real-time
             </>
           }
-          heroImage={{ src: "/product-pos.png", alt: "IVPAY POS machine" }}
+          heroImage={{ src: "/product-invoicing.png", alt: "IVPAY invoicing solution" }}
           action={
             <>
               <StackedCardsFan>
