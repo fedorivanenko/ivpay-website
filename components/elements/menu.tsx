@@ -52,6 +52,7 @@ export type MenuItemType = {
   order: number;
   description?: string;
   full_description?: string;
+  SEOdescription?: string;
   cta?: string;
   img?: {src: string} 
   benefits?: Benefit[],

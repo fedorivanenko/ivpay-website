@@ -18,6 +18,7 @@ export const productsList: MenuItemType[] = [
         order: 1,
         description: "Fastest crypto payments at your physical store",
         full_description: "Our Crypto Payment Terminal device makes crypto payments accessible for any business",
+        SEOdescription: "IVPAY POS Machine is an all-in-one solution that enables you to accept crypto payments in your store easily. Its features include receipt printing, 4G network support, and automatic software updates. Experience the benefits of crypto payments such as increased sales, higher order value, and reduced transaction fees. Trusted by over 500+ clients, IVPAY offers an intuitive way to process payments, improving speed, reliability, conversion, and data transparency",
         cta: "Explore payment terminal",
         img: { src: "/product-pos.png" },
         benefits: [
@@ -61,6 +62,7 @@ export const productsList: MenuItemType[] = [
         order: 2,
         description: "Enable any smartphone to accept crypto payments",
         full_description: "Download a simple and user-friendly app to accept payments in more than 40 cryptocurrencies.",
+        SEOdescription: "Download the IVPAY Mobile App to accept payments in more than 40 cryptocurrencies anywhere and anytime. Our app turns your mobile device into a portable crypto POS machine, allowing you to print receipts, manage your business, and simplify your payment process. Experience the clear benefits of accepting crypto payments, such as increased new customer sales, higher order values, and reduced transaction fees. Trusted by over 500 clients, our responsive technology streamlines payments into one integration, improving speed, reliability, conversion, and data transparency",
         cta: "explore mobile APP",
         img: { src: "/product-app.png" },
         benefits: [
@@ -97,6 +99,7 @@ export const productsList: MenuItemType[] = [
         order: 4,
         description: "Increase sales with smart vending machine.",
         full_description: "Over 100 million people want to use crypto for everyday purchases, but a universal solution is still missing. We're excited to introduce our solution for vending machines.",
+        SEOdescription: "Embrace the future with IVPAY's crypto payments solution for vending machines. Cater to over 100 million people willing to use crypto for daily expenses. Experience benefits such as increased new customer sales, higher order value, and reduced transaction fees. Trusted by 500+ clients worldwide",
         cta: "explore vending machine",
         img: { src: "/product-vending.png" }
     },
@@ -149,6 +152,7 @@ export const productsList: MenuItemType[] = [
         order: 3,
         description: "Start accepting cryptocurrencies in your online store today.",
         full_description: "Integrate cryptocurrency payment options seamlessly into your online business with just a few clicks.",
+        SEOdescription: "IVPAY's e-commerce solution allows you to seamlessly integrate cryptocurrency payment options into your online business. Enjoy the benefits of accepting crypto payments with our trusted and reliable solution used by over 500 clients worldwide. Boost your sales and improve transaction efficiency with IVPAY.",
         cta: "explore e-commerce",
         img: { src: "/product-ecommerce.png" }
     },
@@ -159,6 +163,7 @@ export const productsList: MenuItemType[] = [
         order: 6,
         description: "Integrate crypto payments where you need it.",
         full_description: "REST API integration will cover every need of your business.",
+        SEOdescription: "Integrate crypto payments seamlessly into your business with the IVPAY API. Our flexible solution can be customized to fit your needs, whether for a mobile app, custom website, or SaaS service. Join 500+ clients who trust IVPAY and accept crypto now.",
         cta: "Explore API",
         img: { src: "/product-api.png" },
         benefits: [

@@ -38,6 +38,6 @@ export const companyData = {
         {
             id: "TOTAL_REVENUE",
             value: 5000
-        }
+        },
     ]
 } as const satisfies CompanyDataType

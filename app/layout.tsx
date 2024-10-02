@@ -9,8 +9,9 @@ import { Header } from "@/components/globals/header";
 import { Footer } from "@/components/globals/footer";
 
 export const metadata: Metadata = {
-  title: "IVPAY | A simple way to start accepting crypto in your business",
-  description: "A simple way to start accepting crypto in your business",
+  metadataBase: new URL('https://ivpay.io'),
+  title: "IVPAY | Welcome to Your Gateway to Crypto Payments",
+  description: "IVPAY is an easy, safe, and fast way to accept crypto payments for retail, e-commerce, and vending machines. Our platform supports multiple cryptocurrencies, providing diverse payment options for your business. Discover over 100+ locations that accept cryptocurrency payments and start reaping the benefits of the crypto world today",
 };
 
 const nohemi = localFont({
