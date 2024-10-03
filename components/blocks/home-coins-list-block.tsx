@@ -36,6 +36,7 @@ export default function CoinsListBlock() {
             </span>
             */}
           </Text>
+            {/*
           <Button
             asChild
             className="order-last my-4 max-w-min px-4 sm:absolute sm:right-0 sm:top-0 sm:my-0 sm:mt-2 lg:pl-5"
@@ -43,6 +44,7 @@ export default function CoinsListBlock() {
           >
             <Link href="/contact">Suggest a new coin <Icon icon="Plus"/></Link>
           </Button>
+             */}
           <TicTacToeGridLayout animated={true} className="my-4 max-w-screen-lg">
             {coinData.map((item, index) => (
               <CoinItem
