@@ -43,8 +43,8 @@ export default function PricingListBlock() {
             {pricingList.pricingItems.map((item: PricingItemType, index) => (
               <React.Fragment key={index}>
                   <p className='text-xl flex items-center !border-0'>{item.title}</p>
-                  <p className='flex items-center px-2 py-4'>{item.withdrawFee}%</p>
                   <p className='flex items-center px-2 py-4'>{item.monthlyFee}%</p>
+                  <p className='flex items-center px-2 py-4'>{item.withdrawFee}%</p>
                   <p className='flex items-center px-2 py-4'>{item.exchangeFee}%</p>
                   <p className='flex items-center px-2 py-4'>{item.invoicing ? <Icon icon='CheckCircle'/>:<Icon icon='XCicrcle'/>}</p>
                   <p className='flex items-center px-2 py-4'>{item.api ? <Icon icon='CheckCircle'/>:<Icon icon='XCicrcle'/>}</p>
