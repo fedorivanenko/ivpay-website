@@ -11,7 +11,7 @@ export default async function HeroImage({ src, alt }: HeroImageProps) {
   //const { blurDataURL } = await getImageMetadata(src);
 
   return (
-    <div className="relative aspect-square h-full sm:aspect-4/3">
+    <div className="relative h-full aspect-3/4 sm:aspect-square">
       <Image
         src={src}
         alt={alt}

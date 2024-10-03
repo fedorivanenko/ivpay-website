@@ -170,7 +170,7 @@ const MenuDesktop = React.forwardRef<
                     {menuHeader.label}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[640px] grid-cols-3 gap-2 p-3">
+                    <ul className="grid w-[640px] grid-cols-3 gap-2 p-3 mb-1">
                       {menuHeader.children
                         .slice()
                         .sort((a, b) => a.order - b.order)

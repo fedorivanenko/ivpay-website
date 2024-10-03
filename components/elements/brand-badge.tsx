@@ -18,7 +18,7 @@ const BrandBadge = React.forwardRef<HTMLLIElement, BrandBadgeType>(
         className={cn("flex flex-col", className)}
         {...props}
       >
-        <div className="aspect-square w-24 rounded-lg bg-background relative overflow-hidden shadow-lg" >
+        <div className="aspect-square w-20 xl:w-24 rounded-lg bg-background relative overflow-hidden shadow-lg" >
         <Icon icon={icon} className="h-full w-full"/>
         </div>
         <Text className="mt-2 sm:mt-3 text-xs uppercase sm:text-sm">{name}</Text>
