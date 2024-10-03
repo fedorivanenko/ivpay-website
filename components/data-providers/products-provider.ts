@@ -109,7 +109,7 @@ export const productsList: MenuItemType[] = [
         url: "/invoicing",
         order: 5,
         description: "Simplify payments with invoicing creation",
-        full_description: "create, send, and manage invoices efficiently, making it easier to track payments and improve your financial operations. Say goodbye to manual processes and hello to automated efficiency!",
+        full_description: "Create, send, and manage invoices efficiently, making it easier to track payments and improve your financial operations. Say goodbye to manual processes and hello to automated efficiency!",
         cta: "Explore invoicing",
         img: { src: "/product-invoicing.png" },
         benefits: [
