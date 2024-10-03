@@ -7,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import LazyMotionWrapper from "@/components/motion/lazyMotionWrapper";
 import { Header } from "@/components/globals/header";
 import { Footer } from "@/components/globals/footer";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ivpay.io'),
@@ -54,6 +55,7 @@ export default function RootLayout({
           {children}
           <SpeedInsights />
           <Footer />
+          <Toaster/>
         </body>
       </html>
     </LazyMotionWrapper>

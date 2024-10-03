@@ -23,6 +23,7 @@ import CreditCard from '@/resources/icons/credit-card.svg'
 import File from '@/resources/icons/file.svg'
 import ThumbsUp from '@/resources/icons/thumbs-up.svg'
 import Zap from '@/resources/icons/zap.svg'
+import Loader from '@/resources/icons/loader.svg'
 
 //brands
 import Binance from '@/resources/brands/binance.svg'
@@ -87,6 +88,7 @@ export const IconList = {
     File: File,
     ThumbsUp: ThumbsUp,
     Zap: Zap,
+    Loader: Loader,
 
     //Brands
     Binance: Binance,
