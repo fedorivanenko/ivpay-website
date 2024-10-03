@@ -41,7 +41,7 @@ export default function AboutHeroBlock() {
               </div>
               <Heading
                 size="72"
-                className="z-20 normal-case bg-gradient-to-b from-black/30 from-70% to-transparent p-16 xl:p-24 text-center text-background lg:p-20"
+                className="z-20 normal-case bg-gradient-to-b from-black/30 from-70% to-transparent p-16 xl:p-24 text-center text-background lg:p-20 pb-0 sm:pb-0 lg:pb-0 xl:pb-0"
               >
                 Our mission is simple: we&apos;re here to make crypto payments 
                 effortless and accessible to everyone, everywhere.
@@ -50,7 +50,7 @@ export default function AboutHeroBlock() {
                 asChild
                 size="lg"
                 variant='white'
-                className="z-20 mb-10 border border-border/20 shadow-accent/60 sm:mb-5 lg:mb-10"
+                className="z-20 mb-10 border border-border/20 shadow-accent/60 sm:mb-10"
               >
                 <Link href="https://app.ivendpay.com/register">
                   Try it now
