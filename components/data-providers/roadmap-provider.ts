@@ -12,12 +12,12 @@ export type RoadmapQuarterType = {
 
 export const roadmapList: readonly RoadmapQuarterType[] = [
     {
-        id: '2024q3',
-        title: "2024 Q3",
+        id: '2024',
+        title: "2024",
         items: [
             {
                 id: "tocken",
-                title: "IVPAY Token",
+                title: "$IVPAY Token",
                 list: [
                     'Will be available on the TON blockchain'
                 ]
@@ -50,7 +50,7 @@ export const roadmapList: readonly RoadmapQuarterType[] = [
                 id: "website",
                 title: "Development of a new website",
                 list: [
-                    "Multilingual support (4 languages)",
+                   // "Multilingual support (4 languages)",
                     "Internal cryptocurrency academy",
                     "Extra sections to boost traffic"
                 ]
@@ -73,16 +73,10 @@ export const roadmapList: readonly RoadmapQuarterType[] = [
                 id: "burning",
                 title: "Systematic token burning",
                 list: [
-                    "Automatic Algorithm Implement an algorithm to burn 10% of our commission fees until the token reaches",
+                    "Automatic Algorithm Implement an algorithm to burn 10% of our commission fees until the token reaches $1",
                     "Earnings Utilization The system will automatically use commission earnings to buy back and burn tokens. The team won't know when the burn happens, making it a fully decentralized process."
                 ]
-            }
-        ]
-    },
-    {
-        id: '2024q4',
-        title: "2024 Q4",
-        items: [
+            },
             {
                 id:"map",
                 title: "Crypto map for everyone",
@@ -96,8 +90,8 @@ export const roadmapList: readonly RoadmapQuarterType[] = [
         ]
     },
     {
-        id: '2025q1',
-        title: "2025 Q1",
+        id: '2025',
+        title: "2025",
         items: [
             {
                 id: "social",
