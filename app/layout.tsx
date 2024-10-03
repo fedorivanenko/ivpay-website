@@ -9,6 +9,9 @@ import { Header } from "@/components/globals/header";
 import { Footer } from "@/components/globals/footer";
 import { Toaster } from "@/components/ui/sonner";
 
+import Gleap from 'gleap';
+import { GleapInit } from "@/components/globals/gleap";
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://ivpay.io'),
   title: "IVPAY | Welcome to Your Gateway to Crypto Payments",
@@ -56,6 +59,7 @@ export default function RootLayout({
           <SpeedInsights />
           <Footer />
           <Toaster/>
+          <GleapInit/>
         </body>
       </html>
     </LazyMotionWrapper>
