@@ -15,6 +15,7 @@ const partnersList : PartnerType[] = [
   {name:'1 Inch Exchange', icon:"OneInch"},
   {name:'Fintech House Lisboa', icon:'FintechHouse' },
   {name:'Trust Wallet', icon:'TrustWallet'},
+  {name: 'Binance', icon: 'Binance'},
   {name:'Dash Network', icon:'Dash'},
   {name:'TON Network', icon:'TONfullLogo'},
 ]
