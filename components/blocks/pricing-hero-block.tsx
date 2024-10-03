@@ -37,7 +37,7 @@ export default function PricingHeroBlock() {
               <MotionWrapper>
               <div className="rounded-md border border-border/50 m-5 lg:m-10 bg-background/20 py-5 px-5 lg:px-10 backdrop-blur-md text-background xl:rounded-lg shadow-xl shadow-darkshade/10 z-20">
                   <Text size="32" className="text-center">
-                  It&apos;s so easy you can laugh at it.
+                    So easy, you&apos;ll be amazed
                   </Text>
                 </div>
                 </MotionWrapper>

@@ -38,7 +38,7 @@ export default function HomeHeroBlock() {
           }
           text={
             <>
-              Our terminals are just the start. We provide a complete toolkit for integrating digital currencies, including payment gateways, analytics, and custom solutions, making crypto payments easy for businesses of all sizes.
+              Our terminals are just the beginning. We offer a complete set of tools for integrating digital currencies, including payment gateways, analytics, and custom solutions, to simplify crypto payments for businesses of all sizes.
             </>
           }
         />
