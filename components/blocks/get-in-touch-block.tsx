@@ -82,7 +82,7 @@ export default function GetInTouchBlock() {
   const onSubmit = async (values: z.infer<typeof contactFormSchema>) => {
     try {
       setIsLoading(true);
-      const response = await fetch('/api/email-send', {
+      const response = await fetch('/api/send-message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
