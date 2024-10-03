@@ -52,7 +52,7 @@ export default function EcosystemRoadmapBlock() {
                     />
                   </AccordionTrigger>
                   <AccordionContent className="py-0">
-                    <div className="ml-16 grid grid-cols-1 border-l border-accent py-4 pl-16 lg:grid-cols-3 gap-x-8 gap-y-12">
+                    <div className="ml-16 grid grid-cols-1 border-l border-accent py-4 pl-16 lg:grid-cols-3 gap-x-8 gap-y-12 pb-12">
                       {quarter.items.map((item) => (
                         <div
                           key={item.id}
@@ -87,7 +87,7 @@ export default function EcosystemRoadmapBlock() {
                     </h3>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="ml-32 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
+                    <div className="ml-32 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12  pb-12">
                       {quarter.items.map((item) => (
                         <div
                           key={item.id}
