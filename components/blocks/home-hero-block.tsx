@@ -24,8 +24,8 @@ export default function HomeHeroBlock() {
           action={
             <>
               <Button asChild size="lg" variant="white">
-                <Link href="/contact">
-                  Contact Sales
+                <Link href="https://calendly.com/ivpay">
+                  Schedule a demo <Icon icon="ArrowUpRight" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="default">

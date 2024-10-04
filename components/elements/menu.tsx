@@ -116,13 +116,15 @@ export const menu: MenuType = [
     label: "Help",
     order: 4,
     children: [
+      
       {
         id: "demo",
         label: "Schedule a demo",
-        url: "https://calendly.com/fredpay",
+        url: "https://calendly.com/ivpay",
         description: "Arrange a meeting with our sales team",
         order: 1,
       },
+       
       { id: "developers", label: "Developers", description:"Get details of API and more", url: "https://ivendpay.stoplight.io/docs/ivendpay-api/55671bfa13c1a-ivend-pay-api", order: 2 },
       { id: "faq", label: "FAQ", description: "Frequently asked questions", url: "https://help.ivendpay.com/en/collections/2-getting-started", order: 3 },
       { id: "support", label: "Support", description:"Find answers to your questions", url: "https://help.ivendpay.com/", order: 4 },
