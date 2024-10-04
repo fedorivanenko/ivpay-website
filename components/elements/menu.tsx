@@ -108,6 +108,7 @@ export const menu: MenuType = [
       //{ id: "press", label: "Press", url: "/", order: 3 },
       { id: "privacy", label: "Privacy policy", url: "/privacy", order: 4 },
       { id: "terms", label: "Terms of use", url: "/terms", order: 5 },
+      { id: "aml", label: "Anti-Money Laundering Policy", url: "/aml-policy", order: 6 },
     ],
   },
   {
