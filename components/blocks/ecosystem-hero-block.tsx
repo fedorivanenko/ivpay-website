@@ -21,7 +21,7 @@ export default function EcosystemHeroBlock() {
             <div className="relative flex aspect-3/4 w-full flex-col items-center justify-between overflow-hidden rounded-lg border border-border shadow-2xl shadow-accent/60 sm:aspect-square lg:aspect-2/1 lg:rounded-xl xl:rounded-2xl">
               <div
                 aria-hidden
-                className="bg-darkshade-gradient pointer-events-none absolute inset-0 z-0 border-b border-l border-r border-background/50"
+                className="pointer-events-none absolute inset-0 z-0 border-b border-l border-r border-background/50 bg-darkshade-gradient"
               />
               <div
                 aria-hidden
@@ -39,40 +39,80 @@ export default function EcosystemHeroBlock() {
                   />
                 </MotionWrapper>
               </div>
-              <h1 className="bg-text-gradient z-20 bg-clip-text pt-4 text-center text-[4rem] uppercase leading-none text-transparent sm:text-[6rem] lg:text-[10rem] xl:text-[12rem]">
+              <h1 className="z-20 bg-text-gradient bg-clip-text pt-4 text-center text-[4rem] uppercase leading-none text-transparent sm:text-[6rem] lg:text-[10rem] xl:text-[12rem]">
                 Ecosystem
               </h1>
-              {/*
-              <div className="z-20 grid w-full grid-cols-1 gap-4 p-5 text-background sm:gap-5 lg:grid-cols-3">
-                <div className="rounded-md border border-border/50 bg-background/20 p-5 backdrop-blur-md lg:aspect-11/10 xl:rounded-lg shadow-xl shadow-darkshade/20">
-                  <Text>Current circulating supply</Text>
-                  <Text size="32" className="text-2xl">
-                    <Counter to={651731810} separator="comma" />
-                    <span className="ml-2 origin-top-left scale-50 text-background/70">
-                      UTK
-                    </span>
+
+              <div className="z-20 flex w-full flex-col gap-5 p-5 text-background lg:grid-cols-3">
+                <div className="rounded-md border border-border/50 bg-background/20 p-5 shadow-xl shadow-darkshade/20 backdrop-blur-md xl:rounded-lg">
+                  <div className="flex justify-between">
+                    <Text className="ml-2">IVPAY Contract (BEP-20)</Text>
+                    <Text className="group relative whitespace-nowrap">
+                      <Link href="https://bscscan.com/address/0xDE5BDcbd4d7dFa86E527fEF9971bd6Ca6A76eefB">
+                        Check{" "}
+                        <Icon
+                          icon="ArrowUpRight"
+                          className="h-4 w-4 origin-top-right scale-90 lg:h-4 lg:w-4"
+                        />
+                      </Link>
+                      <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-current transition-all duration-300 ease-in-out group-hover:w-full" />
+                    </Text>
+                  </div>
+                  <Text
+                    size="32"
+                    className="group relative mt-2 break-all text-2xl"
+                  >
+                    0xDE5BDcbd4d7dFa86E527fEF9971bd6Ca6A76eefB
                   </Text>
                 </div>
-                <div className="rounded-md border border-border/50 bg-background/20 p-5 backdrop-blur-md lg:aspect-11/10 xl:rounded-lg shadow-xl shadow-darkshade/20">
-                  <Text>Reward & Cashback</Text>
-                  <Text size="32" className="text-2xl">
-                    <Counter to={225000000} separator="comma" />
-                    <span className="ml-2 origin-top-left scale-50 text-background/70">
-                      UTK
-                    </span>
-                  </Text>
-                </div>
-                <div className="rounded-md border border-border/50 bg-background/20 p-5 backdrop-blur-md lg:aspect-11/10 xl:rounded-lg shadow-xl shadow-darkshade/20">
-                  <Text>Reserve Pool</Text>
-                  <Text size="32" className="text-2xl">
-                    <Counter to={123268190} separator="comma" />
-                    <span className="ml-2 origin-top-left scale-50 text-background/70">
-                      UTK
-                    </span>
-                  </Text>
+                <div className="flex flex-col rounded-md border border-border/50 bg-background/20 p-5 shadow-xl shadow-darkshade/20 backdrop-blur-md lg:flex-row xl:rounded-lg">
+                  <Text className="ml-2">IVPAY Markets</Text>
+                  <div className="mt-4 flex flex-wrap gap-5 lg:ml-auto">
+                    <Link href="https://www.gate.io/trade/IVPAY_USDT">
+                      <Icon
+                        icon="GateIo"
+                        className="aspect-square h-12 rounded-md shadow-lg shadow-accent/20"
+                      />
+                    </Link>
+                    <Link href="https://www.mexc.com/exchange/IVPAY_USDT">
+                      <Icon
+                        icon="MEXC"
+                        className="aspect-square h-12 rounded-md shadow-lg shadow-accent/20"
+                      />
+                    </Link>
+                    <Link href="https://www.bitget.com/spot/IVPAYUSDT">
+                      <Icon
+                        icon="Bitget"
+                        className="aspect-square h-12 rounded-md bg-white shadow-lg shadow-accent/20"
+                      />
+                    </Link>
+                    <Link href="https://bingx.com/en-us/spot/IVPAYUSDT">
+                      <Icon
+                        icon="BingX"
+                        className="aspect-square h-12 rounded-md shadow-lg shadow-accent/20"
+                      />
+                    </Link>
+                    <Link href="https://whitebit.com/trade/IVPAY_USDT">
+                      <Icon
+                        icon="WhiteBit"
+                        className="aspect-square h-12 rounded-md shadow-lg shadow-accent/20"
+                      />
+                    </Link>
+                    <Link href="https://pancakeswap.finance/info/v3/tokens/0xde5bdcbd4d7dfa86e527fef9971bd6ca6a76eefb">
+                      <Icon
+                        icon="Cake"
+                        className="aspect-square h-12 rounded-md shadow-lg shadow-accent/20"
+                      />
+                    </Link>
+                    <Link href="https://changelly.com/exchange/ivpay">
+                      <Icon
+                        icon="Changelly"
+                        className="aspect-square h-12 rounded-md shadow-lg shadow-accent/20"
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
-               */}
             </div>
           </Container>
         </MotionWrapper>

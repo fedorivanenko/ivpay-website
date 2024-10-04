@@ -27,7 +27,6 @@ import Loader from '@/resources/icons/loader.svg'
 
 //brands
 import Binance from '@/resources/brands/binance.svg'
-import GateIo from '@/resources/brands/gateio.svg'
 import Ivenda from '@/resources/brands/ivenda.svg'
 import OKX from '@/resources/brands/OKX.svg'
 import OpenCart from '@/resources/brands/opencart.svg'
@@ -35,6 +34,15 @@ import PrestaShop from "@/resources/brands/prestashop.svg"
 import Shopify from '@/resources/brands/shopify.svg'
 import Woo from '@/resources/brands/woo.svg'
 import WorldLine from '@/resources/brands/worldline.svg'
+
+//Exchanges
+import GateIo from '@/resources/brands/gateio.svg'
+import BingX from '@/resources/brands/bingx.svg'
+import Bitget from '@/resources/brands/bitget.svg'
+import Cake from '@/resources/brands/cake.svg'
+import Changelly from '@/resources/brands/changelly.svg'
+import MEXC from '@/resources/brands/mexc.svg'
+import WhiteBit from '@/resources/brands/whitebit.svg'
 
 //big brand adoptions
 import Amazon from '@/resources/brands/amazon-logo.svg'
@@ -118,4 +126,11 @@ export const IconList = {
     OneInch: OneInch,
     Dash: Dash,
     TONfullLogo: TONfullLogo,
+    //Exchanges
+    BingX: BingX,
+    Bitget: Bitget,
+    Cake: Cake,
+    Changelly: Changelly,
+    MEXC: MEXC,
+    WhiteBit: WhiteBit,
 };
