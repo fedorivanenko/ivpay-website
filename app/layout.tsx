@@ -53,7 +53,7 @@ export default function RootLayout({
   return (
     <LazyMotionWrapper>
       <html lang="en" className={`${nohemi.variable}`}>
-        <body>
+        <body className="relative">
           <Header />
           {children}
           <SpeedInsights />

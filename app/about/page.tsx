@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
     return (
-        <main className="flex flex-col min-h-screen">
+        <main className="flex flex-col min-h-screen mt-20">
             <AboutHeroBlock/>
             <AboultStoryBlock/>
             {/*

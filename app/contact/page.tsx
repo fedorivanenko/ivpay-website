@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col mt-20">
       <GetInTouchBlock />
     </main>
   );

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col mt-20">
       <PricingHeroBlock />
       <PricingListBlock />
     </main>

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function EcosystemPage() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col mt-20">
       <EcosystemHeroBlock />
       <EcosystemRoadmapBlock />
       <EcosystemTockenomicsBlock />

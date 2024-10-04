@@ -42,6 +42,7 @@ export default function EcosystemHeroBlock() {
               <h1 className="bg-text-gradient z-20 bg-clip-text pt-4 text-center text-[4rem] uppercase leading-none text-transparent sm:text-[6rem] lg:text-[10rem] xl:text-[12rem]">
                 Ecosystem
               </h1>
+              {/*
               <div className="z-20 grid w-full grid-cols-1 gap-4 p-5 text-background sm:gap-5 lg:grid-cols-3">
                 <div className="rounded-md border border-border/50 bg-background/20 p-5 backdrop-blur-md lg:aspect-11/10 xl:rounded-lg shadow-xl shadow-darkshade/20">
                   <Text>Current circulating supply</Text>
@@ -71,6 +72,7 @@ export default function EcosystemHeroBlock() {
                   </Text>
                 </div>
               </div>
+               */}
             </div>
           </Container>
         </MotionWrapper>
