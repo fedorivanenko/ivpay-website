@@ -29,12 +29,14 @@ export default function CoinsListBlock() {
             system.
           </Text>
           <Text size="32" className="col-span-1 mb-2.5 sm:col-span-2 lg:mb-5">
-            We support over
+            We support over 40 cryptocurrencies and constantly add new ones.
+            {/*
             <span className="whitespace-nowrap">
               &nbsp;{Math.floor(coinData.length / 10) * 10}&nbsp;
             </span>
-            cryptocurrencies and constantly add new ones.
+            */}
           </Text>
+            {/*
           <Button
             asChild
             className="order-last my-4 max-w-min px-4 sm:absolute sm:right-0 sm:top-0 sm:my-0 sm:mt-2 lg:pl-5"
@@ -42,12 +44,13 @@ export default function CoinsListBlock() {
           >
             <Link href="/contact">Suggest a new coin <Icon icon="Plus"/></Link>
           </Button>
+             */}
           <TicTacToeGridLayout animated={true} className="my-4 max-w-screen-lg">
             {coinData.map((item, index) => (
               <CoinItem
                 key={index}
                 code={item.code}
-                displayCode={item.displayCode}
+                networkName={item.networkName}
                 displayName={item.displayName}
               />
             ))}

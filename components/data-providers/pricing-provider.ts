@@ -24,7 +24,7 @@ type PricingListType = {
     pricingItems: PricingItemType[]
 }
 
-//TODO: place correct links
+//TODO: rework api
 export const pricingList: PricingListType = {
     descriptions: {
         monthlyFee: 'Monthly Fee',
@@ -39,8 +39,8 @@ export const pricingList: PricingListType = {
         {
             id: 'basic',
             title: '',
-            withdrawFee: 1,
             monthlyFee: 0,
+            withdrawFee: 1,
             exchangeFee: 0,
             invoicing: true,
             api: true,

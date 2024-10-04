@@ -47,7 +47,7 @@ export default function EasySafeFastBlock() {
                 </Heading>
                 <Text
                   size="18"
-                  className="order-last mt-2.5 max-w-[24ch] text-sm sm:order-none sm:mt-auto"
+                  className="order-last mt-2.5 max-w-[36ch] text-sm sm:order-none sm:mt-auto"
                 >
                   Watch this video find out how our payment experience is simple and fast 
                 </Text>
@@ -98,7 +98,7 @@ export default function EasySafeFastBlock() {
                       You control your money
                     </Heading>
                     <Text size="24" className="max-w-[28ch]">
-                      Withdraw your crypto or fiat periodically or whenever you prefer
+                      Withdraw in crypto or fiat at any time
                     </Text>
                   </div>
                 </Card>

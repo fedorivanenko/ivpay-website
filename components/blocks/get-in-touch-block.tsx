@@ -6,6 +6,8 @@ import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
+import { toast } from "sonner";
+
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,6 +19,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
+
 import {
   Select,
   SelectContent,
@@ -33,6 +36,7 @@ import { MotionTriggerWrapper } from "../motion/motionTriggerWrapper";
 
 import { contact } from "../data-providers/company-data-provider";
 import { Link } from "../ui/link";
+import { Icon } from "../elements/icon";
 
 const contactFormSchema = z.object({
   name: z
@@ -56,21 +60,63 @@ const contactFormSchema = z.object({
     .string({
       required_error: "Message is required",
     })
-    .min(2)
     .max(255),
 });
 
 export default function GetInTouchBlock() {
   const [charCount, setCharCount] = React.useState(0);
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      username: "",
+      topic: "",
+      message: "",
+    },
   });
 
-  function onSubmit(values: z.infer<typeof contactFormSchema>) {
-    //TODO:Write an API point for subscription form
-    console.log(values);
-  }
+  const onSubmit = async (values: z.infer<typeof contactFormSchema>) => {
+    try {
+      setIsLoading(true);
+      const response = await fetch('/api/send-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+    
+      // Check if the response is OK (status code in the range 200-299)
+      if (!response.ok) {
+        const errorData = await response.json();
+        toast.error(errorData.error || "Failed to send your message. Please try again later.");
+        setIsLoading(false);
+        return; // Exit early if the response is not OK
+      }
+    
+      // Parse the JSON response body
+      const data = await response.json();
+    
+      // Check for the success property in the response
+      if (data.success) {
+        form.reset();
+        toast.success("Success! Your message has been sent to our team.");
+      } else {
+        // Handle the case where success is false
+        toast.error(data.error || "Sending is failed!");
+      }
+    
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setIsLoading(false);
+      toast.error("Failed to send your message. Please try again later.");
+    }
+    
+  };
 
   return (
     <section id="coins-list-block" className="pb-40 pt-10">
@@ -171,9 +217,14 @@ export default function GetInTouchBlock() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value={"topic-1"}>One</SelectItem>
-                            <SelectItem value={"topic-2"}>Two</SelectItem>
-                            <SelectItem value={"topic-3"}>Three</SelectItem>
+                            <SelectItem value={"POS Machine"}>Crypto Payment Terminal</SelectItem>
+                            <SelectItem value={"Mobile App"}>Mobile App</SelectItem>
+                            <SelectItem value={"E-commerce plugins"}>E-commerce Plugins</SelectItem>
+                            <SelectItem value={"Vending machine"}>Vending Machine</SelectItem>
+                            <SelectItem value={"API integration"}>API Integration</SelectItem>
+                            <SelectItem value={"Listing Request"}>Listing Request</SelectItem>
+                            <SelectItem value={"Partnership Request"}>Partnership Request</SelectItem>
+                            <SelectItem value={"Other"}>Other</SelectItem>
                           </SelectContent>
                         </Select>
                       </FormItem>
@@ -213,7 +264,9 @@ export default function GetInTouchBlock() {
                       </FormItem>
                   )}
                 />
-                <Button type="submit">Send Message</Button>
+                <Button type="submit" className="min-w-36">
+                  {isLoading? <Icon icon="Loader" className="mr-2 h-4 w-4 animate-spin-slow mx-auto" /> : "Send Message"}
+                </Button>
               </form>
             </Form>
             </MotionWrapper>

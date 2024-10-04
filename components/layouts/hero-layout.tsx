@@ -22,9 +22,10 @@ const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(
   ({ heading, action, heroImage, text, ...props }, forwardedRef) => {
     return (
       <Container ref={forwardedRef} {...props}>
-        <div className="relative my-3 flex aspect-2/3 w-full flex-col items-center justify-between overflow-hidden p-5 sm:aspect-16/9 xl:my-8 xl:p-10">
+        <div className="relative my-3 flex aspect-2/3 w-full flex-col items-center justify-between overflow-hidden p-5 sm:aspect-16/9 xl:aspect-2 xl:my-8 xl:p-10">
           <MotionWrapper variants={imageAppearingVariant}>
             <div
+              //gradient
               aria-hidden
               className="absolute inset-0 z-0 rounded-lg border-b border-l border-r border-background/50 bg-hero-gradient sm:rounded-xl xl:rounded-2xl"
             />
@@ -37,7 +38,7 @@ const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(
             {heading}
           </Heading>
           <MotionWrapper>
-            <div className="absolute bottom-0 -z-0 h-[60%] gradient-mask-b-[rgba(0,0,0,1.0)_60%,rgba(0,0,0,0.2)_85%]">
+            <div className="absolute bottom-0 -z-0 h-[66%] gradient-mask-b-[rgba(0,0,0,1.0)_60%,rgba(0,0,0,0.2)_85%]">
               <HeroImage src={heroImage.src} alt={heroImage.alt} />
             </div>
           </MotionWrapper>

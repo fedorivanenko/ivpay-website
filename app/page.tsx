@@ -13,11 +13,11 @@ export default function Home() {
       <HomeHeroBlock/>
       <OurProductsBlock/>
       <EasySafeFastBlock/>
+      {/*
       <ReapTheBenfitsBlock/>
+       */}
       <CoinsListBlock/>
       <TogetherWithUsBlock/>
-      {/*
-      */}
     </main>
   );
 }

@@ -52,6 +52,7 @@ export type MenuItemType = {
   order: number;
   description?: string;
   full_description?: string;
+  SEOdescription?: string;
   cta?: string;
   img?: {src: string} 
   benefits?: Benefit[],
@@ -75,6 +76,8 @@ export const menu: MenuType = [
     order: 1,
     children: [...productsList],
   },
+  /** 
+   * 
   {
     id: "use_cases",
     label: "Use Cases",
@@ -88,6 +91,7 @@ export const menu: MenuType = [
       { id: "retail", label: "Retail stores", url: "/", order: 5 },
     ],
   },
+  */
   {
     id: "company",
     label: "Company",
@@ -100,10 +104,11 @@ export const menu: MenuType = [
         url: "/about",
         order: 1,
       },
-      { id: "ecosystem", label: "Ecosystem", url: "/ecosystem", order: 2 },
+      { id: "ecosystem", label: "Ecosystem", url: "/ecosystem", description:"We're all changing the new era of cryptopayments", order: 2 },
       //{ id: "press", label: "Press", url: "/", order: 3 },
       { id: "privacy", label: "Privacy policy", url: "/privacy", order: 4 },
       { id: "terms", label: "Terms of use", url: "/terms", order: 5 },
+      { id: "aml", label: "Anti-Money Laundering Policy", url: "/aml-policy", order: 6 },
     ],
   },
   {
@@ -111,16 +116,19 @@ export const menu: MenuType = [
     label: "Help",
     order: 4,
     children: [
+      
       {
         id: "demo",
         label: "Schedule a demo",
-        url: "https://calendly.com/fredpay",
+        url: "https://calendly.com/ivpay",
+        description: "Arrange a meeting with our sales team",
         order: 1,
       },
-      { id: "developers", label: "Developers", url: "https://ivendpay.stoplight.io/docs/ivendpay-api/55671bfa13c1a-ivend-pay-api", order: 2 },
-      { id: "faq", label: "FAQ", description: undefined, url: "https://help.ivendpay.com/en/collections/2-getting-started", order: 3 },
-      { id: "support", label: "Support", url: "https://help.ivendpay.com/", order: 4 },
-      { id: "contact", label: "Contact us", url: "/contact", order: 5 },
+       
+      { id: "developers", label: "Developers", description:"Get details of API and more", url: "https://ivendpay.stoplight.io/docs/ivendpay-api/55671bfa13c1a-ivend-pay-api", order: 2 },
+      { id: "faq", label: "FAQ", description: "Frequently asked questions", url: "https://help.ivendpay.com/en/collections/2-getting-started", order: 3 },
+      { id: "support", label: "Support", description:"Find answers to your questions", url: "https://help.ivendpay.com/", order: 4 },
+      { id: "contact", label: "Contact us", description: "Leave your contact and we will get back to you.", url: "/contact", order: 5 },
     ],
   },
   { id: "pricing", label: "Pricing", order: 5, url: "/pricing", only: 'menuOnly' },
@@ -165,7 +173,7 @@ const MenuDesktop = React.forwardRef<
                     {menuHeader.label}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[640px] grid-cols-3 gap-2 p-3">
+                    <ul className="grid w-[640px] grid-cols-3 gap-2 p-3 mb-1">
                       {menuHeader.children
                         .slice()
                         .sort((a, b) => a.order - b.order)

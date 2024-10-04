@@ -33,7 +33,7 @@ export default function EcosystemRoadmapBlock() {
             defaultValue={roadmapList.map(item => item.id)}
           >
             {roadmapList.map((quarter, index) =>
-              //TODO: reduce boilerplate with with cn(className)
+              //TODO: switch borders to cn(className). fck. I must be very tired when I've been writing this crap
               index === 0 ? (
                 <MotionWrapper
                   key={quarter.id}
@@ -52,19 +52,18 @@ export default function EcosystemRoadmapBlock() {
                     />
                   </AccordionTrigger>
                   <AccordionContent className="py-0">
-                    <div className="ml-16 grid grid-cols-1 border-l border-accent py-4 pl-16 lg:grid-cols-3">
+                    <div className="ml-16 grid grid-cols-1 border-l border-accent py-4 pl-16 lg:grid-cols-3 gap-x-8 gap-y-12 pb-12">
                       {quarter.items.map((item) => (
                         <div
                           key={item.id}
                           className="flex flex-col lg:space-y-2"
                         >
-                          <h4 className="text-2xl">
+                          <h4 className="text-2xl capitalize">
                             {item.title}
                           </h4>
-                          <ul className="flex flex-col space-y-2">
+                          <ul className="flex flex-col space-y-4 list-disc list-outside pl-4">
                             {item.list.map((listItem, index) => (
-                              <li key={index}>
-                                <p className="text-lg">{listItem}</p>
+                              <li key={index} className="text-lg">{listItem}
                               </li>
                             ))}
                           </ul>
@@ -88,19 +87,18 @@ export default function EcosystemRoadmapBlock() {
                     </h3>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="ml-32 grid grid-cols-1 lg:grid-cols-3">
+                    <div className="ml-32 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12  pb-12">
                       {quarter.items.map((item) => (
                         <div
                           key={item.id}
                           className="flex flex-col lg:space-y-2"
                         >
-                          <h4 className="text-2xl">
+                          <h4 className="text-2xl capitalize">
                             {item.title}
                           </h4>
-                          <ul className="flex flex-col space-y-2">
+                          <ul className="flex flex-col space-y-4 list-disc list-outside pl-4">
                             {item.list.map((listItem, index) => (
-                              <li key={index}>
-                                <p className="text-lg">{listItem}</p>
+                              <li key={index} className="text-lg">{listItem}
                               </li>
                             ))}
                           </ul>

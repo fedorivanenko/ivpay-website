@@ -48,7 +48,7 @@ export default function POSHeroBlock() {
               </Button>
             </>
           }
-          text="Our Payment Terminal supports NFC and QR payments, compatible with all crypto wallets existing. No technical knowledge needed."
+          text="Our Payment Terminal supports NFC and QR payments, compatible with all crypto wallets with all existing crypto wallets. No technical knowledge needed."
         />
       </MotionTriggerWrapper>
     </section>

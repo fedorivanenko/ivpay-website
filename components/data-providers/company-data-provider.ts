@@ -6,7 +6,7 @@ type ContactType = {
 }
 
 export const contact: ContactType = {
-    address: "Av. Duque de Loulé 12, 1050-093 Lisbon",
+    address: "",
     email: "info@ivpay.com"
 } as const
 
@@ -38,6 +38,6 @@ export const companyData = {
         {
             id: "TOTAL_REVENUE",
             value: 5000
-        }
+        },
     ]
 } as const satisfies CompanyDataType

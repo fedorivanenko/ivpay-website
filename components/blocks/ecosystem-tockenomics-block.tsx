@@ -9,13 +9,15 @@ import RenderImage from "../elements/image";
 import { MotionWrapper } from "@/components/motion/motion-wrapper";
 import { Progress } from "@/components/ui/progress";
 
+import TockenUtility from '@/components/data-providers/tocken-utility.mdx'
+
 export type TockenomicsType = {
   amount: number;
   title: string;
 };
 
 export const Tockenomics: TockenomicsType[] = [
-  { amount: 65, title: "Tocken sale" },
+  { amount: 65, title: "Token sale" },
   { amount: 15, title: "Team" },
   { amount: 10, title: "Cashback & Reward" },
   { amount: 10, title: "Marketing" },
@@ -43,13 +45,19 @@ export default function EcosystemTockenomicsBlock() {
         <Container className="flex flex-col space-y-10">
           <div className="mb-2 flex w-full flex-col gap-2.5 lg:mb-5 lg:flex-row lg:justify-between">
             <Heading as="h2" size="64" className="mb-2 lg:mb-0">
-              Tockenomics
+              Tokenomics
             </Heading>
             <Text className="max-w-[32ch] text-left lg:text-right">
-              IVPAY is a utility token of the IVPay ecosystem. It was created to
-              ensure a smooth transfer of value across our ecosystem.
+              $IVPAY token offers a wide range of benefits, providing exclusive advantages for both merchants and users within our ecosystem
             </Text>
           </div>
+          {/*
+          <MotionWrapper>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-4 py-10">
+              <TockenUtility/>
+            </div>
+          </MotionWrapper>
+              */}
           <MotionWrapper>
             <div className="relative grid w-full grid-cols-1 overflow-hidden rounded-lg border border-border bg-gradient-to-br from-secondary/80 to-secondary shadow-2xl shadow-accent/20 lg:h-80 lg:grid-cols-3">
               <div className="p-5 sm:p-7.5 lg:aspect-square lg:h-full lg:p-10">

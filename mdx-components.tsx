@@ -17,28 +17,31 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </Heading>
     ),
     h3: ({ children }) => (
-      <Heading as="h3" size="32" className="mb-5 mt-4">
+      <Heading as="h3" size="32" className="mb-5 mt-6">
         {children}
       </Heading>
     ),
     h4: ({ children }) => (
-      <Heading as="h4" size="32" className="mb-5 mt-4">
+      <Heading as="h4" size="32" className="mb-5 mt-6">
         {children}
       </Heading>
     ),
-    p: ({ children }) => <Text className="mb-4">{children}</Text>,
+    p: ({ children }) => <Text className="mb-4 leading-relaxed">{children}</Text>,
     ol: ({ children }) => (
-      <ol className="mb-5 list-outside list-decimal">{children}</ol>
+      <ol className="list-outside list-decimal mt-3">{children}</ol>
     ),
     ul: ({ children }) => (
-      <ul className="mb-5 list-outside list-disc">{children}</ul>
+      <ul className="list-outside list-disc mt-3">{children}</ul>
     ),
     li: ({ children }) => (
-      <MotionWrapper>
-        <li className="mb-5 ml-5">
-          <AnimatedTextWrapper>{children}</AnimatedTextWrapper>
+        <li className="ml-8 mt-3 leading-relaxed">
+          {children}
         </li>
-      </MotionWrapper>
+    ),
+    strong: ({children}) => (
+      <strong className="uppercase">
+        {children}
+      </strong>
     ),
     ...components,
   };

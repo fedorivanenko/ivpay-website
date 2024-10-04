@@ -30,8 +30,6 @@ export default function AppHeroBlock() {
           heroImage={{ src: "/product-app.png", alt: "IVPAY mobile app" }}
           action={
             <>
-            {/**
-             * 
               <StackedCardsFan>
                 {appProduct?.benefits &&
                   appProduct.benefits.map((item, index) => (
@@ -44,9 +42,8 @@ export default function AppHeroBlock() {
                     </div>
                   ))}
               </StackedCardsFan>
-             */}
+             
               <div className="flex space-x-2 xl:space-x-3 ml-auto">
-                {/** TODO: Add correct links for AppStore and PlayStore */}
                 <MotionWrapper>
                 <Link href="https://apps.apple.com/us/app/ivendpay-pos/id1644875364" className="h-9 bg-black lg:h-12 w-auto shadow-xl shadow-accent/40 rounded-sm sm:rounded-md overflow-hidden">
                   <AppStoreBadge className="h-full w-auto"/>

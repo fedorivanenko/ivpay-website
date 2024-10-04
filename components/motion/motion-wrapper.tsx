@@ -5,7 +5,7 @@ import * as Slot from '@radix-ui/react-slot';
 import { m, MotionProps, Variants } from 'framer-motion';
 import { contentAppearing } from "./motion_utils"; 
 
-type MotionWrapperProps = React.HTMLAttributes<HTMLElement> &
+export type MotionWrapperProps = React.HTMLAttributes<HTMLElement> &
   MotionProps & {
     asDiv?: boolean;
     variants?: Variants;

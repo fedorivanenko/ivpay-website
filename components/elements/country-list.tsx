@@ -67,7 +67,7 @@ const CountriesList = React.forwardRef<HTMLDivElement, CountriesListType>(
         </div>
         </MotionWrapper>
         <Text size="16" className="text-sm text-muted-foreground">
-          More countries will come in&nbsp;
+        More countries to join in&nbsp;
           <span className="whitespace-nowrap">2025</span>
         </Text>
         </>
