@@ -60,7 +60,6 @@ const contactFormSchema = z.object({
     .string({
       required_error: "Message is required",
     })
-    .min(2)
     .max(255),
 });
 

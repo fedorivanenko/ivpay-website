@@ -24,13 +24,12 @@ const contactFormSchema = z.object({
     .string({
       required_error: "Message is required",
     })
-    .min(2)
     .max(255),
 });
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY || '');
 
-export async function POST(request:Request) {
+export async function POST(request: Request) {
   try {
     // Parse incoming request data
     const body = await request.json();
@@ -42,12 +41,56 @@ export async function POST(request:Request) {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 });
     }
 
+    // Prepare messages
+    const escapeHTML = (text: string | undefined) => {
+      if (text == undefined) return null
+      return text
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+  };
+  
+  // text fallback
+  const textdMessage = `
+  Name: ${name}
+  Email: ${email}
+  Phone: ${username}
+  Subject: ${topic}
+  Message: ${message}
+  
+  This message was sent from [IVPAY] 
+  `.trim();
+
+  // HTML for SendGrid
+  const htmlMessage = `
+  <b>Name:</b> ${escapeHTML(name)}<br>
+  <b>Email:</b> ${escapeHTML(email)}<br>
+  <b>Phone:</b> ${escapeHTML(username)}<br>
+  <b>Subject:</b> ${escapeHTML(topic)}<br>
+  <b>Message:</b> ${escapeHTML(message)}<br>
+  <br>
+  This message was sent from <i>IVPAY</i>
+  `.trim();
+
+  // /n indead of <br> for Telegram
+  const telegramMessage = `
+  <b>Name:</b> ${escapeHTML(name)}
+  <b>Email:</b> ${escapeHTML(email)}
+  <b>Phone:</b> ${escapeHTML(username)}
+  <b>Subject:</b> ${escapeHTML(topic)}
+  <b>Message:</b> ${escapeHTML(message)}
+  
+  This message was sent from <i>IVPAY</i>
+  `.trim();
+
     // Send email using SendGrid
     const msg = {
-      to: email,
-      from: 'test@ivpay.io',
-      subject: 'Message from website',
-      text: message,
+      to: ['support@ivpay.io', email],
+      from: 'support@ivpay.io',
+      subject: 'Request from the website',
+      text: textdMessage,
+      html: `<div style="font-family: Arial, sans-serif;">${htmlMessage}</div>`
     };
 
     const emailResponse = await sendgrid.send(msg);
@@ -69,8 +112,8 @@ export async function POST(request:Request) {
       chat_id: chat_id,
       parse_mode: 'html',
       disable_web_page_preview: true,
-      text: message, 
       reply_to_message_id: reply_to_message_id,
+      text: telegramMessage,
     };
 
     // Send message to Telegram
@@ -104,45 +147,3 @@ export async function POST(request:Request) {
 export function GET() {
   return NextResponse.json({ message: 'API is healthy' });
 }
-
-/**
- 
-export async function POST(request) {
-  const token = (process.env.TELEGRAM_TOKEN || '');
-  const chat_id = (process.env.CHAT_ID || '');;
-  
-  try {
-    const { message } = await request.json();
-    const reply_to_message_id = '3422'; 
-
-    const url_req = `https://api.telegram.org/bot${token}/sendMessage`;
-
-    const data = {
-      chat_id: chat_id,
-      parse_mode: 'html',
-      disable_web_page_preview: true,
-      text: message,
-      reply_to_message_id: reply_to_message_id,
-    };
-
-    const response = await fetch(url_req, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (response.ok) {
-      const result = await response.json();
-      return new Response(JSON.stringify({ success: true, data: result }), { status: 200 });
-    } else {
-      const errorData = await response.json();
-      return new Response(JSON.stringify({ success: false, error: errorData }), { status: response.status });
-    }
-  } catch (error) {
-    return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
-  }
-}
-
- */
