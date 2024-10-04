@@ -20,12 +20,11 @@ export default function HomeHeroBlock() {
               for Every Business Need
             </>
           }
-          heroImage={{ src: "/hero-pos.png", alt: "Two IVPAY POS machine" }}
+          heroImage={{ src: "/hero-pos.png", alt: "Two IVPAY POS machines" }}
           action={
             <>
               <Button asChild size="lg" variant="white">
-                {/* TODO: Fix the link */}
-                <Link href="https://app.ivendpay.com/register">
+                <Link href="/contact">
                   Contact Sales
                 </Link>
               </Button>
