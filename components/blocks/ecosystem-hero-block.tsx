@@ -46,7 +46,7 @@ export default function EcosystemHeroBlock() {
               <div className="z-20 flex w-full flex-col gap-5 p-5 text-background lg:grid-cols-3">
                 <div className="rounded-md border border-border/50 bg-background/20 p-5 shadow-xl shadow-darkshade/20 backdrop-blur-md xl:rounded-lg">
                   <div className="flex justify-between">
-                    <Text className="ml-2">IVPAY Contract (BEP-20)</Text>
+                    <Text className="ml-2">$IVPAY Contract (BEP-20)</Text>
                     <Text className="group relative whitespace-nowrap">
                       <Link href="https://bscscan.com/address/0xDE5BDcbd4d7dFa86E527fEF9971bd6Ca6A76eefB">
                         Check{" "}
@@ -66,7 +66,7 @@ export default function EcosystemHeroBlock() {
                   </Text>
                 </div>
                 <div className="flex flex-col rounded-md border border-border/50 bg-background/20 p-5 shadow-xl shadow-darkshade/20 backdrop-blur-md lg:flex-row xl:rounded-lg">
-                  <Text className="ml-2">IVPAY Markets</Text>
+                  <Text className="ml-2">$IVPAY Markets</Text>
                   <div className="mt-4 flex flex-wrap gap-5 lg:ml-auto">
                     <Link href="https://www.gate.io/trade/IVPAY_USDT">
                       <Icon
