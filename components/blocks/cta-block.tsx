@@ -18,7 +18,7 @@ const CTABlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({className}) => {
     >
       <MotionTriggerWrapper>
         <Container>
-          <div className="relative flex aspect-11/10 flex-col justify-center">
+          <div className="relative py-20 flex aspect-11/10 flex-col justify-center">
             <Card
               aria-hidden
               className="pointer-events-none absolute inset-0 z-0 gradient-mask-b-0"
