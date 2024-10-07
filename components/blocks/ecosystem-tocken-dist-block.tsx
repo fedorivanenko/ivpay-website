@@ -144,7 +144,7 @@ export default function EcosystemTockenDistributionBlock(){
          <MotionTriggerWrapper>
         <Container className="overflow-auto">
           <Heading as="h2" size="64" className="mb-2 lg:mb-0">
-            Tocken Distribution
+            Token Distribution
           </Heading>
           <ScrollArea>
             <MotionWrapper>
