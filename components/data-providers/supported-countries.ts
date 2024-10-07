@@ -66,10 +66,12 @@ export const countryData: CountryType[] = [
       countryName: "Germany", 
       icon: deIcon
     },
+    /*
     { 
       code: "pt", 
       countryName: "Portugal", 
       icon: ptIcon
     },
+     */
   ] as const;
 
