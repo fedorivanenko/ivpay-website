@@ -38,7 +38,7 @@ export default function InvocingHeroBlock() {
                   ))}
               </StackedCardsFan>
               <Button asChild size="lg" variant="default">
-                <Link href="https://app.ivendpay.com/register">
+                <Link href="https://app.ivpay.io/register">
                   Get Started
                 </Link>
               </Button>

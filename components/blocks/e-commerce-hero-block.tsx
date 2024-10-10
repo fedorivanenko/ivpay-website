@@ -41,7 +41,7 @@ export default function ECommerceHeroBlock() {
                     ))}
                 </StackedCardsFan>
                 <Button asChild size="lg" variant="default">
-                  <Link href="https://demo.ivendpay.com/demo">
+                  <Link href="https://demo.ivpay.io/demo">
                     Try demo <Icon icon="ArrowUpRight" />
                   </Link>
                 </Button>

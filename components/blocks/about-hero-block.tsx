@@ -52,7 +52,7 @@ export default function AboutHeroBlock() {
                 variant='white'
                 className="z-20 mb-10 border border-border/20 shadow-accent/60 sm:mb-10"
               >
-                <Link href="https://app.ivendpay.com/register">
+                <Link href="https://app.ivpay.io/register">
                   Try it now
                   <Icon icon="ArrowUpRight" />
                 </Link>

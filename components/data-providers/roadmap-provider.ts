@@ -24,7 +24,7 @@ export const roadmapList: readonly RoadmapQuarterType[] = [
             },
             {
                 id: "family",
-                title: "ivpay family",
+                title: "IVPAY family",
                 list: [
                     "A volunteer program for anyone in the community who wants to get involved",
                     "Country-specific community managers for IVPAY",
@@ -107,8 +107,8 @@ export const roadmapList: readonly RoadmapQuarterType[] = [
                 id: "benefits",
                 title: "Benefits for Participants",
                 list: [
-                    "Free Listing: Top project receives a free listing on ivendPay.",
-                    "Increased Visibility: Active engagement with ivendPay community increases project visibility.",
+                    "Free Listing: Top project receives a free listing on IVPAY.",
+                    "Increased Visibility: Active engagement with IVPAY community increases project visibility.",
                     "Attracting Investors: High leaderboard positions attract potential investors and partners."
                 ]
             },

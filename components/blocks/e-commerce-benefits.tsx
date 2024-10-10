@@ -40,7 +40,7 @@ export default function ECommerceBenefitsBlock() {
                   variant={"default"}
                   className="ml-auto max-w-min whitespace-nowrap"
                 >
-                  <Link href="https://wordpress.org/plugins/ivendpay-payments/">
+                  <Link href="https://wordpress.org/plugins/ivpay-payments/">
                     Download <Icon icon="Download" />
                   </Link>
                 </Button>
@@ -62,7 +62,7 @@ export default function ECommerceBenefitsBlock() {
                   
                   className="ml-auto max-w-min whitespace-nowrap"
                 >
-                  <Link href="https://www.opencart.com/index.php?route=marketplace/extension&filter_search=ivendpay">
+                  <Link href="https://www.opencart.com/index.php?route=marketplace/extension&filter_search=ivpay">
                     Download <Icon icon="Download" />
                   </Link>
                 </Button>

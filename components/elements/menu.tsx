@@ -125,7 +125,7 @@ export const menu: MenuType = [
         order: 1,
       },
        
-      { id: "developers", label: "Developers", description:"Get details of API and more", url: "https://ivendpay.stoplight.io/docs/ivendpay-api/55671bfa13c1a-ivend-pay-api", order: 2 },
+      { id: "developers", label: "Developers", description:"Get details of API and more", url: "https://ivpay.stoplight.io/docs/ivpay-api/55671bfa13c1a-ivend-pay-api", order: 2 },
       { id: "faq", label: "FAQ", description: "Frequently asked questions", url: "https://help.ivpay.io/en/collections/2-getting-started", order: 3 },
       { id: "support", label: "Support", description:"Find answers to your questions", url: "https://help.ivpay.io/", order: 4 },
       { id: "contact", label: "Contact us", description: "Leave your contact and we will get back to you.", url: "/contact", order: 5 },
@@ -336,13 +336,13 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
               </ScrollArea>
               {/** LOGIN / LOGOUT */}
               <div className="mx-auto mt-auto flex w-full flex-col space-y-4 p-8 pb-12">
-                <Link href="/" className="w-full">
+                <Link href="https://app.ivpay.io/login" className="w-full">
                   <Button className="w-full" variant="white" size="lg">
                     Log In
                     <Icon icon="LogIn" />
                   </Button>
                 </Link>
-                <Link href="/" className="w-full">
+                <Link href="https://app.ivpay.io/register" className="w-full">
                   <Button className="w-full" size="lg">
                     Sign Up
                     <Icon icon="ArrowUpRight" />

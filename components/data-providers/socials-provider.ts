@@ -18,11 +18,11 @@ export type SocialType = {
 
 export const socialsList = [
     { name: 'YouTube' as const, icon: YouTubeIcon, link: "https://www.youtube.com/@ivendpay_company" },
-    { name: 'X' as const, icon: XIcon, link: "https://x.com/ivendpay" },
-    { name: 'Telegram' as const, icon: TelegramIcon, link: "https://web.telegram.org/" },
-    { name: 'Medium' as const, icon: MediumIcon, link: "https://medium.com/@ivendPay" },
-    { name: 'LinkedIn' as const, icon: LinkedInIcon, link: "https://www.linkedin.com/company/ivendpay/" },
-    { name: 'Instagram' as const, icon: InstagramIcon, link: "https://www.instagram.com/ivendpay_company/" },
+    { name: 'X' as const, icon: XIcon, link: "https://x.com/ivpay_io" },
+    { name: 'Telegram' as const, icon: TelegramIcon, link: "https://t.me/ivpay_io" },
+    { name: 'Medium' as const, icon: MediumIcon, link: "https://medium.com/@ivendpay" },
+    { name: 'LinkedIn' as const, icon: LinkedInIcon, link: "https://www.linkedin.com/company/ivpay/" },
+    { name: 'Instagram' as const, icon: InstagramIcon, link: "https://www.instagram.com/ivpay_io/" },
 ] as const;
 
 export const socialNames : SocialNamesType[] = socialsList.map(social => social.name);
