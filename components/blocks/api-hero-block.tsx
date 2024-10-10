@@ -41,7 +41,7 @@ export default function APIHeroBlock() {
                   ))}
               </StackedCardsFan>
               <Button asChild size="lg" variant="default">
-                <Link href="https://app.ivpay.io/register">
+                <Link href="https://ivendpay.stoplight.io/docs/ivendpay-api/">
                   Documentation <Icon icon="ArrowUpRight" />
                 </Link>
               </Button>
