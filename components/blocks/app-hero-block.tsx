@@ -34,8 +34,8 @@ export default function AppHeroBlock() {
                 {appProduct?.benefits &&
                   appProduct.benefits.map((item, index) => (
                     <div
-                      className="flex min-w-48 items-center gap-2 rounded-sm border border-background/50 bg-background/80 py-2 pl-3 pr-4 text-xs capitalize text-primary shadow-xl shadow-accent/20 sm:min-w-64 sm:rounded-md lg:text-base xl:min-w-72 xl:text-lg"
-                      key={index}
+                    className="flex h-full w-full items-center gap-2 rounded-sm border border-background/50 bg-background/80 py-2 pl-3 pr-4 capitalize shadow-xl shadow-accent/20 sm:rounded-md lg:text-base xl:text-lg"
+                    key={index}
                     >
                       <Icon icon={item.icon} />
                       <span className="whitespace-nowrap">{item.label}</span>
@@ -43,10 +43,10 @@ export default function AppHeroBlock() {
                   ))}
               </StackedCardsFan>
              
-              <div className="flex space-x-2 xl:space-x-3 ml-auto">
+              <div className="flex space-x-2 xl:space-x-3 ml-auto w-full sm:w-auto bg-black shadow-accent/40 rounded-sm lg:rounded-md h-10 lg:h-12">
                 <MotionWrapper>
                   {/** TODO: MAKE IT VAR */}
-                <Link href="https://apps.apple.com/us/app/ivendpay-pos/id1644875364" className="h-9 bg-black lg:h-12 w-auto shadow-xl shadow-accent/40 rounded-sm lg:rounded-md overflow-hidden">
+                <Link href="https://apps.apple.com/us/app/ivendpay-pos/id1644875364" className="mx-auto px-1 shadow-xl overflow-hidden">
                   <AppStoreBadge className="h-full w-auto"/>
                 </Link>
                 </MotionWrapper>

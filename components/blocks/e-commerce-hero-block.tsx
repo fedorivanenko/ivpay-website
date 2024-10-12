@@ -32,7 +32,7 @@ export default function ECommerceHeroBlock() {
                   {ecommProduct?.benefits &&
                     ecommProduct.benefits.map((item, index) => (
                       <div
-                        className="flex min-w-48 items-center gap-2 rounded-sm border border-background/50 bg-background/80 py-2 pl-3 pr-4 text-xs capitalize text-primary shadow-xl shadow-accent/20 sm:min-w-64 sm:rounded-md lg:text-base xl:min-w-72 xl:text-lg"
+                                              className="flex h-full w-full items-center gap-2 rounded-sm border border-background/50 bg-background/80 py-2 pl-3 pr-4 capitalize shadow-xl shadow-accent/20 sm:rounded-md lg:text-base xl:text-lg"
                         key={index}
                       >
                         <Icon icon={item.icon} />

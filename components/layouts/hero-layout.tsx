@@ -42,7 +42,7 @@ const HeroLayout = React.forwardRef<HTMLDivElement, HeroLayoutType>(
               <HeroImage src={heroImage.src} alt={heroImage.alt} />
             </div>
           </MotionWrapper>
-          <div className="z-10 flex w-full justify-between">{action}</div>
+          <div className="z-10 flex w-full flex-col sm:flex-row gap-5 justify-between">{action}</div>
         </div>
         <Text size="28" className="mx-3 max-w-screen-md sm:mx-6">
           {text}

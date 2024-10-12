@@ -32,10 +32,10 @@ const StackedCardsFan = React.forwardRef<HTMLDivElement, StackedCardsFanType>(
     //set variants
     const variants: Variants = {
       hidden: { opacity: 0, y: "0%", filter: "blur(0px)", zIndex:0, scale:1 },
-      first: { opacity: 1, y: "0%", filter: "blur(0px)", zIndex: 30, scale:0.9 },
-      second: { opacity: 0.6, y: "-30%", filter: "blur(1px)", zIndex: 20, scale:0.85 },
-      third: { opacity: 0.4, y: "-60%", filter: "blur(2px)", zIndex: 10, scale:0.8 },
-      fourth: { opacity: 0.2, y: "-90%", filter: "blur(4px)", zIndex: 0, scale:0.75 },
+      first: { opacity: 1, y: "0%", filter: "blur(0px)", zIndex: 30, scale:1 },
+      second: { opacity: 0.6, y: "-30%", filter: "blur(1px)", zIndex: 20, scale:0.9 },
+      third: { opacity: 0.4, y: "-60%", filter: "blur(2px)", zIndex: 10, scale:0.85 },
+      fourth: { opacity: 0.2, y: "-90%", filter: "blur(4px)", zIndex: 0, scale:0.7 },
       rest: { opacity: 0, y: "50%", filter: "blur(0px)", zIndex: 0, scale:1 },
     };
     const [variantKeys, setVariantKeys] = useState<string[]>([]);
@@ -68,7 +68,7 @@ const StackedCardsFan = React.forwardRef<HTMLDivElement, StackedCardsFanType>(
     }, []);
 
     return (
-      <m.div ref={ref} className={cn("relative", className)} {...props} variants={contentAppearing}>
+      <m.div ref={ref} className={cn("relative w-full sm:w-80 min-w-max h-12", className)} {...props} variants={contentAppearing}>
         {processedChildren.map((item, index) =>
           React.isValidElement(item) ? (
             <m.div
@@ -79,7 +79,7 @@ const StackedCardsFan = React.forwardRef<HTMLDivElement, StackedCardsFanType>(
               animate={variantKeys[index]}
               style={{transform: "translate3d(0, 0, 0)"}} //safari fix to force it use GPU
               transition={{ duration: 0.75, ease: circOut }}
-              className="absolute origin-bottom"
+              className="absolute origin-bottom bottom-0 w-full h-full min-w-max"
             >
               {item}
             </m.div>
