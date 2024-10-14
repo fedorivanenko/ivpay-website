@@ -42,7 +42,7 @@ export default function POSHeroBlock() {
                   ))}
               </StackedCardsFan>
               <Button asChild size="lg" variant="default">
-                <Link href="https://app.ivpay.io/register">
+                <Link href="https://app.ivendpay.com/register">
                   Get Started
                 </Link>
               </Button>

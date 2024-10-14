@@ -52,7 +52,7 @@ export default function AppHeroBlock() {
                 </MotionWrapper>
                 {/* 
                 <MotionWrapper>
-                <Link href="https://app.ivpay.io/register" className="h-9 bg-black lg:h-12 w-auto shadow-xl shadow-accent/40 rounded-sm sm:rounded-md overflow-hidden">
+                <Link href="https://app.ivendpay.com/register" className="h-9 bg-black lg:h-12 w-auto shadow-xl shadow-accent/40 rounded-sm sm:rounded-md overflow-hidden">
                   <GoogleStoreBage className="h-full w-auto"/>
                 </Link>
                 </MotionWrapper>

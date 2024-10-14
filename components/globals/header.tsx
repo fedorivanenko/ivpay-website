@@ -46,12 +46,12 @@ const Header = React.forwardRef<
             <div className="pointer-events-auto flex justify-end space-x-2 lg:w-60 ">
                 <Button asChild variant="white">
                   {/*//TODO: MAKE IT VAR */}
-              <Link href="https://app.ivpay.io/login">
+              <Link href="https://app.ivendpay.com/login">
                   Log In
               </Link>
                   </Button>
                 <Button asChild>
-              <Link href="https://app.ivpay.io/register">
+              <Link href="https://app.ivendpay.com/register">
                   Sign Up
               </Link>
                   </Button>

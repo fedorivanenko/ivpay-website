@@ -336,13 +336,13 @@ const MenuMobile = React.forwardRef<HTMLDivElement, MenuProps>(
               </ScrollArea>
               {/** LOGIN / LOGOUT */}
               <div className="mx-auto mt-auto flex w-full flex-col space-y-4 p-8 pb-12">
-                <Link href="https://app.ivpay.io/login" className="w-full">
+                <Link href="https://app.ivendpay.com/login" className="w-full">
                   <Button className="w-full" variant="white" size="lg">
                     Log In
                     <Icon icon="LogIn" />
                   </Button>
                 </Link>
-                <Link href="https://app.ivpay.io/register" className="w-full">
+                <Link href="https://app.ivendpay.com/register" className="w-full">
                   <Button className="w-full" size="lg">
                     Sign Up
                     <Icon icon="ArrowUpRight" />

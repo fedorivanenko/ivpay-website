@@ -49,7 +49,7 @@ export default function TogetherWithUsBlock() {
               Become<br aria-hidden/>part of<br aria-hidden/>IVPAY
             </Text>
             <Button size="xl" asChild>
-              <Link href="https://app.ivpay.io/register">Get started</Link>
+              <Link href="https://app.ivendpay.com/register">Get started</Link>
             </Button>
           </div>
         </div>
