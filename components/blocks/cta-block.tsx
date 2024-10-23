@@ -34,7 +34,7 @@ const CTABlock: React.FC<React.HTMLAttributes<HTMLElement>> = ({className}) => {
               asChild
               className="z-10 mx-auto max-w-min whitespace-nowrap"
             >
-              <Link href="https://app.ivendpay.com/register">
+              <Link href="https://app.ivpay.io/register">
                 Get started <Icon icon="ArrowUpRight" />
               </Link>
             </Button>
