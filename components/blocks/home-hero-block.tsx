@@ -29,7 +29,7 @@ export default function HomeHeroBlock() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="default">
-                <Link href="https://app.ivendpay.com/register">
+                <Link href="https://app.ivpay.io/register">
                   Get Started <Icon icon="ArrowUpRight" />
                 </Link>
               </Button>
