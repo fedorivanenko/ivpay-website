@@ -120,7 +120,7 @@ export const menu: MenuType = [
       {
         id: "demo",
         label: "Schedule a demo",
-        url: "https://calendly.com/ivpay",
+        url: "https://calendly.com/ivpay/discovery",
         description: "Arrange a meeting with our sales team",
         order: 1,
       },
