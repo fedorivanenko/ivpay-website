@@ -84,14 +84,15 @@ export async function POST(request: Request) {
   This message was sent from <i>IVPAY</i>
   `.trim();
 
-    // Send email using SendGrid
-    const msg = {
-      to: ['support@ivpay.io', email],
-      from: 'support@ivpay.io',
-      subject: 'Request from the website',
-      text: textdMessage,
-      html: `<div style="font-family: Arial, sans-serif;">${htmlMessage}</div>`
-    };
+  // Send email using SendGrid
+  const msg = {
+    to: ['support@ivpay.io', email],
+    from: 'support@ivpay.io',
+    subject: 'Request from the website',
+    text: textdMessage,
+    html: `<div style="font-family: Arial, sans-serif;">${htmlMessage}</div>`,
+    replyTo: email
+  };
 
     const emailResponse = await sendgrid.send(msg);
     console.log('SendGrid response:', emailResponse);
