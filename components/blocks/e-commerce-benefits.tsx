@@ -40,7 +40,7 @@ export default function ECommerceBenefitsBlock() {
                   variant={"default"}
                   className="ml-auto max-w-min whitespace-nowrap"
                 >
-                  <Link href="https://wordpress.org/plugins/ivpay-payments/">
+                  <Link href="https://wordpress.org/plugins/ivendpay-payments/">
                     Download <Icon icon="Download" />
                   </Link>
                 </Button>
