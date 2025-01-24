@@ -17,13 +17,13 @@ export type TockenomicsType = {
 };
 
 export const Tockenomics: TockenomicsType[] = [
-  { amount: 65, title: "Token sale" },
+  { amount: 23.3, title: "Token sale" },
+  { amount: 2.5, title: "DEX Liquidity Pool" },
   { amount: 15, title: "Team" },
-  { amount: 10, title: "Cashback & Reward" },
-  { amount: 10, title: "Marketing" },
-  { amount: 5, title: "DEX Liqudity Pool" },
-  { amount: 3, title: "Advisors" },
-  { amount: 2, title: "Listings" },
+  { amount: 2, title: "Advisors" },
+  { amount: 1.2, title: "Listings" },
+  { amount: 20, title: "Marketing" },
+  { amount: 36, title: "Ecosystem Fund" },
 ] as const;
 
 export default function EcosystemTockenomicsBlock() {
